@@ -21,8 +21,8 @@ public class Room : MonoBehaviour {
     }
   }
 
-  public void Show() {
-    this._frontWallCoverMaterial.DOFade(0, 0.3f);
+  public void Show(float transparency = 0f) {
+    this._frontWallCoverMaterial.DOFade(transparency, 0.3f);
   }
 
   public void Hide() {
