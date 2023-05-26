@@ -1,4 +1,6 @@
 using DG.Tweening;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,9 +9,11 @@ public class Room : MonoBehaviour {
   [SerializeField] private GameObject _frontWall;
   [SerializeField] private MeshRenderer _frontWallCoverMeshRenderer;
   [SerializeField] private CheckpointTrigger _checkpointTrigger;
+  [SerializeField] private List<Transform> _windowTransforms;
 
   public float Width => this._width;
   public UnityEvent OnRoomEntered;
+  public List<Vector3> Windows;
 
   private Material _frontWallCoverMaterial;
 
@@ -36,6 +40,7 @@ public class Room : MonoBehaviour {
 
   private void Awake() {
     this._frontWallCoverMaterial = this._frontWallCoverMeshRenderer.material;
+    this.Windows = this._windowTransforms.Select(winTransform => winTransform.position).ToList();
   }
 
   private void Start() {
