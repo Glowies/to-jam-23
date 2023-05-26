@@ -8,7 +8,7 @@ namespace Controls {
     public class RunningState : PlayerState
     {
         // TODO: Adjust multiplier values here
-        private float _speedMultiplier = 2f;
+        private float _stateSpeed = 2f;
         private float _heartRateMultiplier = 3f;
         
         public void OnEnter(PlayerState prevState)
@@ -19,7 +19,7 @@ namespace Controls {
         
         public void Movement(Transform player, HRGauge heartRate, Action playerDeath, float baseSpeed)
         {
-            float speed = baseSpeed + _speedMultiplier;
+            float speed = baseSpeed + _stateSpeed;
             player.Translate(Time.deltaTime * speed, 0, 0);
             
             // Increase the HR Gauge; note that this is called in a delegated method under update
