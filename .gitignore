@@ -111,7 +111,23 @@ WwiseUnityIntegration_*_Src.zip
 .DS_store
 
 # Jetbrains Rider IDE (C# IDE), adds a plugin to Unity
- Assets/Plugins/Editor.meta
- Assets/Plugins/Editor/Jetbrains.meta
- Assets/Plugins/Editor/Jetbrains/
- .idea
+Assets/Plugins/Editor.meta
+Assets/Plugins/Editor/Jetbrains.meta
+Assets/Plugins/Editor/Jetbrains/
+.idea/
+.idea/.idea.to-jam-23/.idea
+.idea/.idea.to-jam-23/.idea/workspace.xml
+ 
+# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/contentModel.xml
+/.idea.to-jam-23.iml
+/modules.xml
+/projectSettingsUpdater.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
