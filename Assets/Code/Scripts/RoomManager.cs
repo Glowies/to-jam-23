@@ -23,6 +23,7 @@ public class RoomManager : MonoBehaviour {
   private void Start() {
     this._currentRoom = this._startRoom;
     this._nextRoom = this._startNextRoom;
+    this._nextRoom.OnRoomEntered.AddListener(this.OnEnteredNextRoom);
     this.InstantiateNextNextRoom();
   }
 
