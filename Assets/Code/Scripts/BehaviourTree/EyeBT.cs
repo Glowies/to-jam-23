@@ -6,8 +6,9 @@ public class EyeBT : Tree
     // Behaviour Tree of the eye enemy AI.
 {
     public UnityEngine.Transform[] lookingPoints;
+    public EyeSight eyeSight;
 
-
+    public float idleWaitTime = 5f;
 
     protected override BehaviourNode SetupTree()
     {
@@ -26,8 +27,8 @@ public class EyeBT : Tree
                 // attack
                 new Sequence (new List<BehaviourNode>
                 {
-                    new CheckPlayerInView(),
-                    new Attack()
+                    new CheckPlayerInView(eyeSight),
+                    new Attack(eyeSight)
                 }),
                 // idling while looking thru window
                 new LookThroughWindow(),
@@ -38,6 +39,8 @@ public class EyeBT : Tree
             // idle
             new Idle()
         });
+
+        root.SetData("idleWaitTime", idleWaitTime);
 
         return root;
     }

@@ -8,6 +8,8 @@ public class LookThroughWindow : BehaviourNode
     // TODO
     public override NodeState _Evaluate()
     {
-        return NodeState.FAILURE;
+        // looking through window animation trigger goes here!
+
+        return NodeState.RUNNING;
     }
 }

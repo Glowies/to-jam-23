@@ -3,11 +3,23 @@ using System.Collections.Generic;
 using BehaviourTree;
 
 public class Idle : BehaviourNode
-    // Behaviour node for when the eye is idle.
+    // Behaviour node for when the eye is idling.
 {
-    // TODO
+    private float _waitCounter = 0;
+
     public override NodeState _Evaluate()
     {
-        return NodeState.FAILURE;
+        // might add an idle animation here?
+
+        // get idle wait time from parent data
+        if (_waitCounter < (float) parent.GetData("idleWaitTime"))
+        {
+            // increment counter
+            _waitCounter += UnityEngine.Time.deltaTime;
+            return NodeState.RUNNING;
+        }
+
+        // end with success
+        return NodeState.SUCCESS;
     }
 }

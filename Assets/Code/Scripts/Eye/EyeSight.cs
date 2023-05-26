@@ -15,7 +15,7 @@ public class EyeSight : MonoBehaviour
         }
     }
 
-    private bool IsTargetInSight()
+    public bool IsTargetInSight()
     {
         var origin = transform.position;
         var targetPosition = EyeTarget.GetTargetPosition();
