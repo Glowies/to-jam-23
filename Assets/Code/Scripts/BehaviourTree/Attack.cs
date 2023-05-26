@@ -9,7 +9,7 @@ public class Attack : BehaviourNode
 
     private EyeSight _eyeSight;
     private PlayerController _player;
-    // TODO
+
     public Attack(EyeSight eyeSight, PlayerController player)
     {
         _eyeSight = eyeSight;
