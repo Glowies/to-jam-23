@@ -1,15 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class RoomManager : MonoBehaviour {
   [SerializeField] private List<Room> _roomPrefabs;
   [SerializeField] private Room _startRoom;
+  [SerializeField] private Room _startNextRoom;
 
   private Room _nextRoomPrefab;
 
+  // There are always at three rooms in the scene
   private Room _previousRoom;
-  private Room _currentRoom;
-  private Room _nextRoom;
+  private Room _currentRoom;  // 1st
+  private Room _nextRoom;     // 2nd
+  private Room _nextNextRoom; // 3rd
 
   private Transform _transform;
 
@@ -19,16 +22,17 @@ public class GameManager : MonoBehaviour {
 
   private void Start() {
     this._currentRoom = this._startRoom;
-    this.InstantiateNextRoom();
+    this._nextRoom = this._startNextRoom;
+    this.InstantiateNextNextRoom();
   }
 
-  private void InstantiateNextRoom() {
+  private void InstantiateNextNextRoom() {
     this.RandomSelectNextPrefab();
 
-    Vector3 position = this._currentRoom.RightEdge;
+    Vector3 position = this._nextRoom.RightEdge;
     position.x += this._nextRoomPrefab.Width / 2f;
-    this._nextRoom = Instantiate(this._nextRoomPrefab, position, Quaternion.identity, this.transform);
-    this._nextRoom.OnRoomEntered.AddListener(this.OnEnteredNextRoom);
+    this._nextNextRoom = Instantiate(this._nextRoomPrefab, position, Quaternion.identity, this._transform);
+    this._nextNextRoom.OnRoomEntered.AddListener(this.OnEnteredNextRoom);
   }
 
   private void RandomSelectNextPrefab() {
@@ -37,20 +41,22 @@ public class GameManager : MonoBehaviour {
   }
 
   private void OnEnteredNextRoom() {
-    this._nextRoom.Show();
+    this._nextNextRoom.Show();
     this._currentRoom.Hide();
     this.DestroyPreviousRoom();
 
     this._previousRoom = this._currentRoom;
     this._currentRoom = this._nextRoom;
+    this._nextRoom = this._nextNextRoom;
 
-    this.InstantiateNextRoom();
+    this.InstantiateNextNextRoom();
   }
 
   private void DestroyPreviousRoom() {
     if (this._previousRoom == null)
       return;
 
+    this._previousRoom.DetachFrontWall();
     Destroy(this._previousRoom.gameObject);
   }
 }

@@ -4,6 +4,7 @@ using UnityEngine.Events;
 public class Room : MonoBehaviour {
   [SerializeField] private float _width;
   [SerializeField] private GameObject _frontWall;
+  [SerializeField] private GameObject _frontWallRoomCover;
   [SerializeField] private CheckpointTrigger _checkpointTrigger;
 
   public float Width => this._width;
@@ -18,11 +19,15 @@ public class Room : MonoBehaviour {
   }
 
   public void Show() {
-    this._frontWall.SetActive(false);
+    this._frontWallRoomCover.SetActive(false);
   }
 
   public void Hide() {
-    this._frontWall.SetActive(true);
+    this._frontWallRoomCover.SetActive(true);
+  }
+
+  public void DetachFrontWall() {
+    this._frontWall.transform.SetParent(this.transform.parent);
   }
 
   private void Start() {
