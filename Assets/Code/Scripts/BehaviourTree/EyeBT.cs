@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using BehaviourTree;
 
 public class EyeBT : Tree
+    // Behaviour Tree of the eye enemy AI.
 {
     public UnityEngine.Transform[] lookingPoints;
 
@@ -10,27 +11,30 @@ public class EyeBT : Tree
 
     protected override BehaviourNode SetupTree()
     {
-        BehaviourNode root = new Sequence(new List<BehaviourNode>
+        BehaviourNode root = new Selector(new List<BehaviourNode>
         {
             // switch rooms
-            new SwitchRooms(),
-            // main behavior sequence
             new Sequence(new List<BehaviourNode>
             {
-                // looking
-                new Selector (new List<BehaviourNode>
-                { 
-                    // attack
-                    new Sequence (new List<BehaviourNode>
-                    {
-                        new CheckPlayerInView(),
-                        new Attack()
-                    }),
-                    new LookThroughWindow()
+                new CheckPlayerInNextRoom(),
+                new SwitchRooms()
+            }),
+            
+            // main behavior
+            new Selector (new List<BehaviourNode>
+            { 
+                // attack
+                new Sequence (new List<BehaviourNode>
+                {
+                    new CheckPlayerInView(),
+                    new Attack()
                 }),
+                // idling while looking thru window
+                new LookThroughWindow(),
                 // switch windows
                 new SwitchWindows()
             }),
+            
             // idle
             new Idle()
         });
