@@ -7,7 +7,8 @@ namespace Controls {
     /// </summary>
     public class HidingState : PlayerState
     {
-        private float _speedMultiplier = 0f;
+        // TODO: Adjust multiplier values here
+        private float _heartRateMultiplier = 3f;
         
         public void OnEnter(PlayerState prevState)
         {
@@ -15,8 +16,11 @@ namespace Controls {
             // state?
         }
         
-        public void Movement(PlayerController player, Rigidbody rBody, float baseSpeed)
+        public void Movement(Transform player, HRGauge heartRate, Action playerDeath, float baseSpeed)
         {
+            // Increase the HR Gauge; note that this is called in a delegated method under update
+            heartRate.IncreaseHR(playerDeath, _heartRateMultiplier);
+            
             // TODO: Any special changes to how the player interacts with the environment while hiding?
         }
         

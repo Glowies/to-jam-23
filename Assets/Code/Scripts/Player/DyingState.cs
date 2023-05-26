@@ -19,7 +19,7 @@ namespace Controls {
             // TODO: Spawn some game over menu
         }
         
-        public void Movement(PlayerController player, Rigidbody rBody, float baseSpeed)
+        public void Movement(Transform player, HRGauge heartRate, Action playerDeath, float baseSpeed)
         {
             // TODO: You're dead! So nothing happens unless we want to change this
         }

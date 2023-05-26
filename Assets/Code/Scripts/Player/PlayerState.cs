@@ -20,11 +20,12 @@ namespace Controls {
         /// Walking: Regular player speed, reduces the heart rate gauge
         /// Running: Sped up running, but the heart rate gauge increases
         /// Hiding: Player does not move to avoid the eye's sight, but heart rate gauge increases
+        /// Dying: The Player has lost the game, essentially ceasing all controls
         /// </summary>
-        /// <param name="player"> The Player script calling this state.</param>
-        /// /// <param name="rBody"> The Rigidbody to move.</param>
-        ///  /// <param name="playerOffset"> The offset of the player object in the world.</param>
+        /// <param name="player"> The player's transform associated with the script calling this state.</param>
+        /// <param name="heartRate"> The player's HRGauge associated with the script calling this state.</param>
+        /// <param name="playerDeath"> Method to handle when the player dies.</param>
         /// <param name="baseSpeed"> The standard speed of the player gameobject.</param>
-        abstract void Movement(PlayerController player, Rigidbody rBody, float baseSpeed);
+        abstract void Movement(Transform player, HRGauge heartRate, Action playerDeath, float baseSpeed);
     }
 }

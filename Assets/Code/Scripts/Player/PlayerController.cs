@@ -43,7 +43,13 @@ namespace Controls
         void Update()
         {
             // Delegate movement behaviour to state classes
-            _state.Movement(this, _rBody, BaseSpeed);
+            _state.Movement(transform, _heartRate, Die, BaseSpeed);
+        }
+        
+        // --------------- Getters ---------------
+        public HRGauge GetHRGauge()
+        {
+            return _heartRate;
         }
 
         void Walk(InputAction.CallbackContext obj) 

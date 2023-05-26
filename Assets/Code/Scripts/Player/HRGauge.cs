@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,9 @@ using UnityEngine;
 public class HRGauge
 {
     // --------------- Bookkeeping ---------------
-    private float _maxThreshold;
-    private float _currentHR;
+    // TODO: Adjust threshold values here
+    private float _maxThreshold = 100f;
+    private float _currentHR = 0f;
     
     public float GetHR()
     {
@@ -19,21 +21,21 @@ public class HRGauge
     }
     
     // TODO: Extend to update UI
-    public void IncreaseHR(Controls.PlayerController player, float increment)
+    public void IncreaseHR(Action playerDeath, float increment)
     {
-        _currentHR += increment;
-        Debug.Log(_currentHR);
-        
+        _currentHR += increment * Time.deltaTime;
+        Debug.Log("Current heart rate: " + _currentHR);
+
         // Handle GameOver when the HR goes over the threshold by delegating to player
-        if (_currentHR > _maxThreshold) player.Die();
+        if (_currentHR > _maxThreshold) playerDeath();
     }
     
     // TODO: Extend to update UI
-    public void DecreaseHR(Controls.PlayerController player, float decrement)
+    public void DecreaseHR(float decrement)
     {
-        _currentHR -= decrement;
+        _currentHR -= decrement * Time.deltaTime;
         if (_currentHR < 0) _currentHR = 0;
-        Debug.Log(_currentHR);
+        Debug.Log("Current heart rate: " + _currentHR);
     }
     
     // TODO: Extend to update UI
