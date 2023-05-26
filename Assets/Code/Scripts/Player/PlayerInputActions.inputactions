@@ -1,0 +1,102 @@
+{
+    "name": "PlayerController",
+    "maps": [
+        {
+            "name": "Movement",
+            "id": "518979b1-42c6-460b-b7eb-e3b705841e09",
+            "actions": [
+                {
+                    "name": "Run",
+                    "type": "Button",
+                    "id": "a36798f1-64b9-48ba-bea7-ceff67ac750d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Stop",
+                    "type": "Button",
+                    "id": "297fbe80-bd26-4631-9bb6-f5dd0239a9d1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Walk",
+                    "type": "Button",
+                    "id": "a5fa5373-c2d5-4810-a750-41fd71889ac1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1276e403-d475-45d1-add8-e322a05eea7e",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Run",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2488d99c-2af1-4ea8-8ebd-c0e79de30e54",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Stop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e484db8c-3648-41e5-b3f7-e6475a3e63c2",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Walk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "4f344cae-2142-4803-8198-d3675ddef9b5",
+            "actions": [
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "65f673cd-d67c-41cf-9887-11e46c7d96c7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "47075f53-01af-4e01-919a-a1907ea32dd2",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
