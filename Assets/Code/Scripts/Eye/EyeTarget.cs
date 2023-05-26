@@ -6,14 +6,16 @@ using UnityEngine;
 public class EyeTarget : MonoBehaviour
 {
     private Collider _collider;
-    
+
     void Awake()
     {
         TryGetComponent(out _collider);
     }
 
     // TODO: Modify what happens when damage is taken every frame
-    public void ReceiveDamage() => Debug.Log("Ouch!");
+    public void ReceiveDamage() {
+        // Debug.Log("Ouch!");
+    }
 
     public Vector3 GetTargetPosition() => transform.position;
 
