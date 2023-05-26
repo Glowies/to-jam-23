@@ -29,6 +29,10 @@ public class RoomManager : MonoBehaviour {
     this.InstantiateNextNextRoom();
   }
 
+  public Room GetCurrentRoom() {
+    return _currentRoom;
+  }
+
   private void InstantiateNextNextRoom() {
     this.RandomSelectNextPrefab();
 

@@ -5,9 +5,20 @@ using BehaviourTree;
 public class SwitchWindows : BehaviourNode
     // Behaviour node for the eye switching the window its focused on currently.
 {
-    // TODO
+    List<UnityEngine.Vector3> windows;
+
+    public SwitchWindows()
+    {
+        windows = ((Room)GetData("currentRoom")).Windows;
+    }
+
+
     public override NodeState _Evaluate()
     {
-        return NodeState.FAILURE;
+        parent.parent.SetData("currWindowIndex", UnityEngine.Random.Range(0, windows.Count));
+
+        // Animation for going to the window set here!
+
+        return NodeState.SUCCESS;
     }
 }

@@ -9,6 +9,7 @@ public class EyeBT : Tree
     public UnityEngine.Transform[] lookingPoints;
     public EyeSight eyeSight;
     public PlayerController player;
+    public RoomManager roomManager;
 
     public float idleWaitTime = 5f;
     public float attackStartTime = 0.5f;
@@ -22,8 +23,8 @@ public class EyeBT : Tree
             // switch rooms
             new Sequence(new List<BehaviourNode>
             {
-                new CheckPlayerInNextRoom(),
-                new SwitchRooms()
+                new CheckPlayerInNextRoom(roomManager),
+                new SwitchRooms(roomManager)
             }),
             
             // main behavior
@@ -50,6 +51,7 @@ public class EyeBT : Tree
         root.SetData("attackStartTime", attackStartTime);
         root.SetData("damagePerSecond", damagePerSecond);
         root.SetData("decreaseMaxHRPerSecond", decreaseMaxHRPerSecond);
+        root.SetData("currentRoom", roomManager.GetCurrentRoom());
 
         return root;
     }
