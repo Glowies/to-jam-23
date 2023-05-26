@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace BehaviourTree
     // behaviour tree template adapted from https://www.youtube.com/watch?v=aR6wt5BlE-E
