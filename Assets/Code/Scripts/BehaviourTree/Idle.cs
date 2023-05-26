@@ -20,6 +20,7 @@ public class Idle : BehaviourNode
         }
 
         // end with success
+        _waitCounter = 0;
         return NodeState.SUCCESS;
     }
 }

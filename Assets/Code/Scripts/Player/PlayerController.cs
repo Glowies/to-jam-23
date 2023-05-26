@@ -52,6 +52,11 @@ namespace Controls
             return _heartRate;
         }
 
+        public PlayerState GetPlayerState()
+        {
+            return _state;
+        }
+
         void Walk(InputAction.CallbackContext obj) 
         {
             // Cache previous state and call OnExit and OnEnter

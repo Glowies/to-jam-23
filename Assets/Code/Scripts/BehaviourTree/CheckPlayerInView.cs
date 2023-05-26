@@ -6,6 +6,7 @@ public class CheckPlayerInView : BehaviourNode
     // Node for checking if the player is in the view space of the eye. Should return a simple true/false within one evaluate call.
 {
     private EyeSight _eyeSight;
+    private float _waitCounter = 0;
 
     public CheckPlayerInView(EyeSight eyeSight)
     {
@@ -16,10 +17,23 @@ public class CheckPlayerInView : BehaviourNode
     {
         if (_eyeSight.IsTargetInSight())
         {
-            // detected oneshot trigger goes here!
-            return NodeState.SUCCESS;
+            _waitCounter += UnityEngine.Time.deltaTime;
+
+            // if the player's been visible to the eye for a certain amount of time, start attack
+            if (_waitCounter < (float) GetData("attackStartTime"))
+                return NodeState.RUNNING;
+            else
+            {
+                // detected oneshot trigger goes here!
+
+                _waitCounter = 0;
+                return NodeState.SUCCESS;
+            }
+        } else
+        {
+            return NodeState.FAILURE;
         }
             
-        return NodeState.FAILURE;
+        
     }
 }
