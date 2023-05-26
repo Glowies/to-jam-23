@@ -24,7 +24,6 @@ public class HRGauge
     public void IncreaseHR(Action playerDeath, float increment)
     {
         _currentHR += increment * Time.deltaTime;
-        Debug.Log("Current heart rate: " + _currentHR);
 
         // Handle GameOver when the HR goes over the threshold by delegating to player
         if (_currentHR > _maxThreshold) playerDeath();
@@ -35,7 +34,6 @@ public class HRGauge
     {
         _currentHR -= decrement * Time.deltaTime;
         if (_currentHR < 0) _currentHR = 0;
-        Debug.Log("Current heart rate: " + _currentHR);
     }
     
     // TODO: Extend to update UI
