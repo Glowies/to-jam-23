@@ -1,14 +1,17 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Room : MonoBehaviour {
   [SerializeField] private float _width;
   [SerializeField] private GameObject _frontWall;
-  [SerializeField] private GameObject _frontWallRoomCover;
+  [SerializeField] private MeshRenderer _frontWallCoverMeshRenderer;
   [SerializeField] private CheckpointTrigger _checkpointTrigger;
 
   public float Width => this._width;
   public UnityEvent OnRoomEntered;
+
+  private Material _frontWallCoverMaterial;
 
   public Vector3 RightEdge {
     get {
@@ -19,15 +22,20 @@ public class Room : MonoBehaviour {
   }
 
   public void Show() {
-    this._frontWallRoomCover.SetActive(false);
+    this._frontWallCoverMaterial.DOFade(0, 0.3f);
   }
 
   public void Hide() {
-    this._frontWallRoomCover.SetActive(true);
+    this._frontWallCoverMaterial.DOFade(1f, 0.3f);
   }
 
-  public void DetachFrontWall() {
+  public GameObject DetachFrontWall() {
     this._frontWall.transform.SetParent(this.transform.parent);
+    return this._frontWall.gameObject;
+  }
+
+  private void Awake() {
+    this._frontWallCoverMaterial = this._frontWallCoverMeshRenderer.material;
   }
 
   private void Start() {

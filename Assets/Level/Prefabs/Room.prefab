@@ -344,7 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _width: 10
   _frontWall: {fileID: 5601234983974697333}
-  _frontWallRoomCover: {fileID: 5601234985078620549}
+  _frontWallCoverMeshRenderer: {fileID: 5601234985078620568}
   _checkpointTrigger: {fileID: 7835540221104513241}
   OnRoomEntered:
     m_PersistentCalls:
@@ -824,7 +824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5601234985078620570
 Transform:
   m_ObjectHideFlags: 0
@@ -868,7 +868,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 7c20f531bb709469cb40bdac37e1e615, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1252,6 +1252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c7a97929ba427a9de4dfd6dc255395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _disableOnceTriggered: 1
   OnTriggered:
     m_PersistentCalls:
       m_Calls: []

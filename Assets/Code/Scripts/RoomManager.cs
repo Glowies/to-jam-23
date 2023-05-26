@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public class RoomManager : MonoBehaviour {
   private Room _nextNextRoom; // 3rd
 
   private Transform _transform;
+  private readonly WaitForSeconds _waitForTenSeconds = new WaitForSeconds(10f);
 
   private void Awake() {
     this._transform = this.transform;
@@ -57,7 +59,13 @@ public class RoomManager : MonoBehaviour {
     if (this._previousRoom == null)
       return;
 
-    this._previousRoom.DetachFrontWall();
+    GameObject wall = this._previousRoom.DetachFrontWall();
     Destroy(this._previousRoom.gameObject);
+    this.StartCoroutine(this.DestroyWallsLater(wall));
+  }
+
+  private IEnumerator DestroyWallsLater(GameObject target) {
+    yield return this._waitForTenSeconds;
+    Destroy(target);
   }
 }
