@@ -77,11 +77,11 @@ crashlytics-build.properties
 ## ---------------- ##
 
 # project stuff
-WWiseProject/.cache/
-WWiseProject/*.prof
-WwiseProject/*_WwiseProject.*.validationcache
-WwiseProject/*_WwiseProject.*.wsettings
-WwiseProject/**/*.akd
+to-jam-23_WWiseProject/.cache/
+to-jam-23_WWiseProject/*.prof
+to-jam-23_WwiseProject/*_WwiseProject.*.validationcache
+to-jam-23_WwiseProject/*_WwiseProject.*.wsettings
+to-jam-23_WwiseProject/**/*.akd
 
 # build stuff (unsure?)
 # Assets/Wwise/Deployment/Plugins/Windows/**/*.meta
@@ -111,7 +111,7 @@ WwiseUnityIntegration_*_Src.zip
 .DS_store
 
 # Jetbrains Rider IDE (C# IDE), adds a plugin to Unity
-# Assets/Plugins/Editor.meta
-# Assets/Plugins/Editor/Jetbrains.meta
-# Assets/Plugins/Editor/Jetbrains/
-# .idea
+ Assets/Plugins/Editor.meta
+ Assets/Plugins/Editor/Jetbrains.meta
+ Assets/Plugins/Editor/Jetbrains/
+ .idea
