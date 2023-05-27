@@ -20,7 +20,7 @@ public class SwitchRooms : BehaviourNode
 
     public override NodeState _Evaluate()
     {
-        Debug.Log("Switching to next room");
+        // Debug.Log("Switching to next room");
 
         Room nextRoom = _roomManager.GetCurrentRoom();
         parent.parent.SetData("currentRoom", nextRoom);

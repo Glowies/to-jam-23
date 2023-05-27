@@ -28,7 +28,7 @@ public class CheckPlayerInView : BehaviourNode
                     return NodeState.RUNNING;
                 else
                 {
-                    UnityEngine.Debug.Log("Player detected!");
+                    // UnityEngine.Debug.Log("Player detected!");
                     // detected oneshot trigger goes here!
 
                     _waitCounter = 0;
@@ -42,7 +42,7 @@ public class CheckPlayerInView : BehaviourNode
             
         } else
         {
-            UnityEngine.Debug.Log("Player not detected");
+            // UnityEngine.Debug.Log("Player not detected");
             _waiting = true;
             return NodeState.FAILURE;
         }

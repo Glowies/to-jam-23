@@ -18,7 +18,7 @@ public class LookThroughWindow : BehaviourNode
 
     public override NodeState _Evaluate()
     {
-        UnityEngine.Debug.Log("Idling through a window...");
+        // UnityEngine.Debug.Log("Idling through a window...");
 
         // if not looking through a window, switch to first window in window list
         if (GetData("currWindowIndex") == null)

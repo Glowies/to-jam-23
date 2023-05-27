@@ -23,7 +23,7 @@ public class Attack : BehaviourNode
 
     public override NodeState _Evaluate()
     {
-        UnityEngine.Debug.Log("Attacking");
+        // UnityEngine.Debug.Log("Attacking");
 
         if (_player.GetPlayerState() is DyingState)
             return NodeState.SUCCESS;
@@ -36,7 +36,7 @@ public class Attack : BehaviourNode
 
             if (GetData("currWindowIndex") == null)
             {
-                UnityEngine.Debug.LogError("Could not find window to attack through");
+                // UnityEngine.Debug.LogError("Could not find window to attack through");
                 return NodeState.FAILURE;
             }
             int currWindowIndex = (int)GetData("currWindowIndex");

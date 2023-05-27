@@ -14,10 +14,10 @@ public class CheckPlayerInNextRoom : BehaviourNode
 
     public override NodeState _Evaluate()
     {
-        UnityEngine.Debug.Log("Checking if player is in next room...");
+        // UnityEngine.Debug.Log("Checking if player is in next room...");
         if (roomManager.GetCurrentRoom() != (Room) GetData("currentRoom"))
         {
-            UnityEngine.Debug.Log("Player is in next room");
+            // UnityEngine.Debug.Log("Player is in next room");
             return NodeState.SUCCESS;
         }
         return NodeState.FAILURE;
