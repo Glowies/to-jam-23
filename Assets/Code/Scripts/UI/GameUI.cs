@@ -5,9 +5,11 @@ using UnityEngine.UI;
 public class GameUI : MonoBehaviour {
   [SerializeField] private Image _foregroundImage;
   [SerializeField] private GameObject _pauseUI;
+  [SerializeField] private GameObject _gameOverUI;
 
   public void Initialize(GameManager gameManager) {
     gameManager.OnSetupComplete.AddListener(this.OnGameSetupComplete);
+    gameManager.OnGameOver.AddListener(this.OnGameOver);
   }
 
   private void Awake() {
@@ -26,5 +28,9 @@ public class GameUI : MonoBehaviour {
 
   private void OnPauseToggled(bool isPaused) {
     this._pauseUI.SetActive(isPaused);
+  }
+
+  private void OnGameOver() {
+    this._gameOverUI.SetActive(true);
   }
 }
