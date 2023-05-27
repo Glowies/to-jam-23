@@ -10,16 +10,11 @@ public class EyeSight : MonoBehaviour
 
     [SerializeField] private float windowWidth = 1f;
 
+    private bool isPaused = false;
+
     private float test = 0;
     private bool testBool = false;
 
-    private void FixedUpdate()
-    {
-        if (IsTargetInSight())
-        {
-            EyeTarget.ReceiveDamage();
-        }
-    }
 
     private void OnDrawGizmos()
     {

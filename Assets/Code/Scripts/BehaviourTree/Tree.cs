@@ -8,15 +8,21 @@ namespace BehaviourTree
     public abstract class Tree : MonoBehaviour
     {
         private BehaviourNode _root = null;
+        protected bool isPaused = false;
 
         protected void Start()
         {
             _root = SetupTree();
+
+            PauseManager.Instance.OnPauseToggled.AddListener((paused) =>
+            {
+                isPaused = paused;
+            });
         }
 
         private void Update()
         {
-            if (_root != null)
+            if (_root != null && !isPaused)
             {
                 _root._Evaluate();
             }
