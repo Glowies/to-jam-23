@@ -6,7 +6,7 @@ public class GameManager : Singleton<GameManager> {
 
   public UnityEvent OnSetupComplete { get; private set; }
 
-  override protected void Awake() {
+  protected override void Awake() {
     base.Awake();
     this.OnSetupComplete = new UnityEvent();
   }
