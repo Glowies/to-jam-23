@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{C3EBA23F-6B22-4295-A265-17E5CA9BEE58}" SchemaVersion="110">
+	<Events>
+		<WorkUnit Name="avy work unit" ID="{C3EBA23F-6B22-4295-A265-17E5CA9BEE58}" PersistMode="Standalone"/>
+	</Events>
+</WwiseDocument>
