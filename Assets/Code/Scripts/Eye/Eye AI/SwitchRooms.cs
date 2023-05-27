@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using BehaviourTree;
+using UnityEngine;
+using DG.Tweening;
 
 public class SwitchRooms : BehaviourNode
     // Room switching behaviour for the eye.
@@ -8,16 +10,24 @@ public class SwitchRooms : BehaviourNode
 {
 
     RoomManager _roomManager;
+    Transform _eyeTransform;
 
-    public SwitchRooms(RoomManager roomManager)
+    public SwitchRooms(RoomManager roomManager, Transform transform)
     {
         _roomManager = roomManager;
+        _eyeTransform = transform;
     }
 
     public override NodeState _Evaluate()
     {
+        Debug.Log("Switching to next room");
 
-        parent.parent.SetData("currRoom", _roomManager.GetCurrentRoom());
+        Room nextRoom = _roomManager.GetCurrentRoom();
+        parent.parent.SetData("currentRoom", nextRoom);
+
+        float eyeZOffset = (float)GetData("eyeRoomZOffset");
+        _eyeTransform.DOMove(nextRoom.transform.position + new Vector3(0, 0, eyeZOffset), 0.5f);
+
         return NodeState.SUCCESS;
     }
 }
