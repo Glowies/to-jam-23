@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour {
@@ -10,6 +11,13 @@ public class GameUI : MonoBehaviour {
   public void Initialize(GameManager gameManager) {
     gameManager.OnSetupComplete.AddListener(this.OnGameSetupComplete);
     gameManager.OnGameOver.AddListener(this.OnGameOver);
+  }
+
+  public void FadeInForeground(UnityAction onComplete) {
+    this._foregroundImage.gameObject.SetActive(true);
+    this._foregroundImage
+      .DOFade(1, 0.5f)
+      .OnComplete(() => onComplete?.Invoke());
   }
 
   private void Awake() {

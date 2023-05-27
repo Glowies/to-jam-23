@@ -10,13 +10,13 @@ public class GameManager : Singleton<GameManager> {
   public UnityEvent OnGameOver { get; private set; }
 
   public void LoadMainMenu() {
-    PauseManager.Instance.SetIsPausable(false);
     PauseManager.Instance.UnpauseGame();
-    SceneNavigationManager.Instance.LoadMainMenuScene();
+    PauseManager.Instance.SetIsPausable(false);
+    this._gameUI.FadeInForeground(SceneNavigationManager.Instance.LoadMainMenuScene);
   }
 
   public void ReloadGameScene() {
-    SceneNavigationManager.Instance.LoadGameScene();
+    this._gameUI.FadeInForeground(SceneNavigationManager.Instance.LoadGameScene);
   }
 
   protected override void Awake() {
