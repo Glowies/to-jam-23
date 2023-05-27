@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour {
+public class AudioManager : Singleton<AudioManager> {
 
   // --- Music and Ambience--- //
   // Sample:
@@ -15,19 +15,19 @@ public class AudioManager : MonoBehaviour {
     // call AudioSource.Play() on the AudioSource of interest
   }
 
+  public void StopAllMusic() {
+    AudioSource[] sources = this.GetComponentsInChildren<AudioSource>();
+    foreach (AudioSource source in sources) {
+      source.Stop();
+    }
+  }
+
   private void Start() {
     // Set up AudioSources that need to ignore game pause
     // Sample:
     // this._ambienceLoopSource.ignoreListenerPause = true;
 
     PauseManager.Instance.OnPauseToggled.AddListener(this.OnPauseToggled);
-  }
-
-  public void StopAllMusic() {
-    AudioSource[] sources = this.GetComponentsInChildren<AudioSource>();
-    foreach (AudioSource source in sources) {
-      source.Stop();
-    }
   }
 
   private void OnPauseToggled(bool isPaused) {
