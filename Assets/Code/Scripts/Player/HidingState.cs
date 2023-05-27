@@ -8,7 +8,7 @@ namespace Controls {
     public class HidingState : PlayerState
     {
         // TODO: Adjust multiplier values here
-        private float _heartRateMultiplier = 3f;
+        private float _heartRateMultiplier = 10f;
         
         public void OnEnter(PlayerState prevState)
         {
