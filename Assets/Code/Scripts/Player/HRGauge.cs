@@ -61,7 +61,7 @@ namespace Controls
             _maxThreshold -= decrement;
             OnMaxHRDecrease?.Invoke(_maxThreshold);
 
-            if (_currentHR > _maxThreshold) player.Die();
+            if (_currentHR >= _maxThreshold) player.Die();
         }
     }
 

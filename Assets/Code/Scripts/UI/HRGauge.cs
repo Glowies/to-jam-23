@@ -10,6 +10,7 @@ namespace UI
     public class HRGauge : MonoBehaviour
     {
         // --------------- Bookkeeping ---------------
+        public GameObject GaugeScaler;
         private Controls.HRGauge _heartRateController;
 
         void Start()
@@ -36,7 +37,9 @@ namespace UI
         
         void OnMaxHRDecrease(float value)
         {
-            
+            // Chisel down the max width of the bar
+            Vector3 targetScale = new Vector3(value / 100, 1, 1);
+            GaugeScaler.transform.DOScale(targetScale, 0.1f);
         }
     }
 }

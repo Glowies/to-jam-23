@@ -83,6 +83,10 @@ namespace Controls
             _state.OnExit(_dying);
             _state = _dying;
             _state.OnEnter(prevState);
+            
+            _playerInputActions.Movement.Walk.performed -= Walk;
+            _playerInputActions.Movement.Run.performed -= Run;
+            _playerInputActions.Movement.Stop.performed -= Stop;
         }
     
         void OnEnable()
