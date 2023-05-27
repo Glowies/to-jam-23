@@ -892,7 +892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f2cdf2568385aa48b032cd5bd09280e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseSpeed: 5
+  BaseSpeed: 1
 --- !u!1 &2039661659
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,7 +950,7 @@ Light:
   m_Color: {r: 1, g: 0.2783019, b: 0.2783019, a: 1}
   m_Intensity: 500
   m_Range: 15
-  m_SpotAngle: 70.60492
+  m_SpotAngle: 40.723953
   m_InnerSpotAngle: 9.620605
   m_CookieSize: 10
   m_Shadows:
@@ -1044,7 +1044,13 @@ MonoBehaviour:
   roomManager: {fileID: 627118282}
   idleWaitTime: 5
   attackStartTime: 0.5
+  idleOnWindowWaitTime: 1
+  windowSwitchTime: 0.5
+  roomSwitchTime: 1
   damagePerSecond: 0.2
+  eyeWindowZOffset: 7
+  eyeRoomZOffset: 10
+  eyeWindowAttackingZOffset: 5
   decreaseMaxHRPerSecond: 0.1
 --- !u!114 &2039661665
 MonoBehaviour:
@@ -1185,6 +1191,11 @@ PrefabInstance:
     - target: {fileID: 5868193899406600957, guid: 9ecc9de96a79f42fea103f68dda76a79,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048419317163855426, guid: 9ecc9de96a79f42fea103f68dda76a79,
+        type: 3}
+      propertyPath: Windows.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
