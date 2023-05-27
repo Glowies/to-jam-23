@@ -52,8 +52,6 @@ public class Attack : BehaviourNode
 
             // increase heart rate
             HRGauge _heartRate = _player.GetHRGauge();
-            // todo: add death method
-            _heartRate.IncreaseHR(_player.Die, (float)GetData("damagePerSecond"));
 
             // decrease max heart reate
             _heartRate.DecreaseMaxHR(_player, (float)GetData("decreaseMaxHRPerSecond"));
