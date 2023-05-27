@@ -457,6 +457,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3036996951243662074, guid: 8b3c5c39cabe548568d4e1a1c7694886,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3426500685694217664, guid: 8b3c5c39cabe548568d4e1a1c7694886,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -661,6 +666,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328919394191211883, guid: 8b3c5c39cabe548568d4e1a1c7694886,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0000038146973
       objectReference: {fileID: 0}
     - target: {fileID: 7073464326209494602, guid: 8b3c5c39cabe548568d4e1a1c7694886,
         type: 3}
@@ -1894,14 +1904,14 @@ MonoBehaviour:
   roomManager: {fileID: 5601234984914919563}
   idleWaitTime: 5
   attackStartTime: 0.5
+  attackLingerTime: 3
   idleOnWindowWaitTime: 1
   windowSwitchTime: 0.5
   roomSwitchTime: 1
-  damagePerSecond: 0.2
+  decreaseMaxHRPerSecond: 0.1
   eyeWindowZOffset: 7
   eyeRoomZOffset: 10
-  eyeWindowAttackingZOffset: 5
-  decreaseMaxHRPerSecond: 0.1
+  eyeWindowAttackingZOffset: 3
 --- !u!114 &2039661665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1975,11 +1985,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1160613187}
     m_Modifications:
-    - target: {fileID: 9048419317163855426, guid: 9ecc9de96a79f42fea103f68dda76a79,
-        type: 3}
-      propertyPath: Windows.Array.size
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3045143505766516172, guid: 78671a84fb9904b05b8e2b98cc06cef2,
         type: 3}
       propertyPath: m_Name
@@ -2055,6 +2060,11 @@ PrefabInstance:
       propertyPath: _startNextRoom
       value: 
       objectReference: {fileID: 1208197980}
+    - target: {fileID: 9048419317163855426, guid: 9ecc9de96a79f42fea103f68dda76a79,
+        type: 3}
+      propertyPath: Windows.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78671a84fb9904b05b8e2b98cc06cef2, type: 3}
 --- !u!114 &5601234984914919563 stripped
