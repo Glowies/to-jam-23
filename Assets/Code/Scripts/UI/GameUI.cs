@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour {
+  [SerializeField] private Image _gameStartedForegroundImage;
   [SerializeField] private Image _foregroundImage;
   [SerializeField] private GameObject _pauseUI;
   [SerializeField] private GameObject _gameOverUI;
@@ -21,7 +22,7 @@ public class GameUI : MonoBehaviour {
   }
 
   private void Awake() {
-    this._foregroundImage.gameObject.SetActive(true);
+    this._gameStartedForegroundImage.gameObject.SetActive(true);
   }
 
   private void Start() {
@@ -31,7 +32,7 @@ public class GameUI : MonoBehaviour {
   private void OnGameSetupComplete() {
     this._foregroundImage
       .DOFade(0, 0.5f)
-      .OnComplete(() => this._foregroundImage.gameObject.SetActive(false));
+      .OnComplete(() => this._gameStartedForegroundImage.gameObject.SetActive(false));
   }
 
   private void OnPauseToggled(bool isPaused) {

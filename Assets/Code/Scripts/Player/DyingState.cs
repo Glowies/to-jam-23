@@ -12,10 +12,7 @@ namespace Controls {
             // TODO: When the Player dies...what should happen? music? visual animations? 
             // Does it depend on from what state you're coming from?
             // Should everything stop moving? Or just the player? And what should happen afterwards (UI)?
-            
-            // For now, everything will stop moving
-            Time.timeScale = 0;
-            
+
             // TODO: Spawn some game over menu
         }
         

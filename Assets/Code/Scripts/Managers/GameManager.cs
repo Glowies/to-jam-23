@@ -37,6 +37,6 @@ public class GameManager : Singleton<GameManager> {
 
   private void PlayerDied() {
     PauseManager.Instance.SetIsPausable(false);
-    Destroy(this._playerController.gameObject);
+    this._playerController.enabled = false;
   }
 }
