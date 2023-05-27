@@ -29,7 +29,7 @@ public class EyeSight : MonoBehaviour
 
         // Draw debug ray
         Debug.DrawLine(origin, targetPosition, (hit && hitInfo.collider == EyeTarget.GetTargetCollider()) ? Color.magenta : Color.grey);
-        Debug.Log(hitInfo.collider.gameObject.name + ", " + (hit && hitInfo.collider == EyeTarget.GetTargetCollider()) + ", " + hit);
+        //Debug.Log(hitInfo.collider.gameObject.name + ", " + (hit && hitInfo.collider == EyeTarget.GetTargetCollider()) + ", " + hit);
 
         // Return true IFF hitting the target collider
         return hit && hitInfo.collider == EyeTarget.GetTargetCollider();

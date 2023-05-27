@@ -9,6 +9,7 @@ public class Idle : BehaviourNode
 
     public override NodeState _Evaluate()
     {
+        UnityEngine.Debug.Log("Idle");
         // might add an idle animation here?
 
         // get idle wait time from parent data

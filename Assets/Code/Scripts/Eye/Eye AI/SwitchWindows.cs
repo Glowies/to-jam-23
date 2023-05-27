@@ -24,8 +24,12 @@ public class SwitchWindows : BehaviourNode
         int nextWindowIndex = UnityEngine.Random.Range(0, windows.Count);
         parent.parent.SetData("currWindowIndex", nextWindowIndex);
 
+        UnityEngine.Debug.Log("Switching to window index " + nextWindowIndex);
+
         // Animation for going to the window set here!
-        _eyeTransform.DOMove(windows[nextWindowIndex], 0.5f);
+
+        float eyeZOffset = (float)GetData("eyeWindowZOffset");
+        _eyeTransform.DOMove(windows[nextWindowIndex] + new Vector3(0, 0, eyeZOffset), 0.5f);
 
 
         return NodeState.SUCCESS;

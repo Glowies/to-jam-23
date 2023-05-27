@@ -14,7 +14,7 @@ namespace BehaviourTree
 
         public override NodeState _Evaluate()
         {
-            bool anyChildIsRunning = false;
+            //bool anyChildIsRunning = false;
 
             foreach (BehaviourNode child in children)
             {
@@ -26,15 +26,15 @@ namespace BehaviourTree
                     case NodeState.SUCCESS:
                         continue;
                     case NodeState.RUNNING:
-                        anyChildIsRunning = true;
-                        continue;
+                        state = NodeState.RUNNING;
+                        return state;
                     default:
                         state = NodeState.SUCCESS;
                         return state;
                 }
             }
 
-            state = anyChildIsRunning ? NodeState.RUNNING : NodeState.SUCCESS;
+            state = NodeState.SUCCESS;
             return state;
         }
     }
