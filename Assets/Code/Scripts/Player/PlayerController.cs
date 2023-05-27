@@ -90,6 +90,8 @@ namespace Controls
             _state.OnExit(_dying);
             _state = _dying;
             _state.OnEnter(prevState);
+
+            GameManager.Instance.OnGameOver?.Invoke();
         }
 
         private void OnEnable() {
