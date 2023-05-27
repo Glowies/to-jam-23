@@ -6,6 +6,11 @@ public class GameManager : Singleton<GameManager> {
 
   public UnityEvent OnSetupComplete { get; private set; }
 
+  public void LoadMainMenu() {
+    PauseManager.Instance.SetIsPausable(false);
+    SceneNavigationManager.Instance.LoadMainMenuScene();
+  }
+
   protected override void Awake() {
     base.Awake();
     this.OnSetupComplete = new UnityEvent();
@@ -14,6 +19,7 @@ public class GameManager : Singleton<GameManager> {
   private void Start() {
     // Setup
     this._gameUI.Initialize(this);
+    PauseManager.Instance.SetIsPausable(true);
 
     this.OnSetupComplete?.Invoke();
   }

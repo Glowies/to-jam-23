@@ -27,6 +27,8 @@ namespace Controls
         private Rigidbody _rBody;
         public float BaseSpeed;
 
+        private PlayerInputActions _playerInputActions;
+
         void Awake()
         {
             _rBody = GetComponent<Rigidbody>();
@@ -35,6 +37,7 @@ namespace Controls
 
         void Start() {
             // Need this due to race condition during scene Awake->OnEnable calls
+            this._playerInputActions = PlayerInputController.Instance.PlayerInputActions;
             OnEnable();
         }
 
@@ -85,18 +88,21 @@ namespace Controls
         }
 
         private void OnEnable() {
-            if (!PlayerInputController.Instance)
+            // OnEnable called before Start
+            // PlayerInputController.Instance and this._playerInputController may be uninitialized
+            // when the scene is just started
+            if (this._playerInputActions == null)
                 return;
 
-            PlayerInputController.Instance.PlayerInputActions.Movement.Walk.performed += Walk;
-            PlayerInputController.Instance.PlayerInputActions.Movement.Run.performed += Run;
-            PlayerInputController.Instance.PlayerInputActions.Movement.Stop.performed += Stop;
+            this._playerInputActions.Movement.Walk.performed += Walk;
+            this._playerInputActions.Movement.Run.performed += Run;
+            this._playerInputActions.Movement.Stop.performed += Stop;
         }
 
         private void OnDisable() {
-            PlayerInputController.Instance.PlayerInputActions.Movement.Walk.performed -= Walk;
-            PlayerInputController.Instance.PlayerInputActions.Movement.Run.performed -= Run;
-            PlayerInputController.Instance.PlayerInputActions.Movement.Stop.performed -= Stop;
+            this._playerInputActions.Movement.Walk.performed -= Walk;
+            this._playerInputActions.Movement.Run.performed -= Run;
+            this._playerInputActions.Movement.Stop.performed -= Stop;
         }
     }
 }
