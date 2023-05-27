@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour {
   [SerializeField] private List<Room> _roomPrefabs;
-  [SerializeField] private Room _startRoom;
-  [SerializeField] private Room _startNextRoom;
+  [SerializeField] public Room _startRoom;
+  [SerializeField] public Room _startNextRoom;
 
   private Room _nextRoomPrefab;
 
   // There are always at three rooms in the scene
-  private Room _previousRoom;
-  private Room _currentRoom;  // 1st
-  private Room _nextRoom;     // 2nd
-  private Room _nextNextRoom; // 3rd
+  [Header("Current Room Info")]
+  [SerializeField] private Room _previousRoom;
+  [SerializeField] private Room _currentRoom;  // 1st
+  [SerializeField] private Room _nextRoom;     // 2nd
+  [SerializeField] private Room _nextNextRoom; // 3rd
 
   private Transform _transform;
   private readonly WaitForSeconds _waitForTenSeconds = new WaitForSeconds(10f);
@@ -31,6 +32,11 @@ public class RoomManager : MonoBehaviour {
 
   public Room GetCurrentRoom() {
     return _currentRoom;
+  }
+
+  public Room GetStartRoom()
+  {
+      return _startRoom;
   }
 
   private void InstantiateNextNextRoom() {

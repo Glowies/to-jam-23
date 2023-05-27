@@ -41,10 +41,6 @@ public class Attack : BehaviourNode
             return NodeState.RUNNING;
         }
 
-
-        // TODO: if player dies return success
-
-
         return NodeState.FAILURE;
     }
 }

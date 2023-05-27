@@ -6,7 +6,6 @@ using Controls;
 public class EyeBT : Tree
     // Behaviour Tree of the eye enemy AI.
 {
-    public UnityEngine.Transform[] lookingPoints;
     public EyeSight eyeSight;
     public PlayerController player;
     public RoomManager roomManager;
@@ -39,7 +38,7 @@ public class EyeBT : Tree
                 // idling while looking thru window
                 new LookThroughWindow(),
                 // switch windows
-                new SwitchWindows()
+                new SwitchWindows(transform, roomManager)
             }),
             
             // idle
@@ -51,7 +50,7 @@ public class EyeBT : Tree
         root.SetData("attackStartTime", attackStartTime);
         root.SetData("damagePerSecond", damagePerSecond);
         root.SetData("decreaseMaxHRPerSecond", decreaseMaxHRPerSecond);
-        root.SetData("currentRoom", roomManager.GetCurrentRoom());
+        root.SetData("currentRoom", roomManager.GetStartRoom());
 
         return root;
     }

@@ -12,7 +12,7 @@ public class Idle : BehaviourNode
         // might add an idle animation here?
 
         // get idle wait time from parent data
-        if (_waitCounter < (float) parent.GetData("idleWaitTime"))
+        if (_waitCounter < (float) GetData("idleWaitTime"))
         {
             // increment counter
             _waitCounter += UnityEngine.Time.deltaTime;

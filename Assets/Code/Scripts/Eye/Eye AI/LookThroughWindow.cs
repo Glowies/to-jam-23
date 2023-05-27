@@ -9,6 +9,6 @@ public class LookThroughWindow : BehaviourNode
     {
         // looking through window animation trigger goes here!
 
-        return NodeState.RUNNING;
+        return NodeState.SUCCESS;
     }
 }

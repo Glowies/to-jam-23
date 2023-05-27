@@ -22,12 +22,15 @@ public class EyeSight : MonoBehaviour
         var direction = targetPosition - origin;
         var layerMask = ~(1 << RaycastIgnoreLayer);
         
-        // Draw debug ray
-        Debug.DrawLine(origin, targetPosition, Color.magenta);
+        
         
         // Cast ray
         var hit = Physics.Raycast(origin, direction, out RaycastHit hitInfo, 1000, layerMask);
-            
+
+        // Draw debug ray
+        Debug.DrawLine(origin, targetPosition, (hit && hitInfo.collider == EyeTarget.GetTargetCollider()) ? Color.magenta : Color.grey);
+        Debug.Log(hitInfo.collider.gameObject.name + ", " + (hit && hitInfo.collider == EyeTarget.GetTargetCollider()) + ", " + hit);
+
         // Return true IFF hitting the target collider
         return hit && hitInfo.collider == EyeTarget.GetTargetCollider();
     }
