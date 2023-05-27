@@ -39,7 +39,7 @@ public class GameUI : MonoBehaviour {
     this._pauseUI.SetActive(isPaused);
   }
 
-  private void OnGameOver() {
+  private void OnGameOver(float distance) {
     this._gameOverUI.SetActive(true);
   }
 }

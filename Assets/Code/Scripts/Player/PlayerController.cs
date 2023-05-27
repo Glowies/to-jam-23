@@ -108,7 +108,7 @@ namespace Controls
             _state = _dying;
             _state.OnEnter(prevState);
 
-            GameManager.Instance.OnGameOver?.Invoke();
+            GameManager.Instance.OnGameOver?.Invoke(_score);
         }
 
         private void OnEnable() {
