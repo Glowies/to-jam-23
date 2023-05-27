@@ -4,11 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[Serializable]
-public class FloatUnityEvent : UnityEvent<float>
-{
-}
-
 namespace Controls
 {
     /// <summary>
@@ -19,11 +14,11 @@ namespace Controls
     public class HRGauge
     {
         // ----------------- Events ------------------
-        public FloatUnityEvent OnHRIncrease = new FloatUnityEvent();
+        public UnityEvent<float> OnHRIncrease = new UnityEvent<float>();
         // Do we want a separate visual effect for when the heart rate decreases? If not, then this can be merged
         // with the previous event...
-        public FloatUnityEvent OnHRDecrease = new FloatUnityEvent();
-        public FloatUnityEvent OnMaxHRDecrease = new FloatUnityEvent();
+        public UnityEvent<float> OnHRDecrease = new UnityEvent<float>();
+        public UnityEvent<float> OnMaxHRDecrease = new UnityEvent<float>();
         
         // --------------- Bookkeeping ---------------
         // TODO: Adjust threshold values here
