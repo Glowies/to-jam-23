@@ -54,7 +54,12 @@ namespace Controls
             return _heartRate;
         }
 
-        void Walk(InputAction.CallbackContext obj)
+        public PlayerState GetPlayerState()
+        {
+            return _state;
+        }
+
+        void Walk(InputAction.CallbackContext obj) 
         {
             // Cache previous state and call OnExit and OnEnter
             var prevState = _state;
@@ -85,6 +90,8 @@ namespace Controls
             _state.OnExit(_dying);
             _state = _dying;
             _state.OnEnter(prevState);
+
+            GameManager.Instance.OnGameOver?.Invoke();
         }
 
         private void OnEnable() {

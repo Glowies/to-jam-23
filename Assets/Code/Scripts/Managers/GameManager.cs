@@ -23,6 +23,8 @@ public class GameManager : Singleton<GameManager> {
     base.Awake();
     this.OnSetupComplete = new UnityEvent();
     this.OnGameOver = new UnityEvent();
+
+    this.OnGameOver.AddListener(this.PlayerDied);
   }
 
   private void Start() {
@@ -33,12 +35,8 @@ public class GameManager : Singleton<GameManager> {
     this.OnSetupComplete?.Invoke();
   }
 
-  private void Update() {
-    // Debug for now until death is triggered
-    if (Input.GetKeyDown(KeyCode.Backspace)) {
-      PauseManager.Instance.SetIsPausable(false);
-      Destroy(this._playerController.gameObject);
-      this.OnGameOver?.Invoke();
-    }
+  private void PlayerDied() {
+    PauseManager.Instance.SetIsPausable(false);
+    Destroy(this._playerController.gameObject);
   }
 }
