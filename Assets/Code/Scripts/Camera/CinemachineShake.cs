@@ -2,33 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using DG.Tweening;
 
 public class CinemachineShake : MonoBehaviour
 {
   public static CinemachineShake Instance { get; private set; }
 
-  [SerializeField] private CinemachineBasicMultiChannelPerlin perlin;
+  [SerializeField] private CinemachineVirtualCamera virtualCamera;
+  private CinemachineBasicMultiChannelPerlin perlin;
 
-  private float shakeTimer;
-  private float shakeTimerTotal;
-  private float startingIntensity;
+  private bool on;
 
   private void Awake() {
     Instance = this;
   }
 
-  public void ShakeCamera(float intensity, float time) {
-    perlin.m_AmplitudeGain = intensity;
+  private void Start() {
+    this.perlin = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+  }
 
-    startingIntensity = intensity;
-    shakeTimerTotal = time;
-    shakeTimer = time;
+  public void DoSmoothCameraShake(float intensity, float transitionTime) {
+    DOTween.To(() => this.perlin.m_AmplitudeGain, x => this.perlin.m_AmplitudeGain = x, intensity, transitionTime);
   }
 
   private void Update() {
-    if (shakeTimer > 0f) {
-      shakeTimer -= Time.deltaTime;
-      perlin.m_AmplitudeGain = Mathf.Lerp(startingIntensity, 0f, shakeTimer / shakeTimerTotal);
+    if (Input.GetKeyDown(UnityEngine.KeyCode.H)) {
+      this.on = !this.on;
+      if (this.on) {
+        this.DoSmoothCameraShake(5, 1);
+      } else {
+        this.DoSmoothCameraShake(0, 1);
+      }
     }
   }
 }
