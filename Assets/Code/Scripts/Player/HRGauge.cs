@@ -32,22 +32,16 @@ namespace Controls
         
         public void IncreaseHR(Action playerDeath, float increment)
         {
-            _currentHR += increment * Time.deltaTime;
+            _currentHR = Mathf.Clamp(_currentHR + increment * Time.deltaTime, 0f, _maxThreshold);
+            OnHRIncrease?.Invoke(_currentHR);
 
             // Handle GameOver when the HR goes over the threshold by delegating to player
-            if (_currentHR > _maxThreshold)
-            {
-                _currentHR = _maxThreshold;
-                playerDeath();
-            }
-            
-            OnHRIncrease?.Invoke(_currentHR);
+            if (_currentHR >= _maxThreshold) playerDeath();
         }
         
         public void DecreaseHR(float decrement)
         {
-            _currentHR -= decrement * Time.deltaTime;
-            if (_currentHR < 0) _currentHR = 0;
+            _currentHR = Mathf.Clamp(_currentHR - decrement * Time.deltaTime, 0f, _maxThreshold);
             OnHRDecrease?.Invoke(_currentHR);
         }
         
