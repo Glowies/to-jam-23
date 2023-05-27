@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using BehaviourTree;
 using Controls;
 
@@ -66,5 +67,14 @@ public class EyeBT : Tree
 
 
         return root;
+    }
+
+    public object getFocusedWindow()
+        // get the current window position eye is focused on. return null if no such window exists.
+    {
+        if (getRootData("currWindowIndex") == null) return null;
+        if (getRootData("currentRoom") == null) return null;
+
+        return ((Room)getRootData("currentRoom")).Windows[(int)getRootData("currWindowIndex")];
     }
 }
