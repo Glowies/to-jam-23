@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PauseManager: Singleton<PauseManager> {
 
-  public UnityAction<bool> OnPauseToggled;
+  public UnityEvent<bool> OnPauseToggled;
 
   private bool _isPausable;
   private bool _isPaused;
@@ -19,6 +19,11 @@ public class PauseManager: Singleton<PauseManager> {
     Time.timeScale = 1f;
     this._isPaused = false;
     this.OnPauseToggled?.Invoke(this._isPaused);
+  }
+
+  protected override void Awake() {
+    base.Awake();
+    this.OnPauseToggled = new UnityEvent<bool>();
   }
 
   private void Start() {
@@ -53,7 +58,6 @@ public class PauseManager: Singleton<PauseManager> {
   }
 
   private void PauseGame() {
-    print("Pausing");
     Time.timeScale = 0f;
     this._isPaused = true;
     this.OnPauseToggled?.Invoke(this._isPaused);

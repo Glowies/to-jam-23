@@ -8,6 +8,7 @@ public class GameManager : Singleton<GameManager> {
 
   public void LoadMainMenu() {
     PauseManager.Instance.SetIsPausable(false);
+    PauseManager.Instance.UnpauseGame();
     SceneNavigationManager.Instance.LoadMainMenuScene();
   }
 
