@@ -23,5 +23,11 @@ namespace BehaviourTree
         }
 
         protected abstract BehaviourNode SetupTree();
+
+        protected object getRootData(string key)
+        {
+            if (_root == null) return null;
+            return _root.GetData(key);
+        }
     }
 }
