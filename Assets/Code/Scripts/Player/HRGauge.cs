@@ -45,7 +45,7 @@ namespace Controls
             OnHRDecrease?.Invoke(_currentHR);
         }
         
-        public void DecreaseMaxHR(Controls.PlayerController player, float decrement)
+        public void DecreaseMaxHR(PlayerController player, float decrement)
         {
             _maxThreshold -= decrement;
             OnMaxHRDecrease?.Invoke(_maxThreshold);

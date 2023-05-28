@@ -1,4 +1,5 @@
 using DG.Tweening;
+using UI;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -8,6 +9,8 @@ public class GameUI : MonoBehaviour {
   [SerializeField] private Image _foregroundImage;
   [SerializeField] private GameObject _pauseUI;
   [SerializeField] private GameObject _gameOverUI;
+  [SerializeField] private DistanceUI _distanceKeeper;
+  [SerializeField] private RoomCountUI _roomCountKeeper;
 
   public void Initialize(GameManager gameManager) {
     gameManager.OnSetupComplete.AddListener(this.OnGameSetupComplete);
@@ -39,7 +42,10 @@ public class GameUI : MonoBehaviour {
     this._pauseUI.SetActive(isPaused);
   }
 
-  private void OnGameOver(float distance) {
+  private void OnGameOver() {
     this._gameOverUI.SetActive(true);
+    
+    // Fetch the room count to display with the distance
+    this._gameOverUI.GetComponent<GameOverUI>().SetScore(_distanceKeeper.GetDistance(), _roomCountKeeper.GetRoomCount());
   }
 }

@@ -30,7 +30,6 @@ namespace Controls
         // TODO: If we want to extend the player movement to incorporate a rigidbody, but for now we won't
         private Rigidbody _rBody;
         private float _startXPos;
-        private float _score;
         public float BaseSpeed;
 
         private PlayerInputActions _playerInputActions;
@@ -60,8 +59,8 @@ namespace Controls
 
         private void CalculateScore()
         {
-            _score = Mathf.Round(transform.position.x - _startXPos);
-            OnScoreUpdate?.Invoke(_score);
+            float score = Mathf.Round(transform.position.x - _startXPos);
+            OnScoreUpdate?.Invoke(score);
         }
 
         // --------------- Getters ---------------
@@ -108,7 +107,7 @@ namespace Controls
             _state = _dying;
             _state.OnEnter(prevState);
 
-            GameManager.Instance.OnGameOver?.Invoke(_score);
+            GameManager.Instance.OnGameOver?.Invoke();
         }
 
         private void OnEnable() {

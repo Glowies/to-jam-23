@@ -7,7 +7,7 @@ public class GameManager : Singleton<GameManager> {
   [SerializeField] private PlayerController _playerController;
 
   public UnityEvent OnSetupComplete { get; private set; }
-  public UnityEvent<float> OnGameOver { get; private set; }
+  public UnityEvent OnGameOver { get; private set; }
 
   public void LoadMainMenu() {
     PauseManager.Instance.UnpauseGame();
@@ -22,7 +22,7 @@ public class GameManager : Singleton<GameManager> {
   protected override void Awake() {
     base.Awake();
     this.OnSetupComplete = new UnityEvent();
-    this.OnGameOver = new UnityEvent<float>();
+    this.OnGameOver = new UnityEvent();
 
     this.OnGameOver.AddListener(this.PlayerDied);
   }
@@ -35,7 +35,7 @@ public class GameManager : Singleton<GameManager> {
     this.OnSetupComplete?.Invoke();
   }
 
-  private void PlayerDied(float distance) {
+  private void PlayerDied() {
     PauseManager.Instance.SetIsPausable(false);
     this._playerController.enabled = false;
   }

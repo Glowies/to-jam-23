@@ -7,6 +7,6 @@ public class GameOverUI : MonoBehaviour
     
     public void SetScore(float distance, int roomCount)
     {
-        _finalScoreText.text = "";
+        _finalScoreText.text = "You crossed " + distance + "m and " + roomCount + " rooms";
     }
 }

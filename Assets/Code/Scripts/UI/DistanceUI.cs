@@ -7,6 +7,7 @@ namespace UI
     public class DistanceUI : MonoBehaviour
     {
         // --------------- Bookkeeping ---------------
+        private float _distance;
         private TMP_Text _scoreText;
 
         private void Start()
@@ -17,8 +18,15 @@ namespace UI
             _scoreText = GetComponent<TMP_Text>();
         }
 
+        public float GetDistance()
+        {
+            return _distance;
+        }
+
         private void OnScoreUpdate(float score)
         {
+            _distance = score;
+            
             // TODO: If we want a cool counter for later, this should be updated
             _scoreText.text = score + "m";
         }
