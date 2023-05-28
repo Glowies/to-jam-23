@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 797346c5250a14b15abe47aca897d241, type: 3}
+  m_Name: CFACBD10-E119-43CF-94A4-479B69FC6258
+  m_EditorClassIdentifier: 
+  objectName: Play_mus_safe_random
+  id: 2126443849
+  guid: CFACBD10-E119-43CF-94A4-479B69FC6258

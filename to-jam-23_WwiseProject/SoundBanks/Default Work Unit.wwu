@@ -1,6 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{9BF9891A-C509-4E26-B5B1-13DAD835945B}" SchemaVersion="110">
 	<SoundBanks>
-		<WorkUnit Name="Default Work Unit" ID="{9BF9891A-C509-4E26-B5B1-13DAD835945B}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{9BF9891A-C509-4E26-B5B1-13DAD835945B}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="amb" ID="{3836517D-3256-480F-A805-E9AA9CD44626}">
+					<PropertyList>
+						<Property Name="Maximum" Type="int32">
+							<ValueList>
+								<Value>10000000</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ObjectInclusionList>
+						<ObjectRef Name="amb" ID="{EF4C234E-13B6-4EC2-ACCA-3CCAAD4C9649}" WorkUnitID="{C3EBA23F-6B22-4295-A265-17E5CA9BEE58}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="mus_safe" ID="{36C4B37D-5FB0-4293-B3A4-F271384A1678}">
+					<PropertyList>
+						<Property Name="Maximum" Type="int32">
+							<ValueList>
+								<Value>10000000</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ObjectInclusionList>
+						<ObjectRef Name="mus_safe_random" ID="{202EF345-A400-411B-8D5B-D40661FB059F}" WorkUnitID="{C3EBA23F-6B22-4295-A265-17E5CA9BEE58}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="mus_safe_drone" ID="{20EB0A46-0B1A-423E-922A-7B4C7813EDD4}" WorkUnitID="{C3EBA23F-6B22-4295-A265-17E5CA9BEE58}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="sfx" ID="{AEDD2248-ACB9-4BCA-96CE-F010340C7DBE}">
+					<PropertyList>
+						<Property Name="Maximum" Type="int32">
+							<ValueList>
+								<Value>10000000</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ObjectInclusionList>
+						<ObjectRef Name="sfx" ID="{D1C644F4-348C-4408-9BEC-D3E9B0C2E6DB}" WorkUnitID="{C3EBA23F-6B22-4295-A265-17E5CA9BEE58}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="ui" ID="{28AE11D8-08BC-4923-973B-CA430D8EA776}">
+					<PropertyList>
+						<Property Name="Maximum" Type="int32">
+							<ValueList>
+								<Value>10000000</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ObjectInclusionList>
+						<ObjectRef Name="UI" ID="{22E268B7-3873-454A-B3B1-73622466FFCA}" WorkUnitID="{2D280309-CB95-41D8-8DEB-3B60C2B444CB}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+				<SoundBank Name="mus_unsafe" ID="{B8E23DDF-C1DF-4C22-9613-D0A680C041C6}">
+					<PropertyList>
+						<Property Name="Maximum" Type="int32">
+							<ValueList>
+								<Value>10000000</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ObjectInclusionList>
+						<ObjectRef Name="mus_unsafe_random" ID="{D496F876-54E6-4300-8F4C-71667FF56FA0}" WorkUnitID="{C3EBA23F-6B22-4295-A265-17E5CA9BEE58}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="mus_eyeDetection" ID="{752A0061-5DD0-4C90-A72A-8DCD5E4012CD}" WorkUnitID="{C3EBA23F-6B22-4295-A265-17E5CA9BEE58}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="mus_unsafe_drone" ID="{14353FB0-1306-4DA5-970D-0C889DC358E5}" WorkUnitID="{C3EBA23F-6B22-4295-A265-17E5CA9BEE58}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundBanks>
 </WwiseDocument>
