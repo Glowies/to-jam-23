@@ -101,13 +101,15 @@ namespace Controls
             if (this._playerInputActions == null)
                 return;
 
-            this._playerInputActions.Movement.Walk.performed += Walk;
+            this._playerInputActions.Movement.Run.canceled += Walk;
+            this._playerInputActions.Movement.Stop.canceled += Walk;
             this._playerInputActions.Movement.Run.performed += Run;
             this._playerInputActions.Movement.Stop.performed += Stop;
         }
 
         private void OnDisable() {
-            this._playerInputActions.Movement.Walk.performed -= Walk;
+            this._playerInputActions.Movement.Run.canceled -= Walk;
+            this._playerInputActions.Movement.Stop.canceled -= Walk;
             this._playerInputActions.Movement.Run.performed -= Run;
             this._playerInputActions.Movement.Stop.performed -= Stop;
         }
