@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _explosionForceOrigin: {fileID: 385827582015107879}
-  _walkForce: 100
+  _walkForce: 70
   _runForce: 170
   _explosionRaduis: 5
   _doorRigidbodies:
