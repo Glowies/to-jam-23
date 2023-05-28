@@ -44,22 +44,13 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Walk"",
-                    ""type"": ""Button"",
-                    ""id"": ""a5fa5373-c2d5-4810-a750-41fd71889ac1"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""1276e403-d475-45d1-add8-e322a05eea7e"",
-                    ""path"": ""<Keyboard>/r"",
+                    ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -70,22 +61,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2488d99c-2af1-4ea8-8ebd-c0e79de30e54"",
-                    ""path"": ""<Keyboard>/s"",
+                    ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Stop"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e484db8c-3648-41e5-b3f7-e6475a3e63c2"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Walk"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -126,7 +106,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_Run = m_Movement.FindAction("Run", throwIfNotFound: true);
         m_Movement_Stop = m_Movement.FindAction("Stop", throwIfNotFound: true);
-        m_Movement_Walk = m_Movement.FindAction("Walk", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
@@ -193,14 +172,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private List<IMovementActions> m_MovementActionsCallbackInterfaces = new List<IMovementActions>();
     private readonly InputAction m_Movement_Run;
     private readonly InputAction m_Movement_Stop;
-    private readonly InputAction m_Movement_Walk;
     public struct MovementActions
     {
         private @PlayerInputActions m_Wrapper;
         public MovementActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Run => m_Wrapper.m_Movement_Run;
         public InputAction @Stop => m_Wrapper.m_Movement_Stop;
-        public InputAction @Walk => m_Wrapper.m_Movement_Walk;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -216,9 +193,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Stop.started += instance.OnStop;
             @Stop.performed += instance.OnStop;
             @Stop.canceled += instance.OnStop;
-            @Walk.started += instance.OnWalk;
-            @Walk.performed += instance.OnWalk;
-            @Walk.canceled += instance.OnWalk;
         }
 
         private void UnregisterCallbacks(IMovementActions instance)
@@ -229,9 +203,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Stop.started -= instance.OnStop;
             @Stop.performed -= instance.OnStop;
             @Stop.canceled -= instance.OnStop;
-            @Walk.started -= instance.OnWalk;
-            @Walk.performed -= instance.OnWalk;
-            @Walk.canceled -= instance.OnWalk;
         }
 
         public void RemoveCallbacks(IMovementActions instance)
@@ -299,7 +270,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     {
         void OnRun(InputAction.CallbackContext context);
         void OnStop(InputAction.CallbackContext context);
-        void OnWalk(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
