@@ -25,14 +25,8 @@ public class CinemachineShake : MonoBehaviour
     DOTween.To(() => this.perlin.m_AmplitudeGain, x => this.perlin.m_AmplitudeGain = x, intensity, transitionTime);
   }
 
-  private void Update() {
-    if (Input.GetKeyDown(UnityEngine.KeyCode.H)) {
-      this.on = !this.on;
-      if (this.on) {
-        this.DoSmoothCameraShake(5, 1);
-      } else {
-        this.DoSmoothCameraShake(0, 1);
-      }
-    }
+  public void DoCameraShakeImpulse(float intensity, float duration) {
+    this.perlin.m_AmplitudeGain = intensity;
+    this.DoSmoothCameraShake(0f, duration);
   }
 }
