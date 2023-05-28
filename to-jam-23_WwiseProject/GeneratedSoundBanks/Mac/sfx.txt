@@ -1,0 +1,25 @@
+Event	ID	Name			Wwise Object Path	Notes
+	842707166	Play_sfx_deathGrunt			\avy work unit\sfx\Play_sfx_deathGrunt	
+	851933865	Play_sfx_eyeSquelchies			\avy work unit\sfx\Play_sfx_eyeSquelchies	
+	2726387356	Play_sfx_grunt			\avy work unit\sfx\Play_sfx_grunt	
+	3582773830	Play_sfx_heavyBreathing_lp			\avy work unit\sfx\Play_sfx_heavyBreathing_lp	
+	4054446234	Play_sfx_heartbeat			\avy work unit\sfx\Play_sfx_heartbeat	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	26943644	sfx_heartbeat_5	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_heartbeat_5_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_heartbeat\sfx_heartbeat_5		16035
+	98241822	sfx_heartbeat_1	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_heartbeat_1_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_heartbeat\sfx_heartbeat_1		16312
+	102897035	sfx_deathGrunt	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_deathGrunt_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_deathGrunt		8624
+	233249719	sfx_heartbeat_3	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_heartbeat_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_heartbeat\sfx_heartbeat_3		15061
+	363459561	sfx_heartbeat_2	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_heartbeat_2_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_heartbeat\sfx_heartbeat_2		15864
+	394152716	sfx_eyeSquelchies_1	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_eyeSquelchies_1_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_eyeSquelchies\sfx_eyeSquelchies_1		54659
+	396504500	sfx_eyeSquelchies_3	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_eyeSquelchies_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_eyeSquelchies\sfx_eyeSquelchies_3		52964
+	407421052	sfx_eyeSquelchies_2	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_eyeSquelchies_2_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_eyeSquelchies\sfx_eyeSquelchies_2		53494
+	420779862	sfx_grunt-006	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_grunt-006_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_grunt\sfx_grunt-006		8148
+	677699518	sfx_grunt-001	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_grunt-001_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_grunt\sfx_grunt-001		7406
+	720753874	sfx_grunt-005	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_grunt-005_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_grunt\sfx_grunt-005		7579
+	771640932	sfx_grunt-004	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_grunt-004_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_grunt\sfx_grunt-004		8228
+	816003539	sfx_grunt-003	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_grunt-003_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_grunt\sfx_grunt-003		7778
+	970589568	sfx_heartbeat_4	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_heartbeat_4_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_heartbeat\sfx_heartbeat_4		15920
+	993768250	sfx_grunt-002	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_grunt-002_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_grunt\sfx_grunt-002		8244
+	1060678547	sfx_heavyBreathing_lp	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_heavyBreathing_lp_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\sfx\sfx_heavyBreathing_lp		117822
+

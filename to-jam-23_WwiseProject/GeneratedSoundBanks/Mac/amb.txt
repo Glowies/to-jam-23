@@ -1,0 +1,13 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1374060406	Play_amb_eyeHum			\avy work unit\amb\Play_amb_eyeHum	
+	1512117776	Play_amb_hospitalDraft			\avy work unit\amb\Play_amb_hospitalDraft	
+	2404840802	Stop_amb_hospitalDraft			\avy work unit\amb\Stop_amb_hospitalDraft	
+	2590763411	Play_amb_ghostFreq_lp			\avy work unit\amb\Play_amb_ghostFreq_lp	
+	2686457601	Stop_amb_ghostFreq_lp			\avy work unit\amb\Stop_amb_ghostFreq_lp	
+	3963121772	Stop_amb_eyeHum			\avy work unit\amb\Stop_amb_eyeHum	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	171406050	amb_hospitalDraft_lp	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\amb_hospitalDraft_lp_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\amb\amb_hospitalDraft_lp		160089
+	366399191	amb_eyeHum_lp	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\sfx_eyeHum_lp_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\amb\amb_eyeHum_lp		89599
+	936333669	amb_ghostFreq_lp	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\amb_ghostFreq_lp_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\amb\amb_ghostFreq_lp		70418
+

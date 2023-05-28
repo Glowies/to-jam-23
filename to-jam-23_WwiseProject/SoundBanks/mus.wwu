@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{0C65D9A6-BA3F-45B7-9320-EE6A94182802}" SchemaVersion="110">
-	<SoundBanks>
-		<WorkUnit Name="mus" ID="{0C65D9A6-BA3F-45B7-9320-EE6A94182802}" PersistMode="Standalone"/>
-	</SoundBanks>
-</WwiseDocument>
