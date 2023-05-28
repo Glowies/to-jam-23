@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2627274783600031745}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ExplosionOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ HingeJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5826320423140951588}
-  m_ConnectedBody: {fileID: 0}
+  m_ConnectedBody: {fileID: 8787582548183739060}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
@@ -202,7 +202,7 @@ HingeJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6146511860929891410}
-  m_ConnectedBody: {fileID: 0}
+  m_ConnectedBody: {fileID: 8787582548183739060}
   m_ConnectedArticulationBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 4759717896811710983}
   - component: {fileID: 4841410927953165516}
   - component: {fileID: 8787582548183739060}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7196093498211421919}
-  m_Mesh: {fileID: 4138777940688918626, guid: f383b5db6b44549e9908072bd275e125, type: 3}
+  m_Mesh: {fileID: 4138777940688918626, guid: d5fa874eccc5e5b4da1b7b2ad0a35632, type: 3}
 --- !u!23 &4841410927953165516
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -293,8 +293,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3541963811634928835, guid: f383b5db6b44549e9908072bd275e125, type: 3}
-  - {fileID: -1444460858095362738, guid: f383b5db6b44549e9908072bd275e125, type: 3}
+  - {fileID: 2100000, guid: 3a3974bf004c4ae4e89c1ff65c815124, type: 2}
+  - {fileID: 2100000, guid: 896dd04f90dfcc24594a36338ff7fe94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -372,7 +372,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8006366717885996542}
-  m_Mesh: {fileID: 9133007775131588653, guid: f383b5db6b44549e9908072bd275e125, type: 3}
+  m_Mesh: {fileID: -4491461299493802552, guid: d5fa874eccc5e5b4da1b7b2ad0a35632, type: 3}
 --- !u!23 &6725368341086094327
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -393,9 +393,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1444460858095362738, guid: f383b5db6b44549e9908072bd275e125, type: 3}
-  - {fileID: -3541963811634928835, guid: f383b5db6b44549e9908072bd275e125, type: 3}
-  - {fileID: -4973734387028869240, guid: f383b5db6b44549e9908072bd275e125, type: 3}
+  - {fileID: 2100000, guid: 896dd04f90dfcc24594a36338ff7fe94, type: 2}
+  - {fileID: 2100000, guid: 3303f7e564e47414f965a327346d0240, type: 2}
+  - {fileID: 2100000, guid: f52181432e692ec469c17d7967aa489b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -457,7 +457,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8081771691876555099}
-  m_Mesh: {fileID: -4491461299493802552, guid: f383b5db6b44549e9908072bd275e125, type: 3}
+  m_Mesh: {fileID: 9133007775131588653, guid: d5fa874eccc5e5b4da1b7b2ad0a35632, type: 3}
 --- !u!23 &1586638033405793682
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -478,9 +478,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -1444460858095362738, guid: f383b5db6b44549e9908072bd275e125, type: 3}
-  - {fileID: -3541963811634928835, guid: f383b5db6b44549e9908072bd275e125, type: 3}
-  - {fileID: -4973734387028869240, guid: f383b5db6b44549e9908072bd275e125, type: 3}
+  - {fileID: 2100000, guid: 896dd04f90dfcc24594a36338ff7fe94, type: 2}
+  - {fileID: 2100000, guid: 3303f7e564e47414f965a327346d0240, type: 2}
+  - {fileID: 2100000, guid: f52181432e692ec469c17d7967aa489b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 3894960723806532226}
   - component: {fileID: 4274003412451360758}
   - component: {fileID: 2440755647256681040}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _roomPrefabs:
-  - {fileID: 6720740589777993326, guid: 6e9bc7e4fb2ca44b687c71d156531ef8, type: 3}
-  - {fileID: 1153432729357697466, guid: e769fb8d74e4446558014b95940a2419, type: 3}
+  - {fileID: 7803235368806689318, guid: 6e9bc7e4fb2ca44b687c71d156531ef8, type: 3}
   _startRoom: {fileID: 0}
   _startNextRoom: {fileID: 0}
   _previousRoom: {fileID: 0}
