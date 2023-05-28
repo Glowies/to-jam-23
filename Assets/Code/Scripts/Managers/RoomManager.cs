@@ -58,6 +58,7 @@ public class RoomManager : MonoBehaviour {
   }
 
   private void OnEnteredNextRoom() {
+    print("Next Room");
     this._nextRoom.Show();
     this._nextNextRoom.Show(0.95f);
     this._currentRoom.Hide();

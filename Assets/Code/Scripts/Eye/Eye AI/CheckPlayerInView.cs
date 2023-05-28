@@ -41,7 +41,7 @@ public class CheckPlayerInView : BehaviourNode
             {
                 return NodeState.SUCCESS;
             }
-            
+
         } else
         {
             // UnityEngine.Debug.Log("Player not detected");
@@ -49,7 +49,7 @@ public class CheckPlayerInView : BehaviourNode
             // linger a bit after player moves out of view
             if (!_waiting)
             {
-                UnityEngine.Debug.Log("Lingering");
+                // UnityEngine.Debug.Log("Lingering");
                 float _attackLingerTime = (float)GetData("attackLingerTime");
                 _lingerCounter += UnityEngine.Time.deltaTime;
 
@@ -57,13 +57,13 @@ public class CheckPlayerInView : BehaviourNode
                     return NodeState.SUCCESS;
             }
 
-            UnityEngine.Debug.Log("Not lingering");
+            // UnityEngine.Debug.Log("Not lingering");
             _lingerCounter = 0;
             _waitCounter = 0;
             _waiting = true;
             return NodeState.FAILURE;
         }
-            
-        
+
+
     }
 }

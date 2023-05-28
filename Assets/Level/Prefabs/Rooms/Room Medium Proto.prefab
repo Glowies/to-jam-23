@@ -726,7 +726,7 @@ GameObject:
   - component: {fileID: 5601234983963603377}
   - component: {fileID: 9048419317163855426}
   m_Layer: 0
-  m_Name: Room Medium
+  m_Name: Room Medium Proto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

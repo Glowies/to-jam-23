@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class Room : MonoBehaviour {
   [SerializeField] private float _width;
   [SerializeField] private GameObject _frontWall;
-  [SerializeField] private MeshRenderer _frontWallCoverMeshRenderer;
+  // [SerializeField] private List<MeshRenderer> _frontWallCoverMeshRenderers;
   [SerializeField] private CheckpointTrigger _checkpointTrigger;
   [SerializeField] private List<Transform> _windowTransforms;
 
@@ -15,7 +15,7 @@ public class Room : MonoBehaviour {
   public UnityEvent OnRoomEntered;
   public List<Vector3> Windows;
 
-  private Material _frontWallCoverMaterial;
+  private List<Material> _frontWallCoverMaterials;
 
   public Vector3 RightEdge {
     get {
@@ -26,11 +26,13 @@ public class Room : MonoBehaviour {
   }
 
   public void Show(float transparency = 0f) {
-    this._frontWallCoverMaterial.DOFade(transparency, 0.3f);
+    // this._frontWallCoverMaterials.DOFade(transparency, 0.3f);
+    this._frontWall.SetActive(false);
   }
 
   public void Hide() {
-    this._frontWallCoverMaterial.DOFade(1f, 0.3f);
+    // this._frontWallCoverMaterials.DOFade(1f, 0.3f);
+    this._frontWall.SetActive(true);
   }
 
   public GameObject DetachFrontWall() {
@@ -39,7 +41,7 @@ public class Room : MonoBehaviour {
   }
 
   private void Awake() {
-    this._frontWallCoverMaterial = this._frontWallCoverMeshRenderer.material;
+    // this._frontWallCoverMaterials = this._frontWallCoverMeshRenderers.material;
     this.Windows = this._windowTransforms.Select(winTransform => winTransform.position).ToList();
   }
 
