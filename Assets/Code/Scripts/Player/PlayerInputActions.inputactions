@@ -22,22 +22,13 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Walk",
-                    "type": "Button",
-                    "id": "a5fa5373-c2d5-4810-a750-41fd71889ac1",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "1276e403-d475-45d1-add8-e322a05eea7e",
-                    "path": "<Keyboard>/r",
+                    "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -48,22 +39,11 @@
                 {
                     "name": "",
                     "id": "2488d99c-2af1-4ea8-8ebd-c0e79de30e54",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Stop",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e484db8c-3648-41e5-b3f7-e6475a3e63c2",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Walk",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
