@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class EyeTarget : MonoBehaviour
 {
+    public float targetWidth = 0.1f;
     private Collider _collider;
 
     void Awake()

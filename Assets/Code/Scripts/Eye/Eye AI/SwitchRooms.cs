@@ -24,6 +24,7 @@ public class SwitchRooms : BehaviourNode
 
         Room nextRoom = _roomManager.GetCurrentRoom();
         parent.parent.SetData("currentRoom", nextRoom);
+        parent.parent.SetData("currWindowIndex", 0); // reset window index
 
         float eyeZOffset = (float)GetData("eyeRoomZOffset");
         _eyeTransform.DOMove(nextRoom.transform.position + new Vector3(0, 0, eyeZOffset), 0.5f);
