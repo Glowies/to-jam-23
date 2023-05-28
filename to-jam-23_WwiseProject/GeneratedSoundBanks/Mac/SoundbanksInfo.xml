@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="145">
+	<RootPaths>
+		<ProjectRoot>../../</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac/</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="289872170" Type="User" Language="SFX" Hash="{E321A701-56C1-8A6F-2968-AC70AFCC0263}">
+			<ShortName>mus_safe</ShortName>
+			<Path>mus_safe.bnk</Path>
+			<Media>
+				<File Id="103433427" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Safe-Strings2_60BPM4-4_L12-P0.wav</ShortName>
+					<CachePath>SFX/Safe-Strings2_60BPM4-4_L12-P0_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="291744681" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Safe-Taiko_60BPM4-4_L8-P1.wav</ShortName>
+					<CachePath>SFX/Safe-Taiko_60BPM4-4_L8-P1_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="479810265" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Safe-Strings_60BPM4-4_L12-P0.wav</ShortName>
+					<CachePath>SFX/Safe-Strings_60BPM4-4_L12-P0_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="532626448" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>mus_Safe-Drone_60BPM4-4_L30-P0.wav</ShortName>
+					<CachePath>SFX/mus_Safe-Drone_60BPM4-4_L30-P0_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="552208287" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Safe-Violin_60BPM4-4_L16-P0.wav</ShortName>
+					<CachePath>SFX/Safe-Violin_60BPM4-4_L16-P0_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="630626176" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Safe-Taiko2_60BPM4-4_L8-P1.wav</ShortName>
+					<CachePath>SFX/Safe-Taiko2_60BPM4-4_L8-P1_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="676521290" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Safe-Taiko3_60BPM4-4_L8-P0.wav</ShortName>
+					<CachePath>SFX/Safe-Taiko3_60BPM4-4_L8-P0_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="792876344" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>mus_safe_blank.wav</ShortName>
+					<CachePath>SFX/mus_safe_blank_9EDFC787.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="55066361" Name="Mute_mus_safe_drone" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1623693784" Name="Mute_mus_safe_random" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3421063274" Name="Play_mus_safe_drone" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="532626448"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2126443849" Name="Play_mus_safe_random" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="103433427"/>
+						<MediaRef Id="291744681"/>
+						<MediaRef Id="479810265"/>
+						<MediaRef Id="552208287"/>
+						<MediaRef Id="630626176"/>
+						<MediaRef Id="676521290"/>
+						<MediaRef Id="792876344"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="118504264" Name="Stop_mus_safe_drone" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2195731107" Name="Stop_mus_safe_random" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3967617646" Name="Unmute_mus_safe_drone" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2276755925" Name="Unmute_mus_safe_random" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="393239870" Type="User" Language="SFX" Hash="{681660DD-E5CE-7A1C-39E2-754C268EE74D}">
+			<ShortName>sfx</ShortName>
+			<Path>sfx.bnk</Path>
+			<Media>
+				<File Id="26943644" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_heartbeat_5.wav</ShortName>
+					<CachePath>SFX/sfx_heartbeat_5_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="98241822" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_heartbeat_1.wav</ShortName>
+					<CachePath>SFX/sfx_heartbeat_1_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="102897035" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_deathGrunt.wav</ShortName>
+					<CachePath>SFX/sfx_deathGrunt_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="233249719" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_heartbeat_3.wav</ShortName>
+					<CachePath>SFX/sfx_heartbeat_3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="363459561" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_heartbeat_2.wav</ShortName>
+					<CachePath>SFX/sfx_heartbeat_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="394152716" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_eyeSquelchies_1.wav</ShortName>
+					<CachePath>SFX/sfx_eyeSquelchies_1_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="396504500" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_eyeSquelchies_3.wav</ShortName>
+					<CachePath>SFX/sfx_eyeSquelchies_3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="407421052" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_eyeSquelchies_2.wav</ShortName>
+					<CachePath>SFX/sfx_eyeSquelchies_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="420779862" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_grunt-006.wav</ShortName>
+					<CachePath>SFX/sfx_grunt-006_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="677699518" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_grunt-001.wav</ShortName>
+					<CachePath>SFX/sfx_grunt-001_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="720753874" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_grunt-005.wav</ShortName>
+					<CachePath>SFX/sfx_grunt-005_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="771640932" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_grunt-004.wav</ShortName>
+					<CachePath>SFX/sfx_grunt-004_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="816003539" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_grunt-003.wav</ShortName>
+					<CachePath>SFX/sfx_grunt-003_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="970589568" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_heartbeat_4.wav</ShortName>
+					<CachePath>SFX/sfx_heartbeat_4_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="993768250" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_grunt-002.wav</ShortName>
+					<CachePath>SFX/sfx_grunt-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1060678547" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_heavyBreathing_lp.wav</ShortName>
+					<CachePath>SFX/sfx_heavyBreathing_lp_3F75BDB9.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="842707166" Name="Play_sfx_deathGrunt" DurationType="OneShot" DurationMin="0.44163266" DurationMax="0.44163266">
+					<MediaRefs>
+						<MediaRef Id="102897035"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="851933865" Name="Play_sfx_eyeSquelchies" DurationType="OneShot" DurationMin="2.9424748" DurationMax="5.2428937">
+					<MediaRefs>
+						<MediaRef Id="394152716"/>
+						<MediaRef Id="396504500"/>
+						<MediaRef Id="407421052"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2726387356" Name="Play_sfx_grunt" DurationType="OneShot" DurationMin="0.44163266" DurationMax="0.44163266">
+					<MediaRefs>
+						<MediaRef Id="420779862"/>
+						<MediaRef Id="677699518"/>
+						<MediaRef Id="720753874"/>
+						<MediaRef Id="771640932"/>
+						<MediaRef Id="816003539"/>
+						<MediaRef Id="993768250"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4054446234" Name="Play_sfx_heartbeat" DurationType="OneShot" DurationMin="1.3092517" DurationMax="1.3092517">
+					<MediaRefs>
+						<MediaRef Id="26943644"/>
+						<MediaRef Id="98241822"/>
+						<MediaRef Id="233249719"/>
+						<MediaRef Id="363459561"/>
+						<MediaRef Id="970589568"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3582773830" Name="Play_sfx_heavyBreathing_lp" DurationType="OneShot" DurationMin="7.51" DurationMax="7.51">
+					<MediaRefs>
+						<MediaRef Id="1060678547"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1066883259" Type="User" Language="SFX" Hash="{2BEA0670-6263-F13A-B495-63D629E6D434}">
+			<ShortName>mus_unsafe</ShortName>
+			<Path>mus_unsafe.bnk</Path>
+			<Media>
+				<File Id="152127736" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>mus_eyeDetection_60BPM4-4_L2.wav</ShortName>
+					<CachePath>SFX/mus_eyeDetection_60BPM4-4_L2_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="212735456" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Safe-BitcrushedViolin_60BPM4-4_L16-P0.wav</ShortName>
+					<CachePath>SFX/Safe-BitcrushedViolin_60BPM4-4_L16-P0_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="454492109" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Safe-Bitcrushedtaiko2_60BPM4-4_L8-P1.wav</ShortName>
+					<CachePath>SFX/Safe-Bitcrushedtaiko2_60BPM4-4_L8-P1_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="528259529" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Safe-Bitcrushedstrings_60BPM4-4_L12-P0.wav</ShortName>
+					<CachePath>SFX/Safe-Bitcrushedstrings_60BPM4-4_L12-P0_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="625644074" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Safe-Bitcrusheddrone_60BPM4-4_L30-P0.wav</ShortName>
+					<CachePath>SFX/Safe-Bitcrusheddrone_60BPM4-4_L30-P0_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="648561599" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Safe-Bitcrushedtaiko_60BPM4-4_L8-P1.wav</ShortName>
+					<CachePath>SFX/Safe-Bitcrushedtaiko_60BPM4-4_L8-P1_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="688742623" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Safe-Bitcrushedtaiko3_60BPM4-4_L8-P0.wav</ShortName>
+					<CachePath>SFX/Safe-Bitcrushedtaiko3_60BPM4-4_L8-P0_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="792876344" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>mus_safe_blank.wav</ShortName>
+					<CachePath>SFX/mus_safe_blank_9EDFC787.wem</CachePath>
+				</File>
+				<File Id="865298709" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Safe-Bitcrushedstrings2_60BPM4-4_L12-P0.wav</ShortName>
+					<CachePath>SFX/Safe-Bitcrushedstrings2_60BPM4-4_L12-P0_9EDFC787.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2463921233" Name="Mute_mus_eyeDetection" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="634881816" Name="Mute_mus_unsafe_drone" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2894427987" Name="Mute_mus_unsafe_random" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4143764106" Name="Play_mus_eyeDetection" DurationType="OneShot" DurationMin="16" DurationMax="16">
+					<MediaRefs>
+						<MediaRef Id="152127736"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="928017323" Name="Play_mus_unsafe_drone" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="625644074"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3101611830" Name="Play_mus_unsafe_random" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="212735456"/>
+						<MediaRef Id="454492109"/>
+						<MediaRef Id="528259529"/>
+						<MediaRef Id="648561599"/>
+						<MediaRef Id="688742623"/>
+						<MediaRef Id="792876344"/>
+						<MediaRef Id="865298709"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="612710076" Name="Stop_mus_eyeDetection" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4238011837" Name="Stop_mus_unsafe_drone" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4051233668" Name="Stop_mus_unsafe_random" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1748942942" Name="Unmute_mus_eyeDetection" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4148618559" Name="Unmute_mus_unsafe_drone" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3881368754" Name="Unmute_mus_unsafe_random" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{A753D75A-C3ED-924F-52C5-6CC937CEF377}">
+			<ShortName>amb</ShortName>
+			<Path>amb.bnk</Path>
+			<Media>
+				<File Id="171406050" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>amb_hospitalDraft_lp.wav</ShortName>
+					<CachePath>SFX/amb_hospitalDraft_lp_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="366399191" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_eyeHum_lp.wav</ShortName>
+					<CachePath>SFX/sfx_eyeHum_lp_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="936333669" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>amb_ghostFreq_lp.wav</ShortName>
+					<CachePath>SFX/amb_ghostFreq_lp_3F75BDB9.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1374060406" Name="Play_amb_eyeHum" DurationType="OneShot" DurationMin="6.01" DurationMax="6.01">
+					<MediaRefs>
+						<MediaRef Id="366399191"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2590763411" Name="Play_amb_ghostFreq_lp" DurationType="OneShot" DurationMin="19.51" DurationMax="19.51">
+					<MediaRefs>
+						<MediaRef Id="936333669"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1512117776" Name="Play_amb_hospitalDraft" DurationType="OneShot" DurationMin="28.675465" DurationMax="28.675465">
+					<MediaRefs>
+						<MediaRef Id="171406050"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3963121772" Name="Stop_amb_eyeHum" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2686457601" Name="Stop_amb_ghostFreq_lp" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2404840802" Name="Stop_amb_hospitalDraft" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F56A610C-C7C4-F874-B68B-7ADDF94EBB7A}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+		</SoundBank>
+		<SoundBank Id="1551306167" Type="User" Language="SFX" Hash="{6C81DA61-C2D7-F9CA-7854-A215D5C51011}">
+			<ShortName>ui</ShortName>
+			<Path>ui.bnk</Path>
+			<Media>
+				<File Id="19650088" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_MenuUI_Hover2.wav</ShortName>
+					<CachePath>SFX/sfx_MenuUI_Hover2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="54725676" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_MenuUI_Select2.wav</ShortName>
+					<CachePath>SFX/sfx_MenuUI_Select2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="158939456" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_MenuUI_Cancel.wav</ShortName>
+					<CachePath>SFX/sfx_MenuUI_Cancel_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="169798850" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_MenuUI_Hover1.wav</ShortName>
+					<CachePath>SFX/sfx_MenuUI_Hover1_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="230114221" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_MenuUI_Hover4.wav</ShortName>
+					<CachePath>SFX/sfx_MenuUI_Hover4_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="328476235" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_MenuUI_Hover3.wav</ShortName>
+					<CachePath>SFX/sfx_MenuUI_Hover3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="358326608" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_MenuUI_StartGame.wav</ShortName>
+					<CachePath>SFX/sfx_MenuUI_StartGame_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="687632916" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_MenuUI_Hover5.wav</ShortName>
+					<CachePath>SFX/sfx_MenuUI_Hover5_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="984354224" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_MenuUI_Select1.wav</ShortName>
+					<CachePath>SFX/sfx_MenuUI_Select1_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1072286774" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>sfx_MenuUI_Hover6.wav</ShortName>
+					<CachePath>SFX/sfx_MenuUI_Hover6_3F75BDB9.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1739132874" Name="Play_sfx_MenuUI_Cancel" DurationType="OneShot" DurationMin="1.7130839" DurationMax="1.7130839">
+					<MediaRefs>
+						<MediaRef Id="158939456"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3029950442" Name="Play_sfx_MenuUI_Hover" DurationType="OneShot" DurationMin="0.077429526" DurationMax="0.25776634">
+					<MediaRefs>
+						<MediaRef Id="19650088"/>
+						<MediaRef Id="169798850"/>
+						<MediaRef Id="230114221"/>
+						<MediaRef Id="328476235"/>
+						<MediaRef Id="687632916"/>
+						<MediaRef Id="1072286774"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3211082284" Name="Play_sfx_MenuUI_Select" DurationType="OneShot" DurationMin="1.1885041" DurationMax="2.1932538">
+					<MediaRefs>
+						<MediaRef Id="54725676"/>
+						<MediaRef Id="984354224"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3968997478" Name="Play_sfx_MenuUI_StartGame" DurationType="OneShot" DurationMin="4.8038774" DurationMax="4.8038774">
+					<MediaRefs>
+						<MediaRef Id="358326608"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{1B10727E-AC42-64A0-2763-B7C659C19FE9}</FileHash>
+</SoundBanksInfo>

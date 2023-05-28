@@ -1,0 +1,18 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1739132874	Play_sfx_MenuUI_Cancel			\rowin work unit\UI\Play_sfx_MenuUI_Cancel	
+	3029950442	Play_sfx_MenuUI_Hover			\rowin work unit\UI\Play_sfx_MenuUI_Hover	
+	3211082284	Play_sfx_MenuUI_Select			\rowin work unit\UI\Play_sfx_MenuUI_Select	
+	3968997478	Play_sfx_MenuUI_StartGame			\rowin work unit\UI\Play_sfx_MenuUI_StartGame	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	19650088	sfx_MenuUI_Hover2	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Windows\SFX\sfx_MenuUI_Hover2_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\UI\UI_Hover\sfx_MenuUI_Hover2		2442
+	54725676	sfx_MenuUI_Select2	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Windows\SFX\sfx_MenuUI_Select2_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\UI\UI_Select\sfx_MenuUI_Select2		24923
+	158939456	sfx_MenuUI_Cancel	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Windows\SFX\sfx_MenuUI_Cancel_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\UI\sfx_MenuUI_Cancel		23519
+	169798850	sfx_MenuUI_Hover1	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Windows\SFX\sfx_MenuUI_Hover1_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\UI\UI_Hover\sfx_MenuUI_Hover1		2088
+	230114221	sfx_MenuUI_Hover4	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Windows\SFX\sfx_MenuUI_Hover4_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\UI\UI_Hover\sfx_MenuUI_Hover4		1892
+	328476235	sfx_MenuUI_Hover3	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Windows\SFX\sfx_MenuUI_Hover3_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\UI\UI_Hover\sfx_MenuUI_Hover3		1491
+	358326608	sfx_MenuUI_StartGame	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Windows\SFX\sfx_MenuUI_StartGame_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\UI\sfx_MenuUI_StartGame		68486
+	687632916	sfx_MenuUI_Hover5	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Windows\SFX\sfx_MenuUI_Hover5_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\UI\UI_Hover\sfx_MenuUI_Hover5		3307
+	984354224	sfx_MenuUI_Select1	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Windows\SFX\sfx_MenuUI_Select1_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\UI\UI_Select\sfx_MenuUI_Select1		25964
+	1072286774	sfx_MenuUI_Hover6	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Windows\SFX\sfx_MenuUI_Hover6_3F75BDB9.wem		\Actor-Mixer Hierarchy\avy work unit\UI\UI_Hover\sfx_MenuUI_Hover6		2608
+

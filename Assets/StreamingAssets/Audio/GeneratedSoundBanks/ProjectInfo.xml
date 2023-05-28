@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="to-jam-23_WwiseProject" GUID="{7741417B-B86D-4D7D-A1A2-B158ECF66663}" Generator="2022.1.4.8202"/>
+	<CacheRoot>../../../../to-jam-23_WwiseProject/.cache/</CacheRoot>
+	<Platforms>
+		<Platform Name="Mac" GUID="{CCFBF073-9203-48F4-A1D4-A5EB63EBCB9D}" BasePlatform="Mac" BasePlatformGUID="{9C6217D5-DD11-4795-87C1-6CE02853C540}" Path="../../../../to-jam-23_WwiseProject/GeneratedSoundBanks/Mac/"/>
+		<Platform Name="Windows" GUID="{79D049A4-A05B-4395-B9BD-28ADD43720AF}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="../../../../to-jam-23_WwiseProject/GeneratedSoundBanks/Windows/"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{9E0DEF69-5943-443C-BA68-9286CF4DACE9}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{6BAD43E4-2BAD-ABAD-484E-22FCD645A92D}</FileHash>
+</ProjectInfo>
