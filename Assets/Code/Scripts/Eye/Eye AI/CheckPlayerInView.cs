@@ -57,7 +57,7 @@ public class CheckPlayerInView : BehaviourNode
                     return NodeState.SUCCESS;
             }
 
-            UnityEngine.Debug.Log("Not lingering");
+            // UnityEngine.Debug.Log("Not lingering");
             _lingerCounter = 0;
             _waitCounter = 0;
             _waiting = true;

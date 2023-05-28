@@ -9,6 +9,8 @@ public class GameUI : MonoBehaviour {
   [SerializeField] private Image _foregroundImage;
   [SerializeField] private GameObject _pauseUI;
   [SerializeField] private GameObject _gameOverUI;
+  [SerializeField] private GameObject _leaderboardSetterUI;
+  [SerializeField] private GameObject _scoreboardUI;
   [SerializeField] private DistanceUI _distanceKeeper;
   [SerializeField] private RoomCountUI _roomCountKeeper;
 
@@ -22,6 +24,15 @@ public class GameUI : MonoBehaviour {
     this._foregroundImage
       .DOFade(1, 0.5f)
       .OnComplete(() => onComplete?.Invoke());
+  }
+  
+  public void ShowLeaderboard() {
+    this._leaderboardSetterUI.SetActive(false);
+    this._scoreboardUI.SetActive(true);
+  }
+  
+  public void ShowGameOver(float distance, int roomsTraversed) {
+    this._gameOverUI.SetActive(true);
   }
 
   private void Awake() {
@@ -42,10 +53,18 @@ public class GameUI : MonoBehaviour {
     this._pauseUI.SetActive(isPaused);
   }
 
-  private void OnGameOver() {
-    this._gameOverUI.SetActive(true);
-    
-    // Fetch the room count to display with the distance
-    this._gameOverUI.GetComponent<GameOverUI>().SetScore(_distanceKeeper.GetDistance(), _roomCountKeeper.GetRoomCount());
+  private void OnGameOver()
+  {
+    float distance = _distanceKeeper.GetDistance();
+    int roomsTraversed = _roomCountKeeper.GetRoomCount();
+
+    if (LeaderboardManager.Instance.SetPlacement(distance, roomsTraversed) > 0)
+    {
+      this._leaderboardSetterUI.SetActive(true);
+    }
+    else
+    {
+      ShowGameOver(distance, roomsTraversed);
+    }
   }
 }
