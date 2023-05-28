@@ -61,6 +61,7 @@ public class Attack : BehaviourNode
         }
 
         // lingering
+        parent.parent.SetData("agitated", true);
         return NodeState.RUNNING;
     }
 }

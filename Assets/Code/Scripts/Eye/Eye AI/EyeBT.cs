@@ -16,8 +16,8 @@ public class EyeBT : BehaviourTree.Tree
 
     [Header("Transition Timings")]
     public float idleWaitTime = 5f;
-    public float attackStartTime = 0.01f;
-    public float attackLingerTime = 1f;
+    public float attackStartTime = 0.5f;
+    public float attackLingerTime = 2f;
     public float idleOnWindowWaitTime = 1f;
     public float windowSwitchTime = 0.5f;
     public float roomSwitchTime = 1f;
@@ -28,7 +28,7 @@ public class EyeBT : BehaviourTree.Tree
     [Header("Eye Positioning")]
     public float eyeWindowZOffset = 7f;
     public float eyeRoomZOffset = 10f;
-    public float eyeWindowAttackingZOffset = 5f;
+    public float eyeWindowAttackingZOffset = 3f;
     
 
     protected override BehaviourNode SetupTree()

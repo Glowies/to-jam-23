@@ -1904,7 +1904,7 @@ MonoBehaviour:
   roomManager: {fileID: 5601234984914919563}
   idleWaitTime: 5
   attackStartTime: 0.5
-  attackLingerTime: 3
+  attackLingerTime: 2
   idleOnWindowWaitTime: 1
   windowSwitchTime: 0.5
   roomSwitchTime: 1
