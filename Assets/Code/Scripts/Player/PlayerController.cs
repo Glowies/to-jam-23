@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Controls
@@ -22,15 +23,20 @@ namespace Controls
         // TODO: The HRGauge should only be exposed to other classes by the provided method GetHRGauge()
         private HRGauge _heartRate = new HRGauge();
 
+        // ----------------- Events ------------------
+        public UnityEvent<float> OnScoreUpdate = new UnityEvent<float>();
+        
         // --------------- Bookkeeping ---------------
         // TODO: If we want to extend the player movement to incorporate a rigidbody, but for now we won't
         private Rigidbody _rBody;
+        private float _startXPos;
         public float BaseSpeed;
 
         private PlayerInputActions _playerInputActions;
 
         void Awake()
         {
+            _startXPos = transform.position.x;
             _rBody = GetComponent<Rigidbody>();
             _state = _walking;
         }
@@ -46,6 +52,15 @@ namespace Controls
         {
             // Delegate movement behaviour to state classes
             _state.Movement(transform, _heartRate, Die, BaseSpeed);
+            
+            // Calculate distance score
+            CalculateScore();
+        }
+
+        private void CalculateScore()
+        {
+            float score = Mathf.Round(transform.position.x - _startXPos);
+            OnScoreUpdate?.Invoke(score);
         }
 
         // --------------- Getters ---------------
@@ -58,7 +73,8 @@ namespace Controls
         {
             return _state;
         }
-
+        
+        // ---------------- Input -----------------
         void Walk(InputAction.CallbackContext obj) 
         {
             // Cache previous state and call OnExit and OnEnter
