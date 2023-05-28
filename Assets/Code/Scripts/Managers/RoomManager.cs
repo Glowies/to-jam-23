@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RoomManager : MonoBehaviour {
   [SerializeField] private List<Room> _roomPrefabs;
@@ -18,6 +19,9 @@ public class RoomManager : MonoBehaviour {
 
   private Transform _transform;
   private readonly WaitForSeconds _waitForTenSeconds = new WaitForSeconds(10f);
+
+  public UnityEvent<int> OnRoomCountUpdate = new UnityEvent<int>();
+  private int _roomCount = 1;
 
   private void Awake() {
     this._transform = this.transform;
@@ -62,6 +66,8 @@ public class RoomManager : MonoBehaviour {
     this._previousRoom = this._currentRoom;
     this._currentRoom = this._nextRoom;
     this._nextRoom = this._nextNextRoom;
+    _roomCount++;
+    OnRoomCountUpdate?.Invoke(_roomCount);
 
     this.InstantiateNextNextRoom();
   }
