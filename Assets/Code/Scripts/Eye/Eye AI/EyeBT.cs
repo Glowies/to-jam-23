@@ -3,24 +3,33 @@ using System.Collections.Generic;
 using System.Numerics;
 using BehaviourTree;
 using Controls;
+using UnityEngine;
 
-public class EyeBT : Tree
+public class EyeBT : BehaviourTree.Tree
     // Behaviour Tree of the eye enemy AI.
 {
+
+    [Header("Interacting Systems")]
     public EyeSight eyeSight;
     public PlayerController player;
     public RoomManager roomManager;
 
+    [Header("Transition Timings")]
     public float idleWaitTime = 5f;
-    public float attackStartTime = 0.01f;
+    public float attackStartTime = 0.5f;
+    public float attackLingerTime = 2f;
     public float idleOnWindowWaitTime = 1f;
     public float windowSwitchTime = 0.5f;
     public float roomSwitchTime = 1f;
-    public float damagePerSecond = 0.2f;
+
+    [Header("Damage")]
+    public float decreaseMaxHRPerSecond = 0.1f;
+
+    [Header("Eye Positioning")]
     public float eyeWindowZOffset = 7f;
     public float eyeRoomZOffset = 10f;
-    public float eyeWindowAttackingZOffset = 5f;
-    public float decreaseMaxHRPerSecond = 0.1f;
+    public float eyeWindowAttackingZOffset = 3f;
+    
 
     protected override BehaviourNode SetupTree()
     {
@@ -58,12 +67,12 @@ public class EyeBT : Tree
         root.SetData("idleOnWindowWaitTime", idleOnWindowWaitTime);
         root.SetData("windowSwitchTime", windowSwitchTime);
         root.SetData("roomSwitchTime", roomSwitchTime);
-        root.SetData("damagePerSecond", damagePerSecond);
         root.SetData("decreaseMaxHRPerSecond", decreaseMaxHRPerSecond);
         root.SetData("currentRoom", roomManager.GetStartRoom());
         root.SetData("eyeWindowZOffset", eyeWindowZOffset);
         root.SetData("eyeRoomZOffset", eyeRoomZOffset);
         root.SetData("eyeWindowAttackingZOffset", eyeWindowAttackingZOffset);
+        root.SetData("attackLingerTime", attackLingerTime);
 
 
         return root;

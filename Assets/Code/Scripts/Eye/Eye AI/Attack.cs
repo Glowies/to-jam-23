@@ -13,6 +13,7 @@ public class Attack : BehaviourNode
     private EyeSight _eyeSight;
     private PlayerController _player;
     private Transform _eyeTransform;
+    
 
     public Attack(EyeSight eyeSight, PlayerController player, Transform transform)
     {
@@ -47,9 +48,6 @@ public class Attack : BehaviourNode
             // animation trigger for attack goes here!
 
 
-
-            //_eyeSight.EyeTarget.ReceiveDamage();
-
             // increase heart rate
             HRGauge _heartRate = _player.GetHRGauge();
 
@@ -62,6 +60,8 @@ public class Attack : BehaviourNode
             return NodeState.RUNNING;
         }
 
-        return NodeState.FAILURE;
+        // lingering
+        parent.parent.SetData("agitated", true);
+        return NodeState.RUNNING;
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using BehaviourTree;
 
@@ -9,6 +10,7 @@ public class CheckPlayerInView : BehaviourNode
     private EyeSight _eyeSight;
     private float _waitCounter = 0;
     private bool _waiting = true;
+    private float _lingerCounter = 0;
 
     public CheckPlayerInView(EyeSight eyeSight)
     {
@@ -43,6 +45,21 @@ public class CheckPlayerInView : BehaviourNode
         } else
         {
             // UnityEngine.Debug.Log("Player not detected");
+
+            // linger a bit after player moves out of view
+            if (!_waiting)
+            {
+                UnityEngine.Debug.Log("Lingering");
+                float _attackLingerTime = (float)GetData("attackLingerTime");
+                _lingerCounter += UnityEngine.Time.deltaTime;
+
+                if (_lingerCounter < _attackLingerTime)
+                    return NodeState.SUCCESS;
+            }
+
+            UnityEngine.Debug.Log("Not lingering");
+            _lingerCounter = 0;
+            _waitCounter = 0;
             _waiting = true;
             return NodeState.FAILURE;
         }
