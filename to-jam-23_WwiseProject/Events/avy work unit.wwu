@@ -1,6 +1,436 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{C3EBA23F-6B22-4295-A265-17E5CA9BEE58}" SchemaVersion="110">
 	<Events>
-		<WorkUnit Name="avy work unit" ID="{C3EBA23F-6B22-4295-A265-17E5CA9BEE58}" PersistMode="Standalone"/>
+		<WorkUnit Name="avy work unit" ID="{C3EBA23F-6B22-4295-A265-17E5CA9BEE58}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="amb" ID="{EF4C234E-13B6-4EC2-ACCA-3CCAAD4C9649}" ShortID="169573925">
+					<ChildrenList>
+						<Event Name="Play_amb_eyeHum" ID="{E615136A-555C-4996-A9DD-674C3CFBECBF}">
+							<ChildrenList>
+								<Action Name="" ID="{28BA909F-1E56-4B2E-8B07-8CBFA07BAC72}" ShortID="75991333">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_eyeHum_lp" ID="{FC881CE4-1EB6-42FC-8E96-8A515F8C9944}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_amb_ghostFreq_lp" ID="{F651AD99-7E8A-4DE5-B310-24C555966F54}">
+							<ChildrenList>
+								<Action Name="" ID="{B9B74438-F4F6-4E04-83FF-D473541E7D70}" ShortID="108022580">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_ghostFreq_lp" ID="{A6250507-E522-4A2F-9FCE-7F4DDDCBC407}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_amb_hospitalDraft" ID="{3EBDF7BD-FE7D-4CB9-8702-1D1E3A771AF4}">
+							<ChildrenList>
+								<Action Name="" ID="{C9D03799-7CAA-4D78-A22D-C8265FFAF5D9}" ShortID="681933825">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_hospitalDraft_lp" ID="{5F4AFACD-AA87-4003-B38C-F3C929067991}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_amb_eyeHum" ID="{92DCF3AD-93C9-47C9-8C5A-D54A7CC823EB}">
+							<ChildrenList>
+								<Action Name="" ID="{481E7635-131E-41ED-B779-561D91D5D4E0}" ShortID="297098551">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_eyeHum_lp" ID="{FC881CE4-1EB6-42FC-8E96-8A515F8C9944}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_amb_ghostFreq_lp" ID="{87C67E29-FCCA-4DA8-BEC9-381D9E1D1D1E}">
+							<ChildrenList>
+								<Action Name="" ID="{5017D345-27A2-49FE-A9A9-5817A6E62B2C}" ShortID="807259862">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_ghostFreq_lp" ID="{A6250507-E522-4A2F-9FCE-7F4DDDCBC407}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_amb_hospitalDraft" ID="{CB09045D-02B9-48EA-87DF-3B38941E4E12}">
+							<ChildrenList>
+								<Action Name="" ID="{B6C53318-1C5A-4702-8A3D-7C50F1E05612}" ShortID="691759405">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="amb_hospitalDraft_lp" ID="{5F4AFACD-AA87-4003-B38C-F3C929067991}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="mus" ID="{4A826B8E-7525-417A-A68D-37A1A9AE8B21}" ShortID="503798183">
+					<ChildrenList>
+						<Folder Name="mus_unsafe_drone" ID="{14353FB0-1306-4DA5-970D-0C889DC358E5}" ShortID="116424581">
+							<ChildrenList>
+								<Event Name="Mute_mus_unsafe_drone" ID="{491A0C87-E343-487E-A1E7-820565326F98}">
+									<ChildrenList>
+										<Action Name="" ID="{DFE5EF69-B92C-4D75-9BB8-8056612B04CC}" ShortID="216717849">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="4"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_unsafe_drone" ID="{0A612EFA-4069-488A-95C7-C8D7C0050EA8}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_mus_unsafe_drone" ID="{5D3D2F92-DECC-4EFF-A52D-DA447D16929D}">
+									<ChildrenList>
+										<Action Name="" ID="{B41F2C6A-E6AD-4767-A557-C7BDB86E65C7}" ShortID="917036166">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_unsafe_drone" ID="{0A612EFA-4069-488A-95C7-C8D7C0050EA8}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Unmute_mus_unsafe_drone" ID="{2E99AB07-57B2-4F19-9F69-D23FD103BD41}">
+									<ChildrenList>
+										<Action Name="" ID="{510730B5-33FD-48D4-B092-E502A07CE270}" ShortID="54721035">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_unsafe_drone" ID="{0A612EFA-4069-488A-95C7-C8D7C0050EA8}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_mus_unsafe_drone" ID="{3E88B2B3-71DE-4814-B0B1-AFF1B7900151}">
+									<ChildrenList>
+										<Action Name="" ID="{E7896745-AFF7-4C8E-90D9-68BA0BBE46DE}" ShortID="231245954">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_unsafe_drone" ID="{0A612EFA-4069-488A-95C7-C8D7C0050EA8}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="mus_safe_drone" ID="{20EB0A46-0B1A-423E-922A-7B4C7813EDD4}" ShortID="809427671">
+							<ChildrenList>
+								<Event Name="Play_mus_safe_drone" ID="{30D081F2-15C7-466B-9B54-1C9EE5A6374E}">
+									<ChildrenList>
+										<Action Name="" ID="{46D521E4-CD91-4F79-B452-6FD861E62F15}" ShortID="354055857">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_safe_drone" ID="{B3F4E68F-814A-400C-8A7A-AE7B86CFA475}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Mute_mus_safe_drone" ID="{D6FA6D44-A2E5-4E37-A64D-1ADC967590EF}">
+									<ChildrenList>
+										<Action Name="" ID="{8FF9B939-E285-4D4B-90CB-6C04318B5BA8}" ShortID="427905671">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="4"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_safe_drone" ID="{B3F4E68F-814A-400C-8A7A-AE7B86CFA475}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Unmute_mus_safe_drone" ID="{765CF90F-9A52-47DA-92EB-504F5706E783}">
+									<ChildrenList>
+										<Action Name="" ID="{38CC8EEC-69E7-4642-9F05-B317353B1889}" ShortID="801001520">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_safe_drone" ID="{B3F4E68F-814A-400C-8A7A-AE7B86CFA475}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_mus_safe_drone" ID="{40C30C7E-4C20-4FDA-A046-7EDD4D676EA9}">
+									<ChildrenList>
+										<Action Name="" ID="{590F3821-75C9-491F-9D43-5803E045C51E}" ShortID="258470450">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_safe_drone" ID="{B3F4E68F-814A-400C-8A7A-AE7B86CFA475}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="mus_eyeDetection" ID="{752A0061-5DD0-4C90-A72A-8DCD5E4012CD}" ShortID="1048340565">
+							<ChildrenList>
+								<Event Name="Play_mus_eyeDetection" ID="{C8BE1772-09F6-4CAE-B2E0-18ACCE0EB947}">
+									<ChildrenList>
+										<Action Name="" ID="{33A4956C-08F4-4AA4-9095-3B53542CAE56}" ShortID="539022370">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_eyeDetection" ID="{41B7A77D-E885-4D93-B788-D7A3599824F8}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Mute_mus_eyeDetection" ID="{7D002C98-B0C1-43E3-95AA-9AEC22612984}">
+									<ChildrenList>
+										<Action Name="" ID="{1AD2551C-AF9E-4E2C-9DBC-EC3A5D54A113}" ShortID="157355531">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="4"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_eyeDetection" ID="{41B7A77D-E885-4D93-B788-D7A3599824F8}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Unmute_mus_eyeDetection" ID="{1C1998ED-A9CF-4EFB-8148-5EFEBF3CD367}">
+									<ChildrenList>
+										<Action Name="" ID="{35A64CC9-6EED-474D-ADE7-6C704E152BC9}" ShortID="634838123">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_eyeDetection" ID="{41B7A77D-E885-4D93-B788-D7A3599824F8}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_mus_eyeDetection" ID="{E6A32EDC-A9E8-4B7F-8B5C-902B8300280E}">
+									<ChildrenList>
+										<Action Name="" ID="{4C62A27C-1030-46C1-8AC3-F39FD6C84F36}" ShortID="624791098">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_eyeDetection" ID="{41B7A77D-E885-4D93-B788-D7A3599824F8}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="mus_safe_random" ID="{202EF345-A400-411B-8D5B-D40661FB059F}" ShortID="4499671">
+							<ChildrenList>
+								<Event Name="Play_mus_safe_random" ID="{CFACBD10-E119-43CF-94A4-479B69FC6258}">
+									<ChildrenList>
+										<Action Name="" ID="{5D013D0B-F08F-4375-9F1A-C2E21E2C5EE9}" ShortID="472840503">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_safe_random" ID="{5F73CC44-9E78-4CA0-A677-367E5D62ED1F}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Mute_mus_safe_random" ID="{FB2BF972-8B35-4423-A6E9-4438DFC3E99D}">
+									<ChildrenList>
+										<Action Name="" ID="{39522A8E-84E9-4A96-85F8-B09FC45787CE}" ShortID="183786718">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="4"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_safe_random" ID="{5F73CC44-9E78-4CA0-A677-367E5D62ED1F}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Unmute_mus_safe_random" ID="{C454493A-E4A7-48FA-BCBA-D4AD80829D91}">
+									<ChildrenList>
+										<Action Name="" ID="{CA48E2E7-436A-4545-BC41-D316D8A513FB}" ShortID="833651664">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_safe_random" ID="{5F73CC44-9E78-4CA0-A677-367E5D62ED1F}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_mus_safe_random" ID="{F4E19FED-F2E1-4B1D-84B2-D54F7A9F193B}">
+									<ChildrenList>
+										<Action Name="" ID="{8D6D0A1C-EC18-46A2-AA81-02B33F804F29}" ShortID="546490236">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_safe_random" ID="{5F73CC44-9E78-4CA0-A677-367E5D62ED1F}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="mus_unsafe_random" ID="{D496F876-54E6-4300-8F4C-71667FF56FA0}" ShortID="501696318">
+							<ChildrenList>
+								<Event Name="Mute_mus_unsafe_random" ID="{8487551E-A74C-4CFF-A518-536C443874B5}">
+									<ChildrenList>
+										<Action Name="" ID="{DD18EB4D-F76D-4DE4-8B17-556B88490C1F}" ShortID="1032609528">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="4"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_unsafe_random" ID="{2C66B8DD-BA6E-4291-8882-C07C41E1248F}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_mus_unsafe_random" ID="{8D32C9EA-FD73-41A2-957B-9A4622F88044}">
+									<ChildrenList>
+										<Action Name="" ID="{D28877CF-D195-4D9B-AF37-5B9A9CB791CE}" ShortID="1005389120">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_unsafe_random" ID="{2C66B8DD-BA6E-4291-8882-C07C41E1248F}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_mus_unsafe_random" ID="{F5D8B739-6A23-487B-8873-BC4A0FEC21BC}">
+									<ChildrenList>
+										<Action Name="" ID="{1FD3006F-2504-4D8B-BFE7-E754AC90C9AA}" ShortID="994888599">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_unsafe_random" ID="{2C66B8DD-BA6E-4291-8882-C07C41E1248F}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Unmute_mus_unsafe_random" ID="{DEC2C7E8-0464-4028-A70C-0D295B50C7B7}">
+									<ChildrenList>
+										<Action Name="" ID="{1053C279-601D-446B-BDB6-74D8CC152B14}" ShortID="208923508">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="mus_unsafe_random" ID="{2C66B8DD-BA6E-4291-8882-C07C41E1248F}" WorkUnitID="{6648A5E9-E1C4-49A5-B35F-8517162B5356}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="sfx" ID="{D1C644F4-348C-4408-9BEC-D3E9B0C2E6DB}" ShortID="935430300">
+					<ChildrenList>
+						<Event Name="Play_sfx_eyeSquelchies" ID="{2571D8C0-A625-4D13-B84B-6AAA33AFAD32}">
+							<ChildrenList>
+								<Action Name="" ID="{122166A6-C7BE-4E81-BB5F-5E60AD1A6A17}" ShortID="667021706">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_eyeSquelchies" ID="{8C712FC2-335D-4D68-A869-5D05F44E0BEF}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_grunt" ID="{FDF7FD7C-74C4-4F21-A2B2-4535891F3D03}">
+							<ChildrenList>
+								<Action Name="" ID="{82BD8026-4A1A-4E2E-86FD-14BE861ED4DF}" ShortID="621763968">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_grunt" ID="{7240F9D7-37B7-4D4A-847C-3741C87D97A5}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_heartbeat" ID="{D62C7E25-542F-48E3-84D9-4474950F4BD2}">
+							<ChildrenList>
+								<Action Name="" ID="{08DEC7AB-7493-45BE-89FE-39091276833A}" ShortID="894871132">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_heartbeat" ID="{02786E1F-FB3C-48B4-B043-9A19AE43DE2A}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_heavyBreathing_lp" ID="{D5150F5D-6094-4C1A-AAC2-8D13FA41AB7F}">
+							<ChildrenList>
+								<Action Name="" ID="{7FAD8D1B-1A87-4105-AF38-4824EE4CFDC2}" ShortID="14791902">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_heavyBreathing_lp" ID="{481CAD93-AFF3-4C8C-AB9B-FAD4F87B2182}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_deathGrunt" ID="{E407997C-66A8-4511-BC0A-990ED3DBE972}">
+							<ChildrenList>
+								<Action Name="" ID="{B9325693-BF43-40B5-AB8A-318F6C07BE2D}" ShortID="782933167">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_deathGrunt" ID="{4AA822BE-CA79-48C2-AA1E-2E05F2EE60B6}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</Events>
 </WwiseDocument>
