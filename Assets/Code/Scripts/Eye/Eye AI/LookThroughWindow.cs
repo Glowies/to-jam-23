@@ -10,10 +10,12 @@ public class LookThroughWindow : BehaviourNode
     private float _waitCounter = 0;
     private Transform _eyeTransform;
     private RoomManager _roomManager;
+    private Animator _animController;
 
-    public LookThroughWindow(Transform transform)
+    public LookThroughWindow(Transform transform, Animator animController)
     {
         _eyeTransform = transform;
+        _animController = animController;
     }
 
     public override NodeState _Evaluate()
@@ -32,6 +34,9 @@ public class LookThroughWindow : BehaviourNode
         }
 
         _waitCounter += UnityEngine.Time.deltaTime;
+        
+        // animation trigger to stop attack goes here!
+        _animController.SetBool("isAttacking", false);
 
         if (_waitCounter > (float)GetData("idleOnWindowWaitTime"))
         {
