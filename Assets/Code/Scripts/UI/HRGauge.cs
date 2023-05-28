@@ -22,14 +22,15 @@ namespace UI
         
         // --------------- Bookkeeping ---------------
         [SerializeField] private GameObject _gaugeScaler;
-        [SerializeField] private GameObject _heartImage;
-        [SerializeField] private GameObject _pulseImage;
-        [SerializeField] private GameObject _pulseImage2;
+        [SerializeField] private Image _heartImage;
+        [SerializeField] private Image _pulseImage;
+        [SerializeField] private Image _pulseImage2;
         private Controls.HRGauge _heartImageRateController;
         
         private State _state;
 
-        private Vector3 _heartImageStartScale;
+        private Vector3 _heartImageStartScale, _pulseImageStartScale;
+        private Color _pulseImageStartColor;
         private readonly WaitForSeconds _waitForHeartBeat = new WaitForSeconds(0.1f);
         private readonly WaitForSeconds _waitForHeavyPace = new WaitForSeconds(0.3f);
         private readonly WaitForSeconds _waitForNormalPace = new WaitForSeconds(0.8f);
@@ -37,6 +38,11 @@ namespace UI
         private void Start()
         {
             _heartImageStartScale = _heartImage.transform.localScale;
+            _pulseImageStartScale = _pulseImage.transform.localScale;
+            
+            Color color = _pulseImage.color;
+            _pulseImageStartColor = new Color(color.r, color.g, color.b, 0.5f);
+            
             _state = State.NormalBeating;
             StartCoroutine(NormalPulse());
             
@@ -87,12 +93,23 @@ namespace UI
         {
             while (_state == State.HeavyBeating)
             {
+                _pulseImage.transform.localScale = _pulseImageStartScale;
+                _pulseImage2.transform.localScale = _pulseImageStartScale;
+                
                 _heartImage.transform.localScale = _heartImageStartScale;
                 
                 // TODO: Match timing with the SFX of the heart beating later
                 _heartImage.transform.DOScale(_heartImageStartScale * 1.1f, 0.08f);
 
+                _pulseImage.color = _pulseImageStartColor;
+                _pulseImage.transform.DOScale(_pulseImageStartScale * 2, 0.3f);
+                _pulseImage.DOFade(0f, 0.3f);
+
                 yield return this._waitForHeartBeat;
+                
+                _pulseImage2.color = _pulseImageStartColor;
+                _pulseImage2.transform.DOScale(_pulseImageStartScale * 2, 0.3f);
+                _pulseImage2.DOFade(0f, 0.3f);
                 
                 // Scale heart back
                 _heartImage.transform.DOScale(_heartImageStartScale, 0.08f);
