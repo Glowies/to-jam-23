@@ -5036,9 +5036,9 @@ MonoBehaviour:
   windowSwitchTime: 0.5
   roomSwitchTime: 1
   decreaseMaxHRPerSecond: -0.1
-  eyeWindowZOffset: 7
+  eyeWindowZOffset: 8
   eyeRoomZOffset: 10
-  eyeWindowAttackingZOffset: 3
+  eyeWindowAttackingZOffset: 5
 --- !u!1 &4845888082243147921
 GameObject:
   m_ObjectHideFlags: 0
