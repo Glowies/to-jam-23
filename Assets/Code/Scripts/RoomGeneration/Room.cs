@@ -7,7 +7,6 @@ using UnityEngine.Events;
 public class Room : MonoBehaviour {
   [SerializeField] private float _width;
   [SerializeField] private GameObject _frontWall;
-  [SerializeField] private MeshRenderer _frontWallCoverMeshRenderer;
   [SerializeField] private CheckpointTrigger _checkpointTrigger;
   [SerializeField] private List<Transform> _windowTransforms;
 
@@ -15,7 +14,7 @@ public class Room : MonoBehaviour {
   public UnityEvent OnRoomEntered;
   public List<Vector3> Windows;
 
-  private Material _frontWallCoverMaterial;
+  private List<Material> _frontWallCoverMaterials;
 
   public Vector3 RightEdge {
     get {
@@ -26,11 +25,15 @@ public class Room : MonoBehaviour {
   }
 
   public void Show(float transparency = 0f) {
-    this._frontWallCoverMaterial.DOFade(transparency, 0.3f);
+    foreach (Material frontWallCoverMaterial in this._frontWallCoverMaterials) {
+      frontWallCoverMaterial.DOFade(transparency, 0.3f);
+    }
   }
 
   public void Hide() {
-    this._frontWallCoverMaterial.DOFade(1f, 0.3f);
+    foreach (Material frontWallCoverMaterial in this._frontWallCoverMaterials) {
+      frontWallCoverMaterial.DOFade(1f, 2f);
+    }
   }
 
   public GameObject DetachFrontWall() {
@@ -39,8 +42,15 @@ public class Room : MonoBehaviour {
   }
 
   private void Awake() {
-    this._frontWallCoverMaterial = this._frontWallCoverMeshRenderer.material;
     this.Windows = this._windowTransforms.Select(winTransform => winTransform.position).ToList();
+
+    List<MeshRenderer> frontWallCoverMeshRenderers = this._frontWall.GetComponentsInChildren<MeshRenderer>().ToList();
+    print($"Renderers: {frontWallCoverMeshRenderers.Count}");
+    this._frontWallCoverMaterials = new List<Material>();
+    foreach (MeshRenderer meshRenderer in frontWallCoverMeshRenderers) {
+      this._frontWallCoverMaterials.AddRange(meshRenderer.materials);
+    }
+    print($"Materials: {this._frontWallCoverMaterials.Count}");
   }
 
   private void Start() {
