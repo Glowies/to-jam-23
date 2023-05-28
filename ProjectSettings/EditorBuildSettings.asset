@@ -10,8 +10,5 @@ EditorBuildSettings:
     guid: ca09ec49c9eef41529913478a6a70ddb
   - enabled: 1
     path: Assets/Level/Scenes/Game.unity
-    guid: 69f2c2c2803b54532b7203998cb304d4
-  - enabled: 1
-    path: Assets/Level/Scenes/eon704.unity
     guid: f2bb978a7dd1d475b94a60fefda3c8f1
   m_configObjects: {}
