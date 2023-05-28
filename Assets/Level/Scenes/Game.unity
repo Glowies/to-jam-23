@@ -4086,7 +4086,7 @@ PrefabInstance:
     - target: {fileID: 4845888082238818238, guid: 607252659b5688f4bb20ac28b429cb45,
         type: 3}
       propertyPath: decreaseMaxHRPerSecond
-      value: -0.1
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4845888082238818239, guid: 607252659b5688f4bb20ac28b429cb45,
         type: 3}
