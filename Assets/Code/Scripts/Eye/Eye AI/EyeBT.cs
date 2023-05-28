@@ -13,6 +13,7 @@ public class EyeBT : BehaviourTree.Tree
     public EyeSight eyeSight;
     public PlayerController player;
     public RoomManager roomManager;
+    public Animator animController;
 
     [Header("Transition Timings")]
     public float idleWaitTime = 5f;
@@ -49,10 +50,10 @@ public class EyeBT : BehaviourTree.Tree
                 new Sequence (new List<BehaviourNode>
                 {
                     new CheckPlayerInView(eyeSight),
-                    new Attack(eyeSight, player, transform)
+                    new Attack(eyeSight, player, animController, transform)
                 }),
                 // idling while looking thru window
-                new LookThroughWindow(transform),
+                new LookThroughWindow(transform, animController),
                 // switch windows
                 new SwitchWindows(transform, roomManager)
             }),
