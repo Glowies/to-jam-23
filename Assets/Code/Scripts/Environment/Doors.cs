@@ -1,10 +1,12 @@
+using Controls;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class Doors : MonoBehaviour {
   [SerializeField] private Transform _explosionForceOrigin;
-  [SerializeField] private float _explosionForce;
+  [SerializeField] private float _walkForce;
+  [SerializeField] private float _runForce;
   [SerializeField] private float _explosionRaduis;
   [SerializeField] private List<Rigidbody> _doorRigidbodies;
 
@@ -43,8 +45,13 @@ public class Doors : MonoBehaviour {
     if (!other.gameObject.CompareTag("Player"))
       return;
 
+    PlayerController playerController = other.GetComponent<PlayerController>();
+    if (!playerController)
+      return;
+
+    float explosionForce = playerController.GetPlayerState() is RunningState ? this._runForce : this._walkForce;
     foreach (Rigidbody doorRigidbody in this._doorRigidbodies) {
-      doorRigidbody.AddExplosionForce(this._explosionForce, this._explosionForceOrigin.position, this._explosionRaduis);
+      doorRigidbody.AddExplosionForce(explosionForce, this._explosionForceOrigin.position, this._explosionRaduis);
     }
   }
 }
