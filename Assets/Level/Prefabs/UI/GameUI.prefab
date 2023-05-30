@@ -1758,7 +1758,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2465,7 +2465,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3364,7 +3364,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3612,21 +3612,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   highlight: {r: 1, g: 0.58431375, b: 0, a: 1}
-  one: {fileID: 8571743541695653956}
-  oneScore: {fileID: 5113672995051785316}
-  oneName: {fileID: 6545032746425755027}
-  two: {fileID: 8200997317915701503}
-  twoScore: {fileID: 7581694119609614718}
-  twoName: {fileID: 3835066094463145616}
-  three: {fileID: 4958575418824066376}
-  threeScore: {fileID: 5192661135157757220}
-  threeName: {fileID: 2037545411365637647}
-  four: {fileID: 1307232989374081843}
-  fourScore: {fileID: 7058135309901833266}
-  fourName: {fileID: 7043965335852044697}
-  five: {fileID: 6492654205495257969}
-  fiveScore: {fileID: 5102071535639233353}
-  fiveName: {fileID: 1856817285370719358}
+  _one: {fileID: 8571743541695653956}
+  _oneScore: {fileID: 5113672995051785316}
+  _oneName: {fileID: 6545032746425755027}
+  _two: {fileID: 8200997317915701503}
+  _twoScore: {fileID: 7581694119609614718}
+  _twoName: {fileID: 3835066094463145616}
+  _three: {fileID: 4958575418824066376}
+  _threeScore: {fileID: 5192661135157757220}
+  _threeName: {fileID: 2037545411365637647}
+  _four: {fileID: 1307232989374081843}
+  _fourScore: {fileID: 7058135309901833266}
+  _fourName: {fileID: 7043965335852044697}
+  _five: {fileID: 6492654205495257969}
+  _fiveScore: {fileID: 5102071535639233353}
+  _fiveName: {fileID: 1856817285370719358}
 --- !u!1 &3753291413995133361
 GameObject:
   m_ObjectHideFlags: 0
@@ -4428,7 +4428,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -6015,7 +6015,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0

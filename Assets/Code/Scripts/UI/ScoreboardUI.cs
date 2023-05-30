@@ -6,73 +6,73 @@ using TMPro;
 public class ScoreboardUI : MonoBehaviour {
     public Color defaultColor, highlight;
 
-    public TMP_Text one, oneScore, oneName;
-    public TMP_Text two, twoScore, twoName;
-    public TMP_Text three, threeScore, threeName;
-    public TMP_Text four, fourScore, fourName;
-    public TMP_Text five, fiveScore, fiveName;
+    [SerializeField] public TMP_Text _one, _oneScore, _oneName;
+    [SerializeField] public TMP_Text _two, _twoScore, _twoName;
+    [SerializeField] public TMP_Text _three, _threeScore, _threeName;
+    [SerializeField] public TMP_Text _four, _fourScore, _fourName;
+    [SerializeField] public TMP_Text _five, _fiveScore, _fiveName;
 
     void OnEnable() {
-        one.color = defaultColor;
-        oneScore.color = defaultColor;
-        oneName.color = defaultColor;
+        _one.color = defaultColor;
+        _oneScore.color = defaultColor;
+        _oneName.color = defaultColor;
 
-        oneScore.text = PlayerPrefs.GetFloat("highScore1") + "m, Room " + PlayerPrefs.GetInt("highScoreRooms1");
-        oneName.text = PlayerPrefs.GetString("name1");
+        _oneScore.text = PlayerPrefs.GetFloat("highScore1") + "m, Room " + PlayerPrefs.GetInt("highScoreRooms1");
+        _oneName.text = PlayerPrefs.GetString("name1");
 
-        two.color = defaultColor;
-        twoScore.color = defaultColor;
-        twoName.color = defaultColor;
+        _two.color = defaultColor;
+        _twoScore.color = defaultColor;
+        _twoName.color = defaultColor;
 
-        twoScore.text = PlayerPrefs.GetFloat("highScore2") + "m, Room " + PlayerPrefs.GetInt("highScoreRooms2");
-        twoName.text = PlayerPrefs.GetString("name2");
+        _twoScore.text = PlayerPrefs.GetFloat("highScore2") + "m, Room " + PlayerPrefs.GetInt("highScoreRooms2");
+        _twoName.text = PlayerPrefs.GetString("name2");
 
-        three.color = defaultColor;
-        threeScore.color = defaultColor;
-        threeName.color = defaultColor;
+        _three.color = defaultColor;
+        _threeScore.color = defaultColor;
+        _threeName.color = defaultColor;
 
-        threeScore.text = PlayerPrefs.GetFloat("highScore3") + "m, Room " + PlayerPrefs.GetInt("highScoreRooms3");
-        threeName.text = PlayerPrefs.GetString("name3");
+        _threeScore.text = PlayerPrefs.GetFloat("highScore3") + "m, Room " + PlayerPrefs.GetInt("highScoreRooms3");
+        _threeName.text = PlayerPrefs.GetString("name3");
 
-        four.color = defaultColor;
-        fourScore.color = defaultColor;
-        fourName.color = defaultColor;
+        _four.color = defaultColor;
+        _fourScore.color = defaultColor;
+        _fourName.color = defaultColor;
 
-        fourScore.text = PlayerPrefs.GetFloat("highScore4") + "m, Room " + PlayerPrefs.GetInt("highScoreRooms4");
-        fourName.text = PlayerPrefs.GetString("name4");
+        _fourScore.text = PlayerPrefs.GetFloat("highScore4") + "m, Room " + PlayerPrefs.GetInt("highScoreRooms4");
+        _fourName.text = PlayerPrefs.GetString("name4");
 
-        five.color = defaultColor;
-        fiveScore.color = defaultColor;
-        fiveName.color = defaultColor;
+        _five.color = defaultColor;
+        _fiveScore.color = defaultColor;
+        _fiveName.color = defaultColor;
 
-        fiveScore.text = PlayerPrefs.GetFloat("highScore5") + "m, Room " + PlayerPrefs.GetInt("highScoreRooms5");
-        fiveName.text = PlayerPrefs.GetString("name5");
+        _fiveScore.text = PlayerPrefs.GetFloat("highScore5") + "m, Room " + PlayerPrefs.GetInt("highScoreRooms5");
+        _fiveName.text = PlayerPrefs.GetString("name5");
 
         switch (LeaderboardManager.Instance.GetPlacement()) {
             case 1:
-                one.color = highlight;
-                oneScore.color = highlight;
-                oneName.color = highlight;
+                _one.color = highlight;
+                _oneScore.color = highlight;
+                _oneName.color = highlight;
                 break;
             case 2:
-                two.color = highlight;
-                twoScore.color = highlight;
-                twoName.color = highlight;
+                _two.color = highlight;
+                _twoScore.color = highlight;
+                _twoName.color = highlight;
                 break;
             case 3:
-                three.color = highlight;
-                threeScore.color = highlight;
-                threeName.color = highlight;
+                _three.color = highlight;
+                _threeScore.color = highlight;
+                _threeName.color = highlight;
                 break;
             case 4:
-                four.color = highlight;
-                fourScore.color = highlight;
-                fourName.color = highlight;
+                _four.color = highlight;
+                _fourScore.color = highlight;
+                _fourName.color = highlight;
                 break;
             case 5:
-                five.color = highlight;
-                fiveScore.color = highlight;
-                fiveName.color = highlight;
+                _five.color = highlight;
+                _fiveScore.color = highlight;
+                _fiveName.color = highlight;
                 break;
         }
     }

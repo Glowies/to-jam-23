@@ -7,8 +7,6 @@ public class LeaderboardManager : Singleton<LeaderboardManager>
     public UnityEvent OnLeaderboardConfirmed;
     
     [SerializeField] private TMP_Text _initialOneText, _initialTwoText, _initialThreeText;
-    private float _distance;
-    // private int _;
     private int _leaderboardPlacement;
     
     // If there are no high scores entered yet, hard code some scores in
@@ -17,7 +15,7 @@ public class LeaderboardManager : Singleton<LeaderboardManager>
         base.Awake();
         OnLeaderboardConfirmed = new UnityEvent();
         
-        // if (!PlayerPrefs.HasKey("highScore1")) {
+        if (!PlayerPrefs.HasKey("highScore1")) {
             PlayerPrefs.SetFloat("highScore1", 100);
             PlayerPrefs.SetInt("highScoreRooms1", 2);
             PlayerPrefs.SetString("name1","FNL");
@@ -39,7 +37,7 @@ public class LeaderboardManager : Singleton<LeaderboardManager>
             PlayerPrefs.SetString("name5","ZZZ");
 
             PlayerPrefs.Save();
-        // }
+        }
     }
 
     public int GetPlacement()
