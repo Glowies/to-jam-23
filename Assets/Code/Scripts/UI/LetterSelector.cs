@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 
 namespace UI {
+    [RequireComponent(typeof(TMP_Text))]
     public class LetterSelector : MonoBehaviour {
 
         private enum Letter {
@@ -12,10 +13,15 @@ namespace UI {
             Heart, Space
         }
 
-        public TMP_Text letterText;
+        private TMP_Text _letterText;
         private Letter _letter = Letter.A;
 
         private int _letterIndex = 0;
+
+        private void Awake()
+        {
+            _letterText = GetComponent<TMP_Text>();
+        }
 
         public void ScrollLetterUp()
         {
@@ -27,7 +33,7 @@ namespace UI {
                 _letter--;
             }
             
-            ChangeLetter(_letter, letterText);
+            ChangeLetter(_letter, _letterText);
         }
         
         public void ScrollLetterDown()
@@ -40,7 +46,7 @@ namespace UI {
                 _letter++;
             }
             
-            ChangeLetter(_letter, letterText);
+            ChangeLetter(_letter, _letterText);
         }
 
         void ChangeLetter(Letter selectedLetter, TMP_Text selectedLetterText) {

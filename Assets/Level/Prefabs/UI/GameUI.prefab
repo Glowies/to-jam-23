@@ -705,7 +705,6 @@ GameObject:
   - component: {fileID: 7383580241241503907}
   - component: {fileID: 1590333083516229609}
   - component: {fileID: 3377006048690598787}
-  - component: {fileID: 6657970163523507478}
   m_Layer: 5
   m_Name: Down
   m_TagString: Untagged
@@ -815,7 +814,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6657970163523507478}
+      - m_Target: {fileID: 6899458368402317778}
         m_TargetAssemblyTypeName: UI.LetterSelector, Assembly-CSharp
         m_MethodName: ScrollLetterDown
         m_Mode: 1
@@ -827,19 +826,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6657970163523507478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 675826845792197096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec71052ef405d14db35091b1e2503f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  letterText: {fileID: 6758937883351322419}
 --- !u!1 &944506724101362155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,7 +1110,6 @@ GameObject:
   - component: {fileID: 6619576678578184465}
   - component: {fileID: 4683661832688513027}
   - component: {fileID: 1816748223366110396}
-  - component: {fileID: 9127066996455770006}
   m_Layer: 5
   m_Name: Up
   m_TagString: Untagged
@@ -1234,7 +1219,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9127066996455770006}
+      - m_Target: {fileID: 6899458368402317778}
         m_TargetAssemblyTypeName: UI.LetterSelector, Assembly-CSharp
         m_MethodName: ScrollLetterUp
         m_Mode: 1
@@ -1246,19 +1231,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &9127066996455770006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260295916333475807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec71052ef405d14db35091b1e2503f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  letterText: {fileID: 6758937883351322419}
 --- !u!1 &1303657012987311582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,7 +1529,6 @@ GameObject:
   - component: {fileID: 5147819544476898926}
   - component: {fileID: 3693070031228374277}
   - component: {fileID: 3234945925518892410}
-  - component: {fileID: 5764863149326270672}
   m_Layer: 5
   m_Name: Up
   m_TagString: Untagged
@@ -1667,7 +1638,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5764863149326270672}
+      - m_Target: {fileID: 667232660142361121}
         m_TargetAssemblyTypeName: UI.LetterSelector, Assembly-CSharp
         m_MethodName: ScrollLetterUp
         m_Mode: 1
@@ -1679,19 +1650,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &5764863149326270672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380286855215039605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec71052ef405d14db35091b1e2503f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  letterText: {fileID: 2305974019216640614}
 --- !u!1 &1631892826008679899
 GameObject:
   m_ObjectHideFlags: 0
@@ -3813,7 +3771,6 @@ GameObject:
   - component: {fileID: 1803213643118598007}
   - component: {fileID: 7852151637753336800}
   - component: {fileID: 5299934930277815188}
-  - component: {fileID: 9113835347711466841}
   m_Layer: 5
   m_Name: Down
   m_TagString: Untagged
@@ -3923,7 +3880,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9113835347711466841}
+      - m_Target: {fileID: 667232660142361121}
         m_TargetAssemblyTypeName: UI.LetterSelector, Assembly-CSharp
         m_MethodName: ScrollLetterDown
         m_Mode: 1
@@ -3935,19 +3892,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &9113835347711466841
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3930493990920499844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec71052ef405d14db35091b1e2503f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  letterText: {fileID: 2305974019216640614}
 --- !u!1 &3954516507037880903
 GameObject:
   m_ObjectHideFlags: 0
@@ -4926,6 +4870,7 @@ GameObject:
   - component: {fileID: 4312359295882452816}
   - component: {fileID: 1112902025536688244}
   - component: {fileID: 1321219097998795521}
+  - component: {fileID: 1625343061525962455}
   m_Layer: 5
   m_Name: Selector
   m_TagString: Untagged
@@ -5050,6 +4995,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1625343061525962455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4293707785362093337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec71052ef405d14db35091b1e2503f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4370329724650365906
 GameObject:
   m_ObjectHideFlags: 0
@@ -5200,7 +5157,6 @@ GameObject:
   - component: {fileID: 2830636493249406610}
   - component: {fileID: 8932218359255048080}
   - component: {fileID: 3725913779659455941}
-  - component: {fileID: 3840769848162458154}
   m_Layer: 5
   m_Name: Down
   m_TagString: Untagged
@@ -5310,7 +5266,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3840769848162458154}
+      - m_Target: {fileID: 1625343061525962455}
         m_TargetAssemblyTypeName: UI.LetterSelector, Assembly-CSharp
         m_MethodName: ScrollLetterDown
         m_Mode: 1
@@ -5322,19 +5278,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3840769848162458154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4595442304566020797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec71052ef405d14db35091b1e2503f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  letterText: {fileID: 1321219097998795521}
 --- !u!1 &4841086893395147597
 GameObject:
   m_ObjectHideFlags: 0
@@ -7383,6 +7326,7 @@ GameObject:
   - component: {fileID: 3866451560923983206}
   - component: {fileID: 7815495899139525566}
   - component: {fileID: 6758937883351322419}
+  - component: {fileID: 6899458368402317778}
   m_Layer: 5
   m_Name: Selector
   m_TagString: Untagged
@@ -7507,6 +7451,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6899458368402317778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7832538024342467800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec71052ef405d14db35091b1e2503f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8203577974175442650
 GameObject:
   m_ObjectHideFlags: 0
@@ -7729,6 +7685,7 @@ GameObject:
   - component: {fileID: 6609399829130689820}
   - component: {fileID: 8541117414721058658}
   - component: {fileID: 2305974019216640614}
+  - component: {fileID: 667232660142361121}
   m_Layer: 5
   m_Name: Selector
   m_TagString: Untagged
@@ -7853,6 +7810,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &667232660142361121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627806141679782640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec71052ef405d14db35091b1e2503f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8856625343720628342
 GameObject:
   m_ObjectHideFlags: 0
@@ -8436,7 +8405,6 @@ GameObject:
   - component: {fileID: 4175447254977685543}
   - component: {fileID: 758745658352348948}
   - component: {fileID: 2951431427022225431}
-  - component: {fileID: 4068693337916835304}
   m_Layer: 5
   m_Name: Up
   m_TagString: Untagged
@@ -8546,7 +8514,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4068693337916835304}
+      - m_Target: {fileID: 1625343061525962455}
         m_TargetAssemblyTypeName: UI.LetterSelector, Assembly-CSharp
         m_MethodName: ScrollLetterUp
         m_Mode: 1
@@ -8558,19 +8526,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4068693337916835304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9144413734356729673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fec71052ef405d14db35091b1e2503f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  letterText: {fileID: 1321219097998795521}
 --- !u!1 &9209294478251421173
 GameObject:
   m_ObjectHideFlags: 0
