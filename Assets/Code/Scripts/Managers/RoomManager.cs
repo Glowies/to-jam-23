@@ -18,19 +18,22 @@ public class RoomManager : MonoBehaviour {
   [SerializeField] private Room _nextNextRoom; // 3rd
 
   private Transform _transform;
+  private UnityAction _updateRoomCount;
   private readonly WaitForSeconds _waitForTenSeconds = new WaitForSeconds(10f);
-
-  public UnityEvent<int> OnRoomCountUpdate = new UnityEvent<int>();
-  private int _roomCount = 1;
 
   private void Awake() {
     this._transform = this.transform;
   }
 
-  private void Start() {
+  private void Start()
+  {
+    _updateRoomCount = ScoreManager.Instance.UpdateRoomCount;
     this._currentRoom = this._startRoom;
     this._nextRoom = this._startNextRoom;
+    
     this._nextRoom.OnRoomEntered.AddListener(this.OnEnteredNextRoom);
+    this._nextRoom.OnRoomEntered.AddListener(_updateRoomCount);
+    
     this.InstantiateNextNextRoom();
   }
 
@@ -50,6 +53,7 @@ public class RoomManager : MonoBehaviour {
     position.x += this._nextRoomPrefab.Width / 2f;
     this._nextNextRoom = Instantiate(this._nextRoomPrefab, position, Quaternion.identity, this._transform);
     this._nextNextRoom.OnRoomEntered.AddListener(this.OnEnteredNextRoom);
+    this._nextNextRoom.OnRoomEntered.AddListener(_updateRoomCount);
   }
 
   private void RandomSelectNextPrefab() {
@@ -66,8 +70,6 @@ public class RoomManager : MonoBehaviour {
     this._previousRoom = this._currentRoom;
     this._currentRoom = this._nextRoom;
     this._nextRoom = this._nextNextRoom;
-    _roomCount++;
-    OnRoomCountUpdate?.Invoke(_roomCount);
 
     this.InstantiateNextNextRoom();
   }

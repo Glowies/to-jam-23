@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Controls
@@ -23,11 +21,9 @@ namespace Controls
         // TODO: The HRGauge should only be exposed to other classes by the provided method GetHRGauge()
         private HRGauge _heartRate = new HRGauge();
 
-        // ----------------- Events ------------------
-        public UnityEvent<float> OnScoreUpdate = new UnityEvent<float>();
-        
         // --------------- Bookkeeping ---------------
         // TODO: If we want to extend the player movement to incorporate a rigidbody, but for now we won't
+        private ScoreManager _scoreKeeper;
         private Rigidbody _rBody;
         private float _startXPos;
         public float BaseSpeed;
@@ -45,6 +41,8 @@ namespace Controls
             // Need this due to race condition during scene Awake->OnEnable calls
             this._playerInputActions = PlayerInputController.Instance.PlayerInputActions;
             OnEnable();
+
+            _scoreKeeper = ScoreManager.Instance;
         }
 
         // Update is called once per frame
@@ -59,8 +57,8 @@ namespace Controls
 
         private void CalculateScore()
         {
-            float score = Mathf.Round(transform.position.x - _startXPos);
-            OnScoreUpdate?.Invoke(score);
+            float distance = Mathf.Round(transform.position.x - _startXPos);
+            _scoreKeeper.SetDistance(distance);
         }
 
         // --------------- Getters ---------------

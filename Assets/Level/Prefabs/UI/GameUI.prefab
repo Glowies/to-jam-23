@@ -2828,6 +2828,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2252034745079492052}
+  - component: {fileID: 934509505624205826}
   m_Layer: 5
   m_Name: GameOverUI
   m_TagString: Untagged
@@ -2859,6 +2860,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &934509505624205826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2844874377969020155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331af14c5ffbea941ad6d321368b1ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _finalScoreText: {fileID: 8662746149724875043}
 --- !u!1 &2914651175375697127
 GameObject:
   m_ObjectHideFlags: 0
@@ -6999,8 +7013,6 @@ MonoBehaviour:
   _gameOverUI: {fileID: 2844874377969020155}
   _leaderboardSetterUI: {fileID: 0}
   _scoreboardUI: {fileID: 0}
-  _distanceKeeper: {fileID: 0}
-  _roomCountKeeper: {fileID: 0}
 --- !u!1 &7325626796212306104
 GameObject:
   m_ObjectHideFlags: 0
@@ -7151,7 +7163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6647819218498758889
 RectTransform:
   m_ObjectHideFlags: 0

@@ -6,29 +6,23 @@ namespace UI
     [RequireComponent(typeof(TMP_Text))]
     public class DistanceUI : MonoBehaviour
     {
-        // --------------- Bookkeeping ---------------
-        private float _distance;
         private TMP_Text _scoreText;
 
         private void Start()
         {
-            // Expensive, but this will only be called at the start
-            FindObjectOfType<Controls.PlayerController>().OnScoreUpdate.AddListener(OnScoreUpdate);
+            ScoreManager.Instance.OnScoreUpdate.AddListener(OnScoreUpdate);
 
             _scoreText = GetComponent<TMP_Text>();
-        }
-
-        public float GetDistance()
-        {
-            return _distance;
-        }
-
-        private void OnScoreUpdate(float score)
-        {
-            _distance = score;
             
+            // Set initial score
+            var score = ScoreManager.Instance.GetScore();
+            _scoreText.text = score.Item1 + "m";
+        }
+
+        private void OnScoreUpdate(float distance, int roomsTraversed)
+        {
             // TODO: If we want a cool counter for later, this should be updated
-            _scoreText.text = score + "m";
+            _scoreText.text = distance + "m";
         }
     }
 }

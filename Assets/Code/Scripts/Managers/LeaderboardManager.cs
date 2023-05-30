@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using TMPro;
 
 public class LeaderboardManager : Singleton<LeaderboardManager> 
 {
-    [SerializeField] private GameUI _gameUI;
-    [SerializeField] private TMP_Text _letterOneText, _letterTwoText, _letterThreeText;
+    public UnityEvent OnLeaderboardConfirmed;
+    
+    [SerializeField] private TMP_Text _initialOneText, _initialTwoText, _initialThreeText;
+    private float _distance;
+    // private int _;
     private int _leaderboardPlacement;
     
     // If there are no high scores entered yet, hard code some scores in
     protected override void Awake()
     {
         base.Awake();
+        OnLeaderboardConfirmed = new UnityEvent();
         
         // if (!PlayerPrefs.HasKey("highScore1")) {
             PlayerPrefs.SetFloat("highScore1", 100);
@@ -45,11 +48,15 @@ public class LeaderboardManager : Singleton<LeaderboardManager>
     }
     
     // Returns the placement in the leaderboard if the player placed (1-5) or -1 otherwise
-    public int SetPlacement(float distance, int roomsTraversed)
+    public int CalculatePlacement()
     {
+        var score = ScoreManager.Instance.GetScore();
+        float distance = score.Item1;
+        int roomsTraversed = score.Item2;
+        
         int placement = -1;
         
-        // Compare the current distance to the existing distanceboard
+        // Compare the current distance to the existing leaderboard
         if (distance >= PlayerPrefs.GetFloat("highScore1")) {
             placement = 1;
 
@@ -124,12 +131,8 @@ public class LeaderboardManager : Singleton<LeaderboardManager>
 
     public void ConfirmLeaderboardEntry()
     {
-        PlayerPrefs.SetString("name" + _leaderboardPlacement, _letterOneText.text + _letterTwoText.text + _letterThreeText.text);
-        _gameUI.ShowLeaderboard();
-    }
-    
-    public void CloseEndGameLeaderboard()
-    {
-        _gameUI.ShowGameOver();
+        // Save the name data to the leaderboard
+        PlayerPrefs.SetString("name" + _leaderboardPlacement, _initialOneText.text + _initialTwoText.text + _initialThreeText.text);
+        OnLeaderboardConfirmed?.Invoke();
     }
 }
