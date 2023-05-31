@@ -16,7 +16,12 @@ namespace Controls {
             // TODO: Spawn some game over menu
         }
         
-        public void Movement(Transform player, HRGauge heartRate, Action playerDeath, float baseSpeed)
+        public float GetMovementSpeed()
+        {
+            return 0f;
+        }
+        
+        public void Movement(Transform player, HRGauge heartRate, Action playerDeath)
         {
             // TODO: You're dead! So nothing happens unless we want to change this
         }

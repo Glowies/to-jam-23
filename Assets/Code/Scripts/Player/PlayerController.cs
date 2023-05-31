@@ -10,11 +10,17 @@ namespace Controls
     public class PlayerController : MonoBehaviour
     {
         // --------------- Player State --------------
-        private static WalkingState _walking = new WalkingState();
-        private static RunningState _running = new RunningState();
-        private static HidingState _hiding = new HidingState();
-        private static DyingState _dying = new DyingState();
+        private static WalkingState _walking;
+        private static RunningState _running;
+        private static HidingState _hiding;
+        private static DyingState _dying;
         private PlayerState _state;
+        
+        // For movement testing, allow speeds to be set through the editor
+        [Header("State speed parameters")]
+        [SerializeField] private float _walkingSpeed, _runningSpeed;
+        [SerializeField] private float _walkingSpeedBlendDuration, _runningSpeedBlendDuration;
+        [SerializeField] private float _walkingHeartRateDecrease, _runningHeartRateIncrease, _hidingHeartRateIncrease;
 
         // ----------------- HR Gauge ----------------
         // Player HAS-A HeartRate Gauge;
@@ -27,16 +33,21 @@ namespace Controls
         private Rigidbody _rBody;
         public Animator _animator;
         private float _startXPos;
-        public float BaseSpeed;
         private float animatorSpeedValue = 0;
 
         private PlayerInputActions _playerInputActions;
 
         void Awake()
         {
+            _walking = new WalkingState(_walkingSpeed, _walkingSpeedBlendDuration, _walkingHeartRateDecrease);
+            _running = new RunningState(_runningSpeed, _runningSpeedBlendDuration, _runningHeartRateIncrease);
+            _hiding = new HidingState(_hidingHeartRateIncrease);
+            _dying = new DyingState();
+            
+            _state = _walking;
+            
             _startXPos = transform.position.x;
             _rBody = GetComponent<Rigidbody>();
-            _state = _walking;
         }
 
         void Start() {
@@ -51,7 +62,7 @@ namespace Controls
         void Update()
         {
             // Delegate movement behaviour to state classes
-            _state.Movement(transform, _heartRate, Die, BaseSpeed);
+            _state.Movement(transform, _heartRate, Die);
 
             // Set animation values
             SetAnimatorValues();
