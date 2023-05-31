@@ -2462,8 +2462,8 @@ Transform:
   - {fileID: 682871539}
   - {fileID: 1960753799}
   - {fileID: 1889595371}
-  - {fileID: 131611384}
   - {fileID: 136332976}
+  - {fileID: 131611384}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2710,6 +2710,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _runningSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _walkingSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _hidingHeartRateIncrease
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _runningHeartRateIncrease
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _walkingHeartRateDecrease
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _runningSpeedBlendDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _walkingSpeedBlendDuration
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7606128236679298142, guid: cff79dadf258649d3a8edb02a4d640b3,
         type: 3}
