@@ -18,7 +18,7 @@ public class LeaderboardManager : Singleton<LeaderboardManager>
         // Not the most secure way of recording a leaderboard, but will do for now
         // Note: The playerprefs file can be altered to fix the scores...
         if (!PlayerPrefs.HasKey("highScore1")) {
-            PlayerPrefs.SetFloat("highScore1", 100);
+            PlayerPrefs.SetFloat("highScore1", 99);
             PlayerPrefs.SetInt("highScoreRooms1", 7);
             PlayerPrefs.SetString("name1","BMF");
             
@@ -35,7 +35,7 @@ public class LeaderboardManager : Singleton<LeaderboardManager>
             PlayerPrefs.SetString("name4","BOI");
             
             PlayerPrefs.SetFloat("highScore5", 16);
-            PlayerPrefs.SetInt("highScoreRooms1", 1);
+            PlayerPrefs.SetInt("highScoreRooms5", 1);
             PlayerPrefs.SetString("name5","CAT");
 
             PlayerPrefs.Save();
