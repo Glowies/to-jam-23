@@ -9,11 +9,13 @@ namespace Controls {
     /// </summary>
     public interface PlayerState
     {
+        public float GetMovementSpeed();
+
         // Methods OnEnter and OnExit that can be extended for future purposes to encapsulate rendering, sound, and logic
         // that are associated with each state.
         // TODO: Consider what we need when switching states...reference to old state, to play audio, etc.
-        public virtual void OnEnter(PlayerState prevState) {}
-        public virtual void OnExit(PlayerState newState) {}
+        public void OnEnter(PlayerState prevState) {}
+        public void OnExit(PlayerState newState) {}
 
         /// <summary>
         /// Adjust the player movement speed and actions depending on the current state of the player.
@@ -25,7 +27,6 @@ namespace Controls {
         /// <param name="player"> The player's transform associated with the script calling this state.</param>
         /// <param name="heartRate"> The player's HRGauge associated with the script calling this state.</param>
         /// <param name="playerDeath"> Method to handle when the player dies.</param>
-        /// <param name="baseSpeed"> The standard speed of the player gameobject.</param>
-        abstract void Movement(Transform player, HRGauge heartRate, Action playerDeath, float baseSpeed);
+        abstract void Movement(Transform player, HRGauge heartRate, Action playerDeath);
     }
 }

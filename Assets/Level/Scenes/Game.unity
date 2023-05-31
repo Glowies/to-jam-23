@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03681031, g: 0.0058935387, b: 0.0077243126, a: 1}
+  m_IndirectSpecularColor: {r: 0.036824685, g: 0.0058859773, b: 0.007804531, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -592,6 +592,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -34
       objectReference: {fileID: 0}
+    - target: {fileID: 167289763551663496, guid: 8b3c5c39cabe548568d4e1a1c7694886,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1164249578341366619, guid: 8b3c5c39cabe548568d4e1a1c7694886,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -621,6 +626,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1287387822134253655, guid: 8b3c5c39cabe548568d4e1a1c7694886,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6.251953
       objectReference: {fileID: 0}
     - target: {fileID: 2844874377969020155, guid: 8b3c5c39cabe548568d4e1a1c7694886,
         type: 3}
@@ -1044,6 +1054,11 @@ PrefabInstance:
       propertyPath: _pulseImage2
       value: 
       objectReference: {fileID: 406087241}
+    - target: {fileID: 8278084538231563469, guid: 8b3c5c39cabe548568d4e1a1c7694886,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8312762730062609003, guid: 8b3c5c39cabe548568d4e1a1c7694886,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2278,6 +2293,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _runningSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _walkingSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _runningSpeedBlend
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _walkingSpeedBlend
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _hidingHeartRateIncrease
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _runningHeartRateIncrease
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _walkingHeartRateDecrease
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _runningSpeedBlendDuration
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
+        type: 3}
+      propertyPath: _walkingSpeedBlendDuration
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7606128236679298142, guid: cff79dadf258649d3a8edb02a4d640b3,
         type: 3}
