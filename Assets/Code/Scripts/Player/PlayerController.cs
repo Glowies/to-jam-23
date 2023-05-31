@@ -12,6 +12,7 @@ namespace Controls
     public class PlayerController : MonoBehaviour
     {
         // --------------- Player State --------------
+        public UnityEvent<PlayerState> OnPlayerStateChanged { get; private set; }
         private static WalkingState _walking = new WalkingState();
         private static RunningState _running = new RunningState();
         private static HidingState _hiding = new HidingState();
@@ -41,6 +42,8 @@ namespace Controls
             _startXPos = transform.position.x;
             _rBody = GetComponent<Rigidbody>();
             _state = _walking;
+            this.OnPlayerStateChanged = new UnityEvent<PlayerState>();
+            this.OnPlayerStateChanged?.Invoke(this._state);
         }
 
         void Start() {
@@ -100,15 +103,16 @@ namespace Controls
         {
             return _state;
         }
-        
+
         // ---------------- Input -----------------
-        void Walk(InputAction.CallbackContext obj) 
+        void Walk(InputAction.CallbackContext obj)
         {
             // Cache previous state and call OnExit and OnEnter
             var prevState = _state;
             _state.OnExit(_walking);
             _state = _walking;
             _state.OnEnter(prevState);
+            this.OnPlayerStateChanged?.Invoke(this._state);
         }
 
         void Run(InputAction.CallbackContext obj)
@@ -117,6 +121,7 @@ namespace Controls
             _state.OnExit(_running);
             _state = _running;
             _state.OnEnter(prevState);
+            this.OnPlayerStateChanged?.Invoke(this._state);
         }
 
         void Stop(InputAction.CallbackContext obj)
@@ -125,6 +130,7 @@ namespace Controls
             _state.OnExit(_hiding);
             _state = _hiding;
             _state.OnEnter(prevState);
+            this.OnPlayerStateChanged?.Invoke(this._state);
         }
 
         public void Die()
@@ -134,6 +140,7 @@ namespace Controls
             _state = _dying;
             _state.OnEnter(prevState);
 
+            this.OnPlayerStateChanged?.Invoke(this._state);
             GameManager.Instance.OnGameOver?.Invoke();
         }
 

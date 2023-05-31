@@ -11,10 +11,12 @@ public class GameUI : MonoBehaviour {
   [SerializeField] private GameObject _gameOverUI;
   [SerializeField] private DistanceUI _distanceKeeper;
   [SerializeField] private RoomCountUI _roomCountKeeper;
+  [SerializeField] private ControlsUI _controlsUI;
 
   public void Initialize(GameManager gameManager) {
     gameManager.OnSetupComplete.AddListener(this.OnGameSetupComplete);
     gameManager.OnGameOver.AddListener(this.OnGameOver);
+    this._controlsUI.Initialize(gameManager.PlayerController);
   }
 
   public void FadeInForeground(UnityAction onComplete) {
