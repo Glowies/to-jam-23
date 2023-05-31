@@ -15,26 +15,28 @@ public class LeaderboardManager : Singleton<LeaderboardManager>
         base.Awake();
         OnLeaderboardConfirmed = new UnityEvent();
         
+        // Not the most secure way of recording a leaderboard, but will do for now
+        // Note: The playerprefs file can be altered to fix the scores...
         if (!PlayerPrefs.HasKey("highScore1")) {
             PlayerPrefs.SetFloat("highScore1", 100);
-            PlayerPrefs.SetInt("highScoreRooms1", 2);
-            PlayerPrefs.SetString("name1","FNL");
+            PlayerPrefs.SetInt("highScoreRooms1", 7);
+            PlayerPrefs.SetString("name1","BMF");
             
-            PlayerPrefs.SetFloat("highScore2", 50);
-            PlayerPrefs.SetInt("highScoreRooms2", 2);
+            PlayerPrefs.SetFloat("highScore2", 85);
+            PlayerPrefs.SetInt("highScoreRooms2", 6);
             PlayerPrefs.SetString("name2","LES");
             
-            PlayerPrefs.SetFloat("highScore3", 25);
-            PlayerPrefs.SetInt("highScoreRooms3", 2);
+            PlayerPrefs.SetFloat("highScore3", 64);
+            PlayerPrefs.SetInt("highScoreRooms3", 4);
             PlayerPrefs.SetString("name3","KMD");
             
-            PlayerPrefs.SetFloat("highScore4", 10);
+            PlayerPrefs.SetFloat("highScore4", 23);
             PlayerPrefs.SetInt("highScoreRooms4", 2);
-            PlayerPrefs.SetString("name4","PAN");
+            PlayerPrefs.SetString("name4","BOI");
             
-            PlayerPrefs.SetFloat("highScore5", 1);
+            PlayerPrefs.SetFloat("highScore5", 16);
             PlayerPrefs.SetInt("highScoreRooms1", 1);
-            PlayerPrefs.SetString("name5","ZZZ");
+            PlayerPrefs.SetString("name5","CAT");
 
             PlayerPrefs.Save();
         }

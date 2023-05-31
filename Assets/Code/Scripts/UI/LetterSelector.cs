@@ -8,9 +8,9 @@ namespace UI {
         private enum Letter {
             A, B, C, D, E, F, G, H, I, 
             J, K, L, M, N, O, P, Q, R,
-            S, T, U, V, W, X, Y, Z, _,
+            S, T, U, V, W, X, Y, Z,
             Zero, One, Two, Three, Four, Five, Six, Seven, Eight, Nine, 
-            Heart, Space
+            Space
         }
 
         private TMP_Text _letterText;
@@ -129,9 +129,6 @@ namespace UI {
                 case Letter.Z:
                     selectedLetterText.text = "Z";
                     break;
-                case Letter._:
-                    selectedLetterText.text = "_";
-                    break;
                 case Letter.Zero:
                     selectedLetterText.text = "0";
                     break;
@@ -161,9 +158,6 @@ namespace UI {
                     break;
                 case Letter.Nine:
                     selectedLetterText.text = "9";
-                    break;
-                case Letter.Heart:
-                    selectedLetterText.text = "♥";
                     break;
                 case Letter.Space:
                     selectedLetterText.text = " ";
