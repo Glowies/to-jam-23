@@ -54,8 +54,8 @@ public class GameUI : MonoBehaviour {
   }
 
   private void OnGameSetupComplete() {
-    this._foregroundImage
-      .DOFade(0, 0.5f)
+    this._gameStartedForegroundImage
+      .DOFade(0, 1f)
       .OnComplete(() => this._gameStartedForegroundImage.gameObject.SetActive(false));
   }
 

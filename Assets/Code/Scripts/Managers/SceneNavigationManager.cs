@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneNavigationManager : Singleton<SceneNavigationManager> {
   public void LoadGameScene() {
-    this.LoadScene("eon704");
+    this.LoadScene("Game");
   }
 
   public void LoadMainMenuScene() {

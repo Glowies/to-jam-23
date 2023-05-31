@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2D280309-CB95-41D8-8DEB-3B60C2B444CB}" SchemaVersion="110">
+	<Events>
+		<WorkUnit Name="rowin work unit" ID="{2D280309-CB95-41D8-8DEB-3B60C2B444CB}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="UI" ID="{22E268B7-3873-454A-B3B1-73622466FFCA}" ShortID="921731865">
+					<ChildrenList>
+						<Event Name="Play_sfx_MenuUI_Select" ID="{F82D8E96-C8DF-4029-ADD8-04A7A2816E32}">
+							<ChildrenList>
+								<Action Name="" ID="{1A3FC7DE-C9C7-4F8F-A2AE-2BE9DFC75046}" ShortID="161140990">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Select" ID="{DCD055F1-4A8B-4B44-956E-CB916D419B3B}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_MenuUI_Hover" ID="{472DFA6D-2696-4B31-B8A9-853BC9F2D775}">
+							<ChildrenList>
+								<Action Name="" ID="{77CFD571-D80B-405B-8A7A-E3CF05108272}" ShortID="575277983">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Hover" ID="{C77D9CA9-04A3-4110-906E-62CC42592C8D}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_MenuUI_Cancel" ID="{AD91B5B6-EF2B-47D0-BBA0-4A3E67D38A07}">
+							<ChildrenList>
+								<Action Name="" ID="{35119452-116B-47EA-9E93-BC33725A2E35}" ShortID="312078878">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_MenuUI_Cancel" ID="{31C5B12F-92ED-496A-84AF-77827C5956D0}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_sfx_MenuUI_StartGame" ID="{FEED0683-92E3-44B4-B3A7-DC22A806C44D}">
+							<ChildrenList>
+								<Action Name="" ID="{715F90DE-5C26-45F8-913A-9F409970F9B9}" ShortID="1032943865">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="sfx_MenuUI_StartGame" ID="{F77DB871-BBD9-4AC1-9EA1-E06233D029D0}" WorkUnitID="{A21C7791-3F11-4EC2-B3DB-AB27ECCA27A7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

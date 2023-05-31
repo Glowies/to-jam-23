@@ -45,7 +45,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _roomPrefabs:
-  - {fileID: 9048419317163855426, guid: 9ecc9de96a79f42fea103f68dda76a79, type: 3}
-  - {fileID: 9048419317163855426, guid: 5f5b647eda2534acc9b35b7dd2245018, type: 3}
+  - {fileID: 7803235368806689318, guid: 6e9bc7e4fb2ca44b687c71d156531ef8, type: 3}
+  - {fileID: 2986944124524708723, guid: 22dcc8a5be9444239adf3606613d9541, type: 3}
+  - {fileID: 2044919977452917452, guid: 0514347ebd07b4256ad60432ee797b2f, type: 3}
+  - {fileID: 9028470454238702961, guid: e769fb8d74e4446558014b95940a2419, type: 3}
   _startRoom: {fileID: 0}
   _startNextRoom: {fileID: 0}
+  _previousRoom: {fileID: 0}
+  _currentRoom: {fileID: 0}
+  _nextRoom: {fileID: 0}
+  _nextNextRoom: {fileID: 0}
+  OnRoomCountUpdate:
+    m_PersistentCalls:
+      m_Calls: []

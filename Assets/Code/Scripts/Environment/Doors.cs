@@ -38,7 +38,7 @@ public class Doors : MonoBehaviour {
 
   private bool DoorApproachedLimit(Rigidbody door, float min, float max) {
     Vector3 eulerAngles = door.transform.eulerAngles;
-    return Mathf.Abs(eulerAngles.y - min) < 2f || Mathf.Abs(eulerAngles.y - max) < 2f;
+    return Mathf.Abs(eulerAngles.y - min) < 5f || Mathf.Abs(eulerAngles.y - max) < 5f;
   }
 
   private void OnTriggerEnter(Collider other) {

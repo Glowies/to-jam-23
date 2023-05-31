@@ -1,0 +1,25 @@
+Event	ID	Name			Wwise Object Path	Notes
+	612710076	Stop_mus_eyeDetection			\avy work unit\mus\mus_eyeDetection\Stop_mus_eyeDetection	
+	634881816	Mute_mus_unsafe_drone			\avy work unit\mus\mus_unsafe_drone\Mute_mus_unsafe_drone	
+	928017323	Play_mus_unsafe_drone			\avy work unit\mus\mus_unsafe_drone\Play_mus_unsafe_drone	
+	1748942942	Unmute_mus_eyeDetection			\avy work unit\mus\mus_eyeDetection\Unmute_mus_eyeDetection	
+	2463921233	Mute_mus_eyeDetection			\avy work unit\mus\mus_eyeDetection\Mute_mus_eyeDetection	
+	2894427987	Mute_mus_unsafe_random			\avy work unit\mus\mus_unsafe_random\Mute_mus_unsafe_random	
+	3101611830	Play_mus_unsafe_random			\avy work unit\mus\mus_unsafe_random\Play_mus_unsafe_random	
+	3881368754	Unmute_mus_unsafe_random			\avy work unit\mus\mus_unsafe_random\Unmute_mus_unsafe_random	
+	4051233668	Stop_mus_unsafe_random			\avy work unit\mus\mus_unsafe_random\Stop_mus_unsafe_random	
+	4143764106	Play_mus_eyeDetection			\avy work unit\mus\mus_eyeDetection\Play_mus_eyeDetection	
+	4148618559	Unmute_mus_unsafe_drone			\avy work unit\mus\mus_unsafe_drone\Unmute_mus_unsafe_drone	
+	4238011837	Stop_mus_unsafe_drone			\avy work unit\mus\mus_unsafe_drone\Stop_mus_unsafe_drone	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	152127736	mus_eyeDetection_60BPM4-4_L2	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\mus_eyeDetection_60BPM4-4_L2_9EDFC787.wem		\Interactive Music Hierarchy\avy work unit\mus_eyeDetection\mus_eyeDetection_60BPM4-4_L2-P0\mus_eyeDetection_60BPM4-4_L2		278050
+	212735456	Safe-BitcrushedViolin_60BPM4-4_L16-P0	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\Safe-BitcrushedViolin_60BPM4-4_L16-P0_9EDFC787.wem		\Interactive Music Hierarchy\avy work unit\mus_unsafe_random\Safe-BitcrushedViolin_60BPM4-4_L16-P0\Safe-BitcrushedViolin_60BPM4-4_L16-P0		1056336
+	454492109	Safe-Bitcrushedtaiko2_60BPM4-4_L8-P1	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\Safe-Bitcrushedtaiko2_60BPM4-4_L8-P1_9EDFC787.wem		\Interactive Music Hierarchy\avy work unit\mus_unsafe_random\Safe-Bitcrushedtaiko2_60BPM4-4_L8-P1\Safe-Bitcrushedtaiko2_60BPM4-4_L8-P1		372510
+	528259529	Safe-Bitcrushedstrings_60BPM4-4_L12-P0	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\Safe-Bitcrushedstrings_60BPM4-4_L12-P0_9EDFC787.wem		\Interactive Music Hierarchy\avy work unit\mus_unsafe_random\Safe-Bitcrushedstrings_60BPM4-4_L12-P0\Safe-Bitcrushedstrings_60BPM4-4_L12-P0		839951
+	625644074	Safe-Bitcrusheddrone_60BPM4-4_L30-P0	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\Safe-Bitcrusheddrone_60BPM4-4_L30-P0_9EDFC787.wem		\Interactive Music Hierarchy\avy work unit\mus_unsafe_drone\Safe-Bitcrusheddrone_60BPM4-4_L30-P0\Safe-Bitcrusheddrone_60BPM4-4_L30-P0		2148322
+	648561599	Safe-Bitcrushedtaiko_60BPM4-4_L8-P1	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\Safe-Bitcrushedtaiko_60BPM4-4_L8-P1_9EDFC787.wem		\Interactive Music Hierarchy\avy work unit\mus_unsafe_random\Safe-Bitcrushedtaiko_60BPM4-4_L8-P1\Safe-Bitcrushedtaiko_60BPM4-4_L8-P1		190447
+	688742623	Safe-Bitcrushedtaiko3_60BPM4-4_L8-P0	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\Safe-Bitcrushedtaiko3_60BPM4-4_L8-P0_9EDFC787.wem		\Interactive Music Hierarchy\avy work unit\mus_unsafe_random\Safe-Bitcrushedtaiko3_60BPM4-4_L8-P0\Safe-Bitcrushedtaiko3_60BPM4-4_L8-P0		238513
+	792876344	mus_safe_blank	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\mus_safe_blank_9EDFC787.wem		\Interactive Music Hierarchy\avy work unit\mus_unsafe_random\mus_safe_blank\mus_safe_blank		201783
+	865298709	Safe-Bitcrushedstrings2_60BPM4-4_L12-P0	Y:\to-jam-23\to-jam-23_WwiseProject\.cache\Mac\SFX\Safe-Bitcrushedstrings2_60BPM4-4_L12-P0_9EDFC787.wem		\Interactive Music Hierarchy\avy work unit\mus_unsafe_random\Safe-Bitcrushedstrings2_60BPM4-4_L12-P0\Safe-Bitcrushedstrings2_60BPM4-4_L12-P0		738744
+

@@ -25,8 +25,10 @@ namespace Controls
         // TODO: If we want to extend the player movement to incorporate a rigidbody, but for now we won't
         private ScoreManager _scoreKeeper;
         private Rigidbody _rBody;
+        public Animator _animator;
         private float _startXPos;
         public float BaseSpeed;
+        private float animatorSpeedValue = 0;
 
         private PlayerInputActions _playerInputActions;
 
@@ -50,9 +52,34 @@ namespace Controls
         {
             // Delegate movement behaviour to state classes
             _state.Movement(transform, _heartRate, Die, BaseSpeed);
-            
+
+            // Set animation values
+            SetAnimatorValues();
+
             // Calculate distance score
             CalculateScore();
+        }
+
+        private void SetAnimatorValues()
+        {
+            float switchSpeed = 2f;
+            if (_state is WalkingState)
+            {
+                animatorSpeedValue = Mathf.MoveTowards(animatorSpeedValue, 0.5f, switchSpeed * Time.deltaTime);
+            } else if (_state is RunningState)
+            {
+                animatorSpeedValue = Mathf.MoveTowards(animatorSpeedValue, 1, switchSpeed * Time.deltaTime);
+            } else if (_state is HidingState)
+            {
+                animatorSpeedValue = Mathf.MoveTowards(animatorSpeedValue, 0, switchSpeed * Time.deltaTime);
+            }
+
+            _animator.SetFloat("speed", animatorSpeedValue);
+
+            if (_state is DyingState)
+            {
+                _animator.SetBool("dead", true);
+            }
         }
 
         private void CalculateScore()
@@ -112,6 +139,11 @@ namespace Controls
             // OnEnable called before Start
             // PlayerInputController.Instance and this._playerInputController may be uninitialized
             // when the scene is just started
+
+            // reset animator values
+            _animator.SetFloat("speed", 0.5f);
+            _animator.SetBool("dead", false);
+
             if (this._playerInputActions == null)
                 return;
 
