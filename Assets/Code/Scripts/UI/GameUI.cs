@@ -9,8 +9,8 @@ public class GameUI : MonoBehaviour {
   [SerializeField] private Image _foregroundImage;
   [SerializeField] private GameObject _pauseUI;
   [SerializeField] private GameObject _gameOverUI;
-  [SerializeField] private DistanceUI _distanceKeeper;
-  [SerializeField] private RoomCountUI _roomCountKeeper;
+  [SerializeField] private GameObject _leaderboardSetterUI;
+  [SerializeField] private GameObject _scoreboardUI;
 
   public void Initialize(GameManager gameManager) {
     gameManager.OnSetupComplete.AddListener(this.OnGameSetupComplete);
@@ -23,6 +23,26 @@ public class GameUI : MonoBehaviour {
       .DOFade(1, 0.5f)
       .OnComplete(() => onComplete?.Invoke());
   }
+  private void HideLeaderboardSelection() {
+    this._leaderboardSetterUI.SetActive(false);
+    ShowLeaderboard();
+  }
+  
+  public void ShowLeaderboard() {
+    this._scoreboardUI.SetActive(true);
+  }
+  
+  public void HideLeaderboard() {
+    this._scoreboardUI.SetActive(false);
+  }
+  
+  public void ShowGameOver() {
+    // Get the score from the ScoreManager and set the final score for the game over menu
+    var score = ScoreManager.Instance.GetScore();
+
+    this._gameOverUI.SetActive(true);
+    this._gameOverUI.GetComponent<GameOverUI>().SetScore(score.Item1, score.Item2);
+  }
 
   private void Awake() {
     this._gameStartedForegroundImage.gameObject.SetActive(true);
@@ -30,6 +50,7 @@ public class GameUI : MonoBehaviour {
 
   private void Start() {
     PauseManager.Instance.OnPauseToggled.AddListener(this.OnPauseToggled);
+    LeaderboardManager.Instance.OnLeaderboardConfirmed.AddListener(HideLeaderboardSelection);
   }
 
   private void OnGameSetupComplete() {
@@ -42,10 +63,16 @@ public class GameUI : MonoBehaviour {
     this._pauseUI.SetActive(isPaused);
   }
 
-  private void OnGameOver() {
-    this._gameOverUI.SetActive(true);
-
-    // Fetch the room count to display with the distance
-    this._gameOverUI.GetComponent<GameOverUI>().SetScore(_distanceKeeper.GetDistance(), _roomCountKeeper.GetRoomCount());
+  private void OnGameOver()
+  {
+    if (LeaderboardManager.Instance.CalculatePlacement() > 0)
+    {
+      // Show the leaderboard selector menu
+      this._leaderboardSetterUI.SetActive(true);
+    }
+    else
+    {
+      ShowGameOver();
+    }
   }
 }
