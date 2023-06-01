@@ -16,7 +16,11 @@ public class PostProcessingManager : MonoBehaviour {
 
   // Bloom
   private const float bloomMinIntensity = 3f;
-  private const float bloomMaxIntensity = 9f;
+  private const float bloomMaxIntensity = 6f;
+
+  // Color Adjustments
+  private const float exposureMinIntensity = 0f;
+  private const float exposureMaxIntensity = 0.5f;
 
   // Vignette
   private const float vignetteMinIntensity = 0.2f;
@@ -33,6 +37,7 @@ public class PostProcessingManager : MonoBehaviour {
   [SerializeField] private Volume volume;
   private CinemachineBasicMultiChannelPerlin perlin;
   private Bloom bloom;
+  private ColorAdjustments colorAdjustments;
   private Vignette vignette;
   private FilmGrain filmGrain;
 
@@ -52,6 +57,11 @@ public class PostProcessingManager : MonoBehaviour {
     set { this.bloom.intensity.value = value; }
   }
 
+  public float ExposureValue {
+    get { return this.colorAdjustments.postExposure.value; }
+    set { this.colorAdjustments.postExposure.value = value; }
+  }
+
   public float VignetteIntensity {
     get { return this.vignette.intensity.value; }
     set { this.vignette.intensity.value = value; }
@@ -69,6 +79,7 @@ public class PostProcessingManager : MonoBehaviour {
   private void UpdateAttackEffects() {
     this.ShakeAmplitude = this.currentAttackEffectIntensity * (cameraShakeMaxIntensity - cameraShakeMinIntensity) + cameraShakeMinIntensity;
     this.BloomIntensity = this.currentAttackEffectIntensity * (bloomMaxIntensity - bloomMinIntensity) + bloomMinIntensity;
+    this.ExposureValue = this.currentAttackEffectIntensity * (exposureMaxIntensity - exposureMinIntensity) + exposureMinIntensity;
     this.VignetteIntensity = this.currentAttackEffectIntensity * (vignetteMaxIntensity - vignetteMinIntensity) + vignetteMinIntensity;
     this.FilmGrainIntensity = this.currentAttackEffectIntensity * (filmGrainMaxIntensity - filmGrainMinIntensity) + filmGrainMinIntensity;
   }
@@ -83,6 +94,11 @@ public class PostProcessingManager : MonoBehaviour {
     if (this.volume.profile.TryGet(out this.bloom)) {
       this.bloom.active = true;
       this.BloomIntensity = bloomMinIntensity;
+    }
+
+    if (this.volume.profile.TryGet(out this.colorAdjustments)) {
+      this.colorAdjustments.active = true;
+      this.ExposureValue = exposureMinIntensity;
     }
 
     if (this.volume.profile.TryGet(out this.vignette)) {
