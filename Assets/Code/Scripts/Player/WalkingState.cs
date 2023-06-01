@@ -8,19 +8,47 @@ namespace Controls {
     public class WalkingState : PlayerState
     {
         // TODO: Adjust multiplier values here
-        private float _stateSpeed = 1f;
-        private float _heartRateMultiplier = 10f;
+        private readonly float _stateSpeed;
+        private readonly float _stateSpeedBlendDuration;
+        private readonly float _heartRateMultiplier;
+        
+        private float _currentSpeed, _t;
+
+        public WalkingState(float stateSpeed, float stateSpeedBlendDuration, float heartRateMultiplier)
+        {
+            _stateSpeed = stateSpeed;
+            _stateSpeedBlendDuration = stateSpeedBlendDuration;
+            _heartRateMultiplier = heartRateMultiplier;
+
+            _currentSpeed = stateSpeed;
+        }
         
         public void OnEnter(PlayerState prevState)
         {
             // TODO: When the Player walks...what should happen? music? visual animations? Does it matter from which
             // state?
+            if (prevState is RunningState || prevState is HidingState)
+            {
+                // Smooth running or hiding speed to walking speed
+                _currentSpeed = prevState.GetMovementSpeed();
+                _t = 0;
+            }
+        }
+
+        public float GetMovementSpeed()
+        {
+            return _currentSpeed;
         }
         
-        public void Movement(Transform player, HRGauge heartRate, Action playerDeath, float baseSpeed)
+        public void Movement(Transform player, HRGauge heartRate, Action playerDeath)
         {
-            float speed = baseSpeed + _stateSpeed;
-            player.Translate(Time.deltaTime * speed, 0, 0);
+            if (_t < _stateSpeedBlendDuration)
+            {
+                _currentSpeed = Mathf.SmoothStep(_currentSpeed, _stateSpeed, _t / _stateSpeedBlendDuration);
+                _t += Time.deltaTime;
+            }
+
+            player.Translate(Time.deltaTime * _currentSpeed, 0, 0);
             
             // Increase the HR Gauge; note that this is called in a delegated method under update
             heartRate.DecreaseHR(_heartRateMultiplier);
