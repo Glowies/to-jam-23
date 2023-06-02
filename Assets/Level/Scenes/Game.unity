@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03681031, g: 0.0058935387, b: 0.0077243126, a: 1}
+  m_IndirectSpecularColor: {r: 0.036824685, g: 0.0058859773, b: 0.007804531, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -757,6 +757,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1287387822134253655, guid: 8b3c5c39cabe548568d4e1a1c7694886,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6.252075
+      objectReference: {fileID: 0}
     - target: {fileID: 1494512335674152911, guid: 8b3c5c39cabe548568d4e1a1c7694886,
         type: 3}
       propertyPath: m_RootOrder
@@ -1355,7 +1360,7 @@ PrefabInstance:
     - target: {fileID: 6879335959448965613, guid: 8b3c5c39cabe548568d4e1a1c7694886,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -9.645996
+      value: -9.646057
       objectReference: {fileID: 0}
     - target: {fileID: 7073464326209494602, guid: 8b3c5c39cabe548568d4e1a1c7694886,
         type: 3}
@@ -4747,9 +4752,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4845888082238818238, guid: 607252659b5688f4bb20ac28b429cb45,
         type: 3}
+      propertyPath: aggro
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4845888082238818238, guid: 607252659b5688f4bb20ac28b429cb45,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1595531623}
+    - target: {fileID: 4845888082238818238, guid: 607252659b5688f4bb20ac28b429cb45,
+        type: 3}
+      propertyPath: retreatTime
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4845888082238818238, guid: 607252659b5688f4bb20ac28b429cb45,
         type: 3}
       propertyPath: roomManager
@@ -4760,6 +4775,11 @@ PrefabInstance:
       propertyPath: animController
       value: 
       objectReference: {fileID: 1430614647}
+    - target: {fileID: 4845888082238818238, guid: 607252659b5688f4bb20ac28b429cb45,
+        type: 3}
+      propertyPath: eyeRoomZOffset
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4845888082238818238, guid: 607252659b5688f4bb20ac28b429cb45,
         type: 3}
       propertyPath: decreaseMaxHRPerSecond

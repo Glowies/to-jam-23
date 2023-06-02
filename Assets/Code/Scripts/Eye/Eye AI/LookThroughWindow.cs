@@ -25,7 +25,7 @@ public class LookThroughWindow : BehaviourNode
         // if not looking through a window, switch to first window in window list
         if (GetData("currWindowIndex") == null)
         {
-            parent.parent.SetData("currWindowIndex", 0);
+            parent.parent.parent.parent.SetData("currWindowIndex", 0);
 
             Room currRoom = (Room)GetData("currentRoom");
             float eyeZOffset = (float)GetData("eyeWindowZOffset");

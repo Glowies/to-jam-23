@@ -62,6 +62,7 @@ namespace BehaviourTree
                     return value;
                 currNode = currNode.parent;
             }
+            UnityEngine.Debug.LogError("Could not find data " + key);
             return null;
         }
 

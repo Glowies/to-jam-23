@@ -22,9 +22,13 @@ public class EyeBT : BehaviourTree.Tree
     public float idleOnWindowWaitTime = 1f;
     public float windowSwitchTime = 0.5f;
     public float roomSwitchTime = 1f;
+    public float retreatTime = 1.5f;
 
     [Header("Damage")]
     public float decreaseMaxHRPerSecond = 0.1f;
+
+    [Header("Attitude")]
+    [Range(0, 1)] public float aggro = 0.3f;
 
     [Header("Eye Positioning")]
     public float eyeWindowZOffset = 7f;
@@ -34,8 +38,9 @@ public class EyeBT : BehaviourTree.Tree
 
     protected override BehaviourNode SetupTree()
     {
-        BehaviourNode root = new Selector(new List<BehaviourNode>
+        BehaviourNode nonIdlingBehaviour = new Selector(new List<BehaviourNode>
         {
+
             // switch rooms
             new Sequence(new List<BehaviourNode>
             {
@@ -56,19 +61,33 @@ public class EyeBT : BehaviourTree.Tree
                 new LookThroughWindow(transform, animController),
                 // switch windows
                 new SwitchWindows(transform, roomManager)
+            })
+        });
+
+
+        BehaviourNode root = new Selector(new List<BehaviourNode>
+        {
+            new Sequence(new List<BehaviourNode>
+            {
+                new IsNotIdling(),
+                nonIdlingBehaviour
             }),
+
+            new Idle(transform)
             
-            // idle
-            new Idle()
+
         });
 
         // set values
         root.SetData("idleWaitTime", idleWaitTime);
+        root.SetData("idling", true);
         root.SetData("attackStartTime", attackStartTime);
         root.SetData("idleOnWindowWaitTime", idleOnWindowWaitTime);
         root.SetData("windowSwitchTime", windowSwitchTime);
         root.SetData("roomSwitchTime", roomSwitchTime);
+        root.SetData("retreatTime", retreatTime);
         root.SetData("decreaseMaxHRPerSecond", decreaseMaxHRPerSecond);
+        root.SetData("aggro", aggro);
         root.SetData("currentRoom", roomManager.GetStartRoom());
         root.SetData("eyeWindowZOffset", eyeWindowZOffset);
         root.SetData("eyeRoomZOffset", eyeRoomZOffset);
