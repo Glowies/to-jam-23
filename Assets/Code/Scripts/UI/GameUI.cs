@@ -11,6 +11,7 @@ public class GameUI : MonoBehaviour {
   [SerializeField] private GameObject _gameOverUI;
   [SerializeField] private GameObject _leaderboardSetterUI;
   [SerializeField] private GameObject _scoreboardUI;
+  [SerializeField] private PostProcessingManager _postProcessingManager;
 
   public void Initialize(GameManager gameManager) {
     gameManager.OnSetupComplete.AddListener(this.OnGameSetupComplete);
@@ -65,14 +66,27 @@ public class GameUI : MonoBehaviour {
 
   private void OnGameOver()
   {
-    if (LeaderboardManager.Instance.CalculatePlacement() > 0)
-    {
-      // Show the leaderboard selector menu
-      this._leaderboardSetterUI.SetActive(true);
-    }
-    else
-    {
-      ShowGameOver();
-    }
+    float animDuration = 0.7f;
+    Sequence gameOverSequence = DOTween.Sequence();
+    gameOverSequence.AppendCallback(() => _postProcessingManager.DeathFX(animDuration));
+    gameOverSequence.AppendInterval(animDuration);
+    gameOverSequence.AppendCallback(() => {
+      this._foregroundImage.color = new Color(0f, 0f, 0f, 0f);
+      this._foregroundImage.gameObject.SetActive(true); 
+    });
+    gameOverSequence.Append(this._foregroundImage.DOFade(1, 0.3f));
+    gameOverSequence.AppendCallback(() => {
+      if (LeaderboardManager.Instance.CalculatePlacement() > 0) {
+        // Show the leaderboard selector menu
+        this._leaderboardSetterUI.SetActive(true);
+      }
+      else {
+        ShowGameOver();
+      }
+    });
+    gameOverSequence.AppendInterval(0.5f);
+    gameOverSequence.Append(this._foregroundImage.DOFade(0, 1f));
+    gameOverSequence.AppendCallback(() => this._foregroundImage.gameObject.SetActive(false));
+    gameOverSequence.Play();
   }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using DG.Tweening;
 
 public class PostProcessingManager : MonoBehaviour {
   public static PostProcessingManager Instance { get; private set; }
@@ -30,7 +31,7 @@ public class PostProcessingManager : MonoBehaviour {
   private const float filmGrainMinIntensity = 0.2f;
   private const float filmGrainMaxIntensity = 1f;
 
-  private const float attackOnDuration = 1f;
+  private const float attackOnDuration = 0.5f;
   private const float attackOffDuration = 0.5f;
 
   [SerializeField] private CinemachineVirtualCamera virtualCamera;
@@ -45,7 +46,6 @@ public class PostProcessingManager : MonoBehaviour {
   private float currentAttackEffectIntensity;
   private float attackOnIntensityPerSecond;
   private float attackOffIntensityPerSecond;
-  private bool on = false;
 
   public float ShakeAmplitude {
     get { return this.perlin.m_AmplitudeGain; }
@@ -62,6 +62,11 @@ public class PostProcessingManager : MonoBehaviour {
     set { this.colorAdjustments.postExposure.value = value; }
   }
 
+  public float SaturationValue {
+    get { return this.colorAdjustments.saturation.value; }
+    set { this.colorAdjustments.saturation.value = value; }
+  }
+
   public float VignetteIntensity {
     get { return this.vignette.intensity.value; }
     set { this.vignette.intensity.value = value; }
@@ -70,6 +75,22 @@ public class PostProcessingManager : MonoBehaviour {
   public float FilmGrainIntensity {
     get { return this.filmGrain.intensity.value; }
     set { this.filmGrain.intensity.value = value; }
+  }
+
+  public void DeathFX(float duration) {
+    DOTween.To(x => this.ExposureValue = x, this.ExposureValue, 2f, duration).SetEase(Ease.InCirc);
+    DOTween.To(x => this.SaturationValue = x, 0, -50f, duration).SetEase(Ease.InCirc);
+    DOTween.To(x => this.FilmGrainIntensity = x, FilmGrainIntensity, 1f, duration).SetEase(Ease.InCirc);
+    DOTween.To(x => this.ShakeAmplitude = x, ShakeAmplitude, 1f, duration).SetEase(Ease.InCirc);
+  }
+
+  public void ResetFX() {
+    this.ShakeAmplitude = cameraShakeMinIntensity;
+    this.BloomIntensity = bloomMinIntensity;
+    this.ExposureValue = exposureMinIntensity;
+    this.ExposureValue = 0f;
+    this.VignetteIntensity = vignetteMinIntensity;
+    this.FilmGrainIntensity = filmGrainMinIntensity;
   }
   
   private void HandleAttackStateChange(bool isAttacking) {
