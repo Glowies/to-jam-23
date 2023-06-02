@@ -12,12 +12,14 @@ public class Idle : BehaviourNode
     private Transform _eyeTransform;
     private Light _selfLight;
     private UnityEngine.Events.UnityEvent _onStartSearching;
+    private int _guaranteedLooks;
 
-    public Idle(Transform eyeTransform, Light selfLight, UnityEngine.Events.UnityEvent onStartSearching)
+    public Idle(Transform eyeTransform, Light selfLight, UnityEngine.Events.UnityEvent onStartSearching, int guaranteedLooks)
     {
         _eyeTransform = eyeTransform;
         _selfLight = selfLight;
         _onStartSearching = onStartSearching;
+        _guaranteedLooks = guaranteedLooks;
     }
 
 
@@ -56,7 +58,7 @@ public class Idle : BehaviourNode
         parent.SetData("idling", false);
 
         // look at least 3 times before available to idle again
-        parent.SetData("guaranteedLooks", 3);
+        parent.SetData("guaranteedLooks", _guaranteedLooks);
         _onStartSearching.Invoke();
         return NodeState.SUCCESS;
     }

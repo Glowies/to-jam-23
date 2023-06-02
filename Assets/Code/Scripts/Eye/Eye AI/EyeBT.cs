@@ -9,6 +9,8 @@ using UnityEngine.Events;
 public class EyeBT : BehaviourTree.Tree
     // Behaviour Tree of the eye enemy AI.
 {
+    [Header("Debug")]
+    public bool debug = false;
 
     [Header("Interacting Systems")]
     public EyeSight eyeSight;
@@ -37,6 +39,7 @@ public class EyeBT : BehaviourTree.Tree
 
     [Header("Attitude")]
     [Range(0, 1)] public float aggro = 0.3f;
+    public int guaranteedAmountOfLooksAfterSwitchingToSearching = 3;
 
     [Header("Eye Positioning")]
     public float eyeWindowZOffset = 7f;
@@ -49,9 +52,6 @@ public class EyeBT : BehaviourTree.Tree
     public UnityEvent onEndAgitated;
     public UnityEvent onStartSearching;
     public UnityEvent onStartIdle;
-
-    [Header("Debug")]
-    public bool debug = false;
 
 
     protected override BehaviourNode SetupTree()
@@ -91,7 +91,7 @@ public class EyeBT : BehaviourTree.Tree
                 searching
             }),
 
-            new Idle(transform, eyeSelfLight, onStartSearching)
+            new Idle(transform, eyeSelfLight, onStartSearching, guaranteedAmountOfLooksAfterSwitchingToSearching)
             
 
         });

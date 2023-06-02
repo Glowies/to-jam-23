@@ -51,7 +51,7 @@ public class CheckPlayerInView : BehaviourNode
                     int currWindowIndex = (int)GetData("currWindowIndex");
 
                     float eyeZOffset = (float)GetData("eyeWindowAttackingZOffset");
-                    _eyeTransform.DOMove(currRoom.Windows[currWindowIndex] + new Vector3(0, 0, eyeZOffset), (float)GetData("windowSwitchTime"));
+                    _eyeTransform.DOMove(currRoom.Windows[currWindowIndex] + new Vector3(0, 0, eyeZOffset), (float)GetData("attackStartTime"));
                     _animController.SetBool("isAttacking", true);
                     _waitCounter = 0;
                     _waiting = false;
