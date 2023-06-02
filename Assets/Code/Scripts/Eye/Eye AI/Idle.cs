@@ -11,11 +11,13 @@ public class Idle : BehaviourNode
     private bool _switching = true;
     private Transform _eyeTransform;
     private Light _selfLight;
+    private UnityEngine.Events.UnityEvent _onStartSearching;
 
-    public Idle(Transform eyeTransform, Light selfLight)
+    public Idle(Transform eyeTransform, Light selfLight, UnityEngine.Events.UnityEvent onStartSearching)
     {
         _eyeTransform = eyeTransform;
         _selfLight = selfLight;
+        _onStartSearching = onStartSearching;
     }
 
 
@@ -46,12 +48,16 @@ public class Idle : BehaviourNode
             return NodeState.RUNNING;
         }
 
-        // end with success
+        // end idling
         // Debug.Log("Not Idle");
         _waitCounter = 0;
         _switching = true;
         _selfLight.intensity = 12.34f;
         parent.SetData("idling", false);
+
+        // look at least 3 times before available to idle again
+        parent.SetData("guaranteedLooks", 3);
+        _onStartSearching.Invoke();
         return NodeState.SUCCESS;
     }
 }

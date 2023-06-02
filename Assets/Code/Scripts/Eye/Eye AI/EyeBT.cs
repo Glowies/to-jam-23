@@ -4,6 +4,7 @@ using System.Numerics;
 using BehaviourTree;
 using Controls;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EyeBT : BehaviourTree.Tree
     // Behaviour Tree of the eye enemy AI.
@@ -41,11 +42,21 @@ public class EyeBT : BehaviourTree.Tree
     public float eyeWindowZOffset = 7f;
     public float eyeRoomZOffset = 10f;
     public float eyeWindowAttackingZOffset = 3f;
-    
+
+    [Header("Events")]
+    public UnityEvent onStartAttack;
+    public UnityEvent onEndAttack;
+    public UnityEvent onEndAgitated;
+    public UnityEvent onStartSearching;
+    public UnityEvent onStartIdle;
+
+    [Header("Debug")]
+    public bool debug = false;
+
 
     protected override BehaviourNode SetupTree()
     {
-        BehaviourNode nonIdlingBehaviour = new Selector(new List<BehaviourNode>
+        BehaviourNode searching = new Selector(new List<BehaviourNode>
         {
 
             // switch rooms
@@ -61,13 +72,13 @@ public class EyeBT : BehaviourTree.Tree
                 // attack
                 new Sequence (new List<BehaviourNode>
                 {
-                    new CheckPlayerInView(eyeSight),
-                    new Attack(eyeSight, player, animController, transform)
+                    new CheckPlayerInView(eyeSight, transform, onStartAttack, animController),
+                    new Attack(eyeSight, player)
                 }),
                 // idling while looking thru window
-                new LookThroughWindow(transform, animController),
+                new LookThroughWindow(transform, animController, onEndAttack),
                 // switch windows
-                new SwitchWindows(transform, roomManager)
+                new SwitchWindows(transform, roomManager, onEndAgitated, onStartIdle)
             })
         });
 
@@ -77,13 +88,24 @@ public class EyeBT : BehaviourTree.Tree
             new Sequence(new List<BehaviourNode>
             {
                 new IsNotIdling(),
-                nonIdlingBehaviour
+                searching
             }),
 
-            new Idle(transform, eyeSelfLight)
+            new Idle(transform, eyeSelfLight, onStartSearching)
             
 
         });
+
+        // setup debug logs
+        if (debug)
+        {
+            onStartAttack.AddListener(() => { Debug.Log("Attack start event"); });
+            onEndAttack.AddListener(() => { Debug.Log("Attack end event"); });
+            onEndAgitated.AddListener(() => { Debug.Log("Agitated end event"); });
+            onStartSearching.AddListener(() => { Debug.Log("Searching start event"); });
+            onStartIdle.AddListener(() => { Debug.Log("Idle start event"); });
+        }
+        
 
         // set values
         root.SetData("idleWaitTime", idleWaitTime);
@@ -100,6 +122,7 @@ public class EyeBT : BehaviourTree.Tree
         root.SetData("eyeRoomZOffset", eyeRoomZOffset);
         root.SetData("eyeWindowAttackingZOffset", eyeWindowAttackingZOffset);
         root.SetData("attackLingerTime", attackLingerTime);
+        root.SetData("guaranteedLooks", 0);
 
 
         return root;

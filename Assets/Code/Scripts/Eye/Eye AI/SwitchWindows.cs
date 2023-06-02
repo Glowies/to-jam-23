@@ -9,11 +9,16 @@ public class SwitchWindows : BehaviourNode
 {
     RoomManager _roomManager;
     Transform _eyeTransform;
+    UnityEngine.Events.UnityEvent _onEndAgitated;
+    UnityEngine.Events.UnityEvent _onStartIdle;
 
-    public SwitchWindows(Transform eyeTransform, RoomManager roomManager)
+
+    public SwitchWindows(Transform eyeTransform, RoomManager roomManager, UnityEngine.Events.UnityEvent onEndAgitated, UnityEngine.Events.UnityEvent onStartIdle)
     {
         _roomManager = roomManager;
         _eyeTransform = eyeTransform;
+        _onEndAgitated = onEndAgitated;
+        _onStartIdle = onStartIdle;
     }
 
 
@@ -31,19 +36,29 @@ public class SwitchWindows : BehaviourNode
         float eyeZOffset = (agitated) ? (float)GetData("eyeWindowAttackingZOffset") : (float)GetData("eyeWindowZOffset");
         
         // reset agitation state
-        parent.SetData("agitated", false);
+        if (agitated)
+        {
+            parent.SetData("agitated", false);
+            _onEndAgitated.Invoke();
+        }
+        
 
 
         // retreat depending on agressiveness
         // if started agitated, keep on the windows
         float aggro = (float) GetData("aggro");
+        int guaranteedLooks = (int)GetData("guaranteedLooks");
         float r = Random.Range(0f, 1f);
-        if (!agitated && r >= aggro)
+        if (!agitated && r >= aggro && guaranteedLooks == 0)
         {
-            Debug.Log("Retreat...");
+            // Debug.Log("Retreat...");
+            _onStartIdle.Invoke();
             return NodeState.FAILURE;
         } else
         {
+            if (!agitated && guaranteedLooks > 0)
+                parent.parent.parent.parent.SetData("guaranteedLooks", guaranteedLooks - 1); // used one of the guaranteed looks
+
             List<Vector3> windows = _roomManager.GetCurrentRoom().Windows;
 
             // switch windows in data
