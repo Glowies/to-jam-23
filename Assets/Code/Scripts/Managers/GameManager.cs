@@ -6,6 +6,7 @@ public class GameManager : Singleton<GameManager> {
   [SerializeField] private GameUI _gameUI;
   [SerializeField] private PlayerController _playerController;
 
+  public PlayerController PlayerController => this._playerController;
   public UnityEvent OnSetupComplete { get; private set; }
   public UnityEvent OnGameOver { get; private set; }
 

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace Controls
@@ -15,7 +16,8 @@ namespace Controls
         private static HidingState _hiding;
         private static DyingState _dying;
         private PlayerState _state;
-        
+        public UnityEvent<PlayerState> OnPlayerStateChanged { get; private set; }
+
         // For movement testing, allow speeds to be set through the editor
         [Header("State speed parameters")]
         [SerializeField] private float _walkingSpeed, _runningSpeed;
@@ -43,11 +45,12 @@ namespace Controls
             _running = new RunningState(_runningSpeed, _runningSpeedBlendDuration, _runningHeartRateIncrease);
             _hiding = new HidingState(_hidingHeartRateIncrease);
             _dying = new DyingState();
-            
+
             _state = _walking;
-            
+
             _startXPos = transform.position.x;
             _rBody = GetComponent<Rigidbody>();
+            this.OnPlayerStateChanged = new UnityEvent<PlayerState>();
         }
 
         void Start() {
@@ -109,15 +112,16 @@ namespace Controls
         {
             return _state;
         }
-        
+
         // ---------------- Input -----------------
-        void Walk(InputAction.CallbackContext obj) 
+        void Walk(InputAction.CallbackContext obj)
         {
             // Cache previous state and call OnExit and OnEnter
             var prevState = _state;
             _state.OnExit(_walking);
             _state = _walking;
             _state.OnEnter(prevState);
+            this.OnPlayerStateChanged?.Invoke(this._state);
         }
 
         void Run(InputAction.CallbackContext obj)
@@ -126,6 +130,7 @@ namespace Controls
             _state.OnExit(_running);
             _state = _running;
             _state.OnEnter(prevState);
+            this.OnPlayerStateChanged?.Invoke(this._state);
         }
 
         void Stop(InputAction.CallbackContext obj)
@@ -134,6 +139,7 @@ namespace Controls
             _state.OnExit(_hiding);
             _state = _hiding;
             _state.OnEnter(prevState);
+            this.OnPlayerStateChanged?.Invoke(this._state);
         }
 
         public void Die()
@@ -143,6 +149,7 @@ namespace Controls
             _state = _dying;
             _state.OnEnter(prevState);
 
+            this.OnPlayerStateChanged?.Invoke(this._state);
             GameManager.Instance.OnGameOver?.Invoke();
         }
 
