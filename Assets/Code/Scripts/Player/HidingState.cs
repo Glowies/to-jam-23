@@ -8,7 +8,12 @@ namespace Controls {
     public class HidingState : PlayerState
     {
         // TODO: Adjust multiplier values here
-        private float _heartRateMultiplier = 10f;
+        private readonly float _heartRateMultiplier;
+        
+        public HidingState(float heartRateMultiplier)
+        {
+            _heartRateMultiplier = heartRateMultiplier;
+        }
         
         public void OnEnter(PlayerState prevState)
         {
@@ -16,7 +21,12 @@ namespace Controls {
             // state?
         }
         
-        public void Movement(Transform player, HRGauge heartRate, Action playerDeath, float baseSpeed)
+        public float GetMovementSpeed()
+        {
+            return 0f;
+        }
+        
+        public void Movement(Transform player, HRGauge heartRate, Action playerDeath)
         {
             // Increase the HR Gauge; note that this is called in a delegated method under update
             heartRate.IncreaseHR(playerDeath, _heartRateMultiplier);

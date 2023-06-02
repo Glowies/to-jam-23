@@ -11,10 +11,12 @@ public class GameUI : MonoBehaviour {
   [SerializeField] private GameObject _gameOverUI;
   [SerializeField] private GameObject _leaderboardSetterUI;
   [SerializeField] private GameObject _scoreboardUI;
+  [SerializeField] private ControlsUI _controlsUI;
 
   public void Initialize(GameManager gameManager) {
     gameManager.OnSetupComplete.AddListener(this.OnGameSetupComplete);
     gameManager.OnGameOver.AddListener(this.OnGameOver);
+    this._controlsUI.Initialize(gameManager.PlayerController);
   }
 
   public void FadeInForeground(UnityAction onComplete) {
@@ -27,15 +29,15 @@ public class GameUI : MonoBehaviour {
     this._leaderboardSetterUI.SetActive(false);
     ShowLeaderboard();
   }
-  
+
   public void ShowLeaderboard() {
     this._scoreboardUI.SetActive(true);
   }
-  
+
   public void HideLeaderboard() {
     this._scoreboardUI.SetActive(false);
   }
-  
+
   public void ShowGameOver() {
     // Get the score from the ScoreManager and set the final score for the game over menu
     var score = ScoreManager.Instance.GetScore();
