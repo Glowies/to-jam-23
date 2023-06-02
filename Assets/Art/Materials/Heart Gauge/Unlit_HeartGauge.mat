@@ -30,8 +30,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CorruptionFill: 45.599304
-    - _HeartFill: 95.86656
+    - _CorruptionFill: 0
+    - _HeartFill: 100
     m_Colors:
     - _BackgroundColor: {r: 0.3773585, g: 0.3773585, b: 0.3773585, a: 1}
     - _CorruptedColor: {r: 1, g: 0, b: 0, a: 1}
