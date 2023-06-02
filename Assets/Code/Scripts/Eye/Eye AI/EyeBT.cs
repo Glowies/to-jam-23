@@ -14,6 +14,13 @@ public class EyeBT : BehaviourTree.Tree
     public PlayerController player;
     public RoomManager roomManager;
     public Animator animController;
+    public Light eyeSelfLight;
+    public Light eyeWindowLight;
+
+    [Header("Light Colors")]
+    public Color eyeAgitatedColor = new Color(1, 0.34f, 0.34f, 1);
+    public Color eyeNonIdlingColor = new Color(0.5f, 0.5f, 0.5f, 1);
+    public Color eyeIdleColor = new Color(0.5f, 0.5f, 0.5f, 1);
 
     [Header("Transition Timings")]
     public float idleWaitTime = 5f;
@@ -73,7 +80,7 @@ public class EyeBT : BehaviourTree.Tree
                 nonIdlingBehaviour
             }),
 
-            new Idle(transform)
+            new Idle(transform, eyeSelfLight)
             
 
         });

@@ -10,10 +10,12 @@ public class Idle : BehaviourNode
     private float _waitCounter = 0;
     private bool _switching = true;
     private Transform _eyeTransform;
+    private Light _selfLight;
 
-    public Idle(Transform transform)
+    public Idle(Transform eyeTransform, Light selfLight)
     {
-        _eyeTransform = transform;
+        _eyeTransform = eyeTransform;
+        _selfLight = selfLight;
     }
 
 
@@ -31,6 +33,7 @@ public class Idle : BehaviourNode
             float eyeRoomZOffset = (float)GetData("eyeRoomZOffset");
             float retreatTime = (float)GetData("retreatTime");
             _eyeTransform.DOMove(currRoom.transform.position + new Vector3(0, 2, eyeRoomZOffset), retreatTime);
+            _selfLight.DOIntensity(0, retreatTime);
         }
 
         // get idle wait time from parent data
@@ -47,6 +50,7 @@ public class Idle : BehaviourNode
         // Debug.Log("Not Idle");
         _waitCounter = 0;
         _switching = true;
+        _selfLight.intensity = 12.34f;
         parent.SetData("idling", false);
         return NodeState.SUCCESS;
     }
