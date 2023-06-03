@@ -1,8 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 namespace UI 
 {
@@ -20,6 +20,12 @@ namespace UI
         }
         
         // --------------- Bookkeeping ---------------
+        [Header("Music Events")]
+        // Music events kept in the HRGauge UI class to match beating animations
+        public UnityEvent onHeavyBeating;
+        public UnityEvent onNormalBeating;
+
+        [Header("UI")]
         [SerializeField] private GameObject _heartImage;
         [SerializeField] private Image _pulseImage;
         [SerializeField] private Image _pulseImage2;
@@ -63,6 +69,7 @@ namespace UI
             _heartGauge.material.SetFloat("_HeartFill", 100f - value);
 
             // Heart pulsates furiously!
+            onHeavyBeating?.Invoke();
             if (_state == State.HeavyBeating) return;
             
             _state = State.HeavyBeating;
@@ -77,9 +84,10 @@ namespace UI
             // Replenish the colour of the heart
             _heartGauge.material.SetFloat("_HeartFill", 100f - value);
 
+            // Heart pulsates normally
+            onNormalBeating?.Invoke();
             if (_state == State.NormalBeating) return;
             
-            // Heart pulsates normally
             _state = State.NormalBeating;
             StopAllCoroutines();
             StartCoroutine(NormalPulse());
