@@ -2864,7 +2864,7 @@ PrefabInstance:
     - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
         type: 3}
       propertyPath: _runningSpeedBlendDuration
-      value: 2.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7606128236679298141, guid: cff79dadf258649d3a8edb02a4d640b3,
         type: 3}
