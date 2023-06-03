@@ -69,7 +69,6 @@ namespace UI
             _heartGauge.material.SetFloat("_HeartFill", 100f - value);
 
             // Heart pulsates furiously!
-            onHeavyBeating?.Invoke();
             if (_state == State.HeavyBeating) return;
             
             _state = State.HeavyBeating;
@@ -85,7 +84,6 @@ namespace UI
             _heartGauge.material.SetFloat("_HeartFill", 100f - value);
 
             // Heart pulsates normally
-            onNormalBeating?.Invoke();
             if (_state == State.NormalBeating) return;
             
             _state = State.NormalBeating;
@@ -105,6 +103,8 @@ namespace UI
         {
             while (_state == State.HeavyBeating)
             {
+                onHeavyBeating?.Invoke();
+                
                 _pulseImage.transform.localScale = _pulseImageStartScale;
                 _pulseImage2.transform.localScale = _pulseImageStartScale;
                 
@@ -134,6 +134,8 @@ namespace UI
         {
             while (_state == State.NormalBeating)
             {
+                onNormalBeating?.Invoke();
+                
                 _heartImage.transform.localScale = _heartImageStartScale;
                 
                 // TODO: Match timing with the SFX of the heart beating later
