@@ -20,10 +20,13 @@ public class EyeBT : BehaviourTree.Tree
     public Light eyeSelfLight;
     public Light eyeWindowLight;
 
-    [Header("Light Colors")]
+    [Header("Light Colors (TODO: not yet hooked up!)")]
     public Color eyeAgitatedColor = new Color(1, 0.34f, 0.34f, 1);
+    public float eyeAgitatedLightIntensity = 12.34f;
     public Color eyeNonIdlingColor = new Color(0.5f, 0.5f, 0.5f, 1);
+    public float eyeNonIdlingLightIntensity = 12.34f;
     public Color eyeIdleColor = new Color(0.5f, 0.5f, 0.5f, 1);
+    public float eyeIdleLightIntensity = 12.34f;
 
     [Header("Transition Timings")]
     public float idleWaitTime = 5f;
@@ -46,6 +49,8 @@ public class EyeBT : BehaviourTree.Tree
     public float eyeRoomZOffset = 10f;
     public float eyeWindowAttackingZOffset = 3f;
 
+    [Space(10)]
+
     [Header("Events")]
     public UnityEvent onStartAttack;
     public UnityEvent onEndAttack;
@@ -58,7 +63,6 @@ public class EyeBT : BehaviourTree.Tree
     {
         BehaviourNode searching = new Selector(new List<BehaviourNode>
         {
-
             // switch rooms
             new Sequence(new List<BehaviourNode>
             {
