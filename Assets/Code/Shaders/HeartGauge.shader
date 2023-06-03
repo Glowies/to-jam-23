@@ -92,8 +92,8 @@ Shader "Unlit/HeartGauge" {
             }
 
             fixed4 frag (Interpolators i) : SV_Target {
-                float heartfillMask = (_HeartFill / 100) > i.uv.y;
-                float corruptionfillMask = (_CorruptionFill / 100) > i.uv.y;
+                float heartfillMask = (_HeartFill / 127) + 0.1f > i.uv.y;
+                float corruptionfillMask = (_CorruptionFill / 127) + 0.1f > i.uv.y;
 
                 float4 fillColor = lerp(_GradientColorA, _GradientColorB, i.uv.y);
                 float3 backgroundColor = _BackgroundColor;
