@@ -1,12 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 namespace UI 
 {
-    [RequireComponent(typeof(Slider))]
     public class HRGauge : MonoBehaviour
     {
         private enum State {
@@ -21,10 +20,16 @@ namespace UI
         }
         
         // --------------- Bookkeeping ---------------
-        [SerializeField] private GameObject _gaugeScaler;
-        [SerializeField] private Image _heartImage;
+        [Header("Music Events")]
+        // Music events kept in the HRGauge UI class to match beating animations
+        public UnityEvent onHeavyBeating;
+        public UnityEvent onNormalBeating;
+
+        [Header("UI")]
+        [SerializeField] private GameObject _heartImage;
         [SerializeField] private Image _pulseImage;
         [SerializeField] private Image _pulseImage2;
+        [SerializeField] private Image _heartGauge;
         private Controls.HRGauge _heartImageRateController;
         
         private State _state;
@@ -41,10 +46,14 @@ namespace UI
             _pulseImageStartScale = _pulseImage.transform.localScale;
             
             Color color = _pulseImage.color;
-            _pulseImageStartColor = new Color(color.r, color.g, color.b, 0.5f);
+            _pulseImageStartColor = new Color(color.r, color.g, color.b, 0.03f);
             
             _state = State.NormalBeating;
             StartCoroutine(NormalPulse());
+            
+            // Set heartbeat to starting amount
+            _heartGauge.material.SetFloat("_HeartFill", 100f);
+            _heartGauge.material.SetFloat("_CorruptionFill", 0.3f);
             
             // Expensive, but this will only be called at the start
             _heartImageRateController = FindObjectOfType<Controls.PlayerController>().GetHRGauge();
@@ -56,8 +65,9 @@ namespace UI
 
         private void OnHRIncrease(float value)
         {
-            GetComponent<Slider>().DOValue(value, 0.1f);
-            
+            // Drain the colour out of the heart
+            _heartGauge.material.SetFloat("_HeartFill", 100f - value);
+
             // Heart pulsates furiously!
             if (_state == State.HeavyBeating) return;
             
@@ -65,16 +75,17 @@ namespace UI
             StopAllCoroutines();
             StartCoroutine(HeavyPulse());
 
-            // In addition to setting the slider value, what else should be done? 
+            // In addition to setting the gauge value, what else should be done? 
         }
 
         private void OnHRDecrease(float value)
         {
-            GetComponent<Slider>().DOValue(value, 0.1f);
-            
+            // Replenish the colour of the heart
+            _heartGauge.material.SetFloat("_HeartFill", 100f - value);
+
+            // Heart pulsates normally
             if (_state == State.NormalBeating) return;
             
-            // Heart pulsates normally
             _state = State.NormalBeating;
             StopAllCoroutines();
             StartCoroutine(NormalPulse());
@@ -82,10 +93,9 @@ namespace UI
         
         private void OnMaxHRDecrease(float value)
         {
-            // Chisel down the max width of the bar
-            Vector3 targetScale = new Vector3(value / 100, 1, 1);
-            _gaugeScaler.transform.DOScale(targetScale, 0.1f);
-            
+            // Replenish the colour of the heart
+            _heartGauge.material.SetFloat("_CorruptionFill", 100f - value);
+
             // _state = State.EyeAttacking;
         }
         
@@ -93,6 +103,8 @@ namespace UI
         {
             while (_state == State.HeavyBeating)
             {
+                onHeavyBeating?.Invoke();
+                
                 _pulseImage.transform.localScale = _pulseImageStartScale;
                 _pulseImage2.transform.localScale = _pulseImageStartScale;
                 
@@ -102,14 +114,14 @@ namespace UI
                 _heartImage.transform.DOScale(_heartImageStartScale * 1.1f, 0.08f);
 
                 _pulseImage.color = _pulseImageStartColor;
-                _pulseImage.transform.DOScale(_pulseImageStartScale * 2, 0.3f);
-                _pulseImage.DOFade(0f, 0.3f);
+                _pulseImage.transform.DOScale(_pulseImageStartScale * 1.5f, 0.3f);
+                _pulseImage.DOFade(0f, 0.2f);
 
                 yield return this._waitForHeartBeat;
                 
                 _pulseImage2.color = _pulseImageStartColor;
-                _pulseImage2.transform.DOScale(_pulseImageStartScale * 2, 0.3f);
-                _pulseImage2.DOFade(0f, 0.3f);
+                _pulseImage2.transform.DOScale(_pulseImageStartScale * 1.5f, 0.3f);
+                _pulseImage2.DOFade(0f, 0.2f);
                 
                 // Scale heart back
                 _heartImage.transform.DOScale(_heartImageStartScale, 0.08f);
@@ -122,6 +134,8 @@ namespace UI
         {
             while (_state == State.NormalBeating)
             {
+                onNormalBeating?.Invoke();
+                
                 _heartImage.transform.localScale = _heartImageStartScale;
                 
                 // TODO: Match timing with the SFX of the heart beating later
