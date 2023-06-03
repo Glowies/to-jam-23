@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Controls {
     /// <summary>
@@ -15,10 +16,12 @@ namespace Controls {
             _heartRateMultiplier = heartRateMultiplier;
         }
         
-        public void OnEnter(PlayerState prevState)
+        public void OnEnter(PlayerState prevState, UnityEvent[] musicEvents)
         {
             // TODO: When the Player hides...what should happen? music? visual animations? Does it matter from which
             // state?
+            // Selection of music events can be handled through indexing after events are input
+            musicEvents[4]?.Invoke();
         }
         
         public float GetMovementSpeed()
@@ -34,10 +37,12 @@ namespace Controls {
             // TODO: Any special changes to how the player interacts with the environment while hiding?
         }
         
-        public void OnExit(PlayerState newState)
+        public void OnExit(PlayerState newState, UnityEvent[] musicEvents)
         {
             // TODO: When the Player stops hiding...what should happen? music? visual animations? Does
             // it matter to which state?
+            // Selection of music events can be handled through indexing after events are input
+            musicEvents[5]?.Invoke();
         }
     }
 }

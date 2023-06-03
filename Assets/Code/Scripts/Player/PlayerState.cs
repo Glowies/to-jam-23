@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Controls {
     /// <summary>
@@ -14,8 +15,8 @@ namespace Controls {
         // Methods OnEnter and OnExit that can be extended for future purposes to encapsulate rendering, sound, and logic
         // that are associated with each state.
         // TODO: Consider what we need when switching states...reference to old state, to play audio, etc.
-        public void OnEnter(PlayerState prevState) {}
-        public void OnExit(PlayerState newState) {}
+        public void OnEnter(PlayerState prevState, UnityEvent[] musicEvents) {}
+        public void OnExit(PlayerState newState, UnityEvent[] musicEvents) {}
 
         /// <summary>
         /// Adjust the player movement speed and actions depending on the current state of the player.

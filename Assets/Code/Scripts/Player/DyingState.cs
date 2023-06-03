@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Controls {
     /// <summary>
@@ -7,13 +8,13 @@ namespace Controls {
     /// </summary>
     public class DyingState : PlayerState
     {
-        public void OnEnter(PlayerState prevState)
+        public void OnEnter(PlayerState prevState, UnityEvent[] musicEvents)
         {
             // TODO: When the Player dies...what should happen? music? visual animations? 
             // Does it depend on from what state you're coming from?
             // Should everything stop moving? Or just the player? And what should happen afterwards (UI)?
-
-            // TODO: Spawn some game over menu
+            // Selection of music events can be handled through indexing after events are input
+            musicEvents[6]?.Invoke();
         }
         
         public float GetMovementSpeed()

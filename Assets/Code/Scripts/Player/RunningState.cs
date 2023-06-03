@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Controls {
     /// <summary>
@@ -23,10 +24,12 @@ namespace Controls {
             _currentSpeed = stateSpeed;
         }
         
-        public void OnEnter(PlayerState prevState)
+        public void OnEnter(PlayerState prevState, UnityEvent[] musicEvents)
         {
             // TODO: When the Player runs...what should happen? music? visual animations? Does it matter from which
             // state?
+            // Selection of music events can be handled through indexing after events are input
+            musicEvents[2]?.Invoke();
             
             if (prevState is WalkingState || prevState is HidingState)
             {
@@ -57,10 +60,11 @@ namespace Controls {
             // TODO: Any special changes to how the player interacts with the environment while running?
         }
         
-        public void OnExit(PlayerState newState)
+        public void OnExit(PlayerState newState, UnityEvent[] musicEvents)
         {
             // TODO: When the Player stops running...what should happen? music? visual animations? Does
             // it matter to which state?
+            musicEvents[3]?.Invoke();
         }
     }
 }

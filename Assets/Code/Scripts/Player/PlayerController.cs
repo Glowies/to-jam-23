@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -10,6 +11,18 @@ namespace Controls
     /// </summary>
     public class PlayerController : MonoBehaviour
     {
+        // ------------------ Events -----------------
+        [Header("Music Events")] 
+        public UnityEvent OnStartWalking;
+        public UnityEvent OnStopWalking;
+        public UnityEvent OnStartRunning;
+        public UnityEvent OnStopRunning;
+        public UnityEvent OnStartHiding;
+        public UnityEvent OnStopHiding;
+        public UnityEvent OnStartDying;
+        // Kept as a list for now in case states need to invoke any type of music event
+        private UnityEvent[] _musicEvents;
+        
         // --------------- Player State --------------
         private static WalkingState _walking;
         private static RunningState _running;
@@ -41,6 +54,8 @@ namespace Controls
 
         void Awake()
         {
+            _musicEvents = new UnityEvent[] {OnStartWalking, OnStopWalking, OnStartRunning, OnStopRunning, 
+                OnStartHiding, OnStopHiding, OnStartDying};
             _walking = new WalkingState(_walkingSpeed, _walkingSpeedBlendDuration, _walkingHeartRateDecrease);
             _running = new RunningState(_runningSpeed, _runningSpeedBlendDuration, _runningHeartRateIncrease);
             _hiding = new HidingState(_hidingHeartRateIncrease);
@@ -118,36 +133,36 @@ namespace Controls
         {
             // Cache previous state and call OnExit and OnEnter
             var prevState = _state;
-            _state.OnExit(_walking);
+            _state.OnExit(_walking, _musicEvents);
             _state = _walking;
-            _state.OnEnter(prevState);
+            _state.OnEnter(prevState, _musicEvents);
             this.OnPlayerStateChanged?.Invoke(this._state);
         }
 
         void Run(InputAction.CallbackContext obj)
         {
             var prevState = _state;
-            _state.OnExit(_running);
+            _state.OnExit(_running, _musicEvents);
             _state = _running;
-            _state.OnEnter(prevState);
+            _state.OnEnter(prevState, _musicEvents);
             this.OnPlayerStateChanged?.Invoke(this._state);
         }
 
         void Stop(InputAction.CallbackContext obj)
         {
             var prevState = _state;
-            _state.OnExit(_hiding);
+            _state.OnExit(_hiding, _musicEvents);
             _state = _hiding;
-            _state.OnEnter(prevState);
+            _state.OnEnter(prevState, _musicEvents);
             this.OnPlayerStateChanged?.Invoke(this._state);
         }
 
         public void Die()
         {
             var prevState = _state;
-            _state.OnExit(_dying);
+            _state.OnExit(_dying, _musicEvents);
             _state = _dying;
-            _state.OnEnter(prevState);
+            _state.OnEnter(prevState, _musicEvents);
 
             this.OnPlayerStateChanged?.Invoke(this._state);
             GameManager.Instance.OnGameOver?.Invoke();
