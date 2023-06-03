@@ -5,6 +5,7 @@ using BehaviourTree;
 using DG.Tweening;
 using Controls;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Attack : BehaviourNode
     // Behaviour node for the attack state of the eye. Increase paranoia meter.
@@ -14,14 +15,18 @@ public class Attack : BehaviourNode
     private PlayerController _player;
     private Transform _eyeTransform;
     private Animator _animController;
+    private UnityEvent<bool> _onAttackStateChange;
+    private bool _isAttacking;
     
 
-    public Attack(EyeSight eyeSight, PlayerController player, Animator animController, Transform transform)
+    public Attack(EyeSight eyeSight, PlayerController player, Animator animController, Transform transform, UnityEvent<bool> onAttackStateChange)
     {
         _eyeSight = eyeSight;
         _player = player;
         _eyeTransform = transform;
         _animController = animController;
+        _onAttackStateChange = onAttackStateChange;
+        _isAttacking = false;
     }
 
     public override NodeState _Evaluate()
@@ -33,6 +38,10 @@ public class Attack : BehaviourNode
 
         if (_eyeSight.IsTargetInSight())
         {
+            if (_isAttacking == false) { 
+                _isAttacking = true;
+                _onAttackStateChange.Invoke(true);
+            }
 
             // get closer to window
             Room currRoom = (Room)GetData("currentRoom");
@@ -60,6 +69,11 @@ public class Attack : BehaviourNode
                 return NodeState.SUCCESS;
 
             return NodeState.RUNNING;
+        }
+
+        if (_isAttacking) { 
+            _isAttacking = false;
+            _onAttackStateChange.Invoke(false);
         }
 
         // lingering
