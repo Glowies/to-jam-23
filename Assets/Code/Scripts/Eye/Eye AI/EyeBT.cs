@@ -20,7 +20,7 @@ public class EyeBT : BehaviourTree.Tree
     public Light eyeSelfLight;
     public Light eyeWindowLight;
 
-    [Header("Light Colors (TODO: not yet hooked up!)")]
+    [Header("Light Colors")]
     public Color eyeAgitatedColor = new Color(1, 0.34f, 0.34f, 1);
     public float eyeAgitatedLightIntensity = 12.34f;
     public Color eyeNonIdlingColor = new Color(0.5f, 0.5f, 0.5f, 1);
@@ -77,7 +77,7 @@ public class EyeBT : BehaviourTree.Tree
                 new Sequence (new List<BehaviourNode>
                 {
                     new CheckPlayerInView(eyeSight, transform, onStartAttack, animController),
-                    new Attack(eyeSight, player)
+                    new Attack(eyeSight, player, eyeSelfLight, eyeWindowLight)
                 }),
                 // idling while looking thru window
                 new LookThroughWindow(transform, animController, onEndAttack),
@@ -91,11 +91,11 @@ public class EyeBT : BehaviourTree.Tree
         {
             new Sequence(new List<BehaviourNode>
             {
-                new IsNotIdling(),
+                new IsNotIdling(eyeSelfLight, eyeWindowLight),
                 searching
             }),
 
-            new Idle(transform, eyeSelfLight, onStartSearching, guaranteedAmountOfLooksAfterSwitchingToSearching)
+            new Idle(transform, eyeSelfLight, eyeWindowLight, onStartSearching, guaranteedAmountOfLooksAfterSwitchingToSearching)
             
 
         });
@@ -127,7 +127,13 @@ public class EyeBT : BehaviourTree.Tree
         root.SetData("eyeWindowAttackingZOffset", eyeWindowAttackingZOffset);
         root.SetData("attackLingerTime", attackLingerTime);
         root.SetData("guaranteedLooks", 0);
-
+        root.SetData("agitated", false);
+        root.SetData("eyeAgitatedColor", eyeAgitatedColor);
+        root.SetData("eyeAgitatedLightIntensity", eyeAgitatedLightIntensity);
+        root.SetData("eyeNonIdlingColor", eyeNonIdlingColor);
+        root.SetData("eyeNonIdlingLightIntensity", eyeNonIdlingLightIntensity);
+        root.SetData("eyeIdleColor", eyeIdleColor);
+        root.SetData("eyeIdleLightIntensity", eyeIdleLightIntensity);
 
         return root;
     }

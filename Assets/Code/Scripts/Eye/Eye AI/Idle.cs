@@ -11,13 +11,15 @@ public class Idle : BehaviourNode
     private bool _switching = true;
     private Transform _eyeTransform;
     private Light _selfLight;
+    private Light _windowLight;
     private UnityEngine.Events.UnityEvent _onStartSearching;
     private int _guaranteedLooks;
 
-    public Idle(Transform eyeTransform, Light selfLight, UnityEngine.Events.UnityEvent onStartSearching, int guaranteedLooks)
+    public Idle(Transform eyeTransform, Light selfLight, Light windowLight, UnityEngine.Events.UnityEvent onStartSearching, int guaranteedLooks)
     {
         _eyeTransform = eyeTransform;
         _selfLight = selfLight;
+        _windowLight = windowLight;
         _onStartSearching = onStartSearching;
         _guaranteedLooks = guaranteedLooks;
     }
@@ -55,6 +57,8 @@ public class Idle : BehaviourNode
         _waitCounter = 0;
         _switching = true;
         _selfLight.intensity = 12.34f;
+        _windowLight.intensity = (float) GetData("eyeIdleLightIntensity");
+        _windowLight.color = (Color) GetData("eyeIdleColor");
         parent.SetData("idling", false);
 
         // look at least 3 times before available to idle again

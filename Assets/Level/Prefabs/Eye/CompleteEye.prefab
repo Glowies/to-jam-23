@@ -5032,8 +5032,11 @@ MonoBehaviour:
   eyeSelfLight: {fileID: 1454801695953502805}
   eyeWindowLight: {fileID: 4845888082238818179}
   eyeAgitatedColor: {r: 1, g: 0.34, b: 0.34, a: 1}
+  eyeAgitatedLightIntensity: 600
   eyeNonIdlingColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  eyeNonIdlingLightIntensity: 600
   eyeIdleColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  eyeIdleLightIntensity: 600
   idleWaitTime: 5
   attackStartTime: 0.2
   attackLingerTime: 2
