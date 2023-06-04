@@ -13,20 +13,19 @@ public class Attack : BehaviourNode
 
     private EyeSight _eyeSight;
     private PlayerController _player;
-    private Transform _eyeTransform;
-    private Animator _animController;
+    private readonly Light _selfLight;
+    private readonly Light _windowLight;
     private UnityEvent<bool> _onAttackStateChange;
     private bool _isAttacking;
     
 
-    public Attack(EyeSight eyeSight, PlayerController player, Animator animController, Transform transform, UnityEvent<bool> onAttackStateChange)
+    public Attack(EyeSight eyeSight, PlayerController player, Light selfLight, Light windowLight, UnityEvent<bool> onAttackStateChange)
     {
         _eyeSight = eyeSight;
         _player = player;
-        _eyeTransform = transform;
-        _animController = animController;
+        _selfLight = selfLight;
+        _windowLight = windowLight;
         _onAttackStateChange = onAttackStateChange;
-        _isAttacking = false;
     }
 
     public override NodeState _Evaluate()
@@ -38,32 +37,22 @@ public class Attack : BehaviourNode
 
         if (_eyeSight.IsTargetInSight())
         {
-            if (_isAttacking == false) { 
-                _isAttacking = true;
-                _onAttackStateChange.Invoke(true);
-            }
-
-            // get closer to window
-            Room currRoom = (Room)GetData("currentRoom");
 
             if (GetData("currWindowIndex") == null)
             {
                 // UnityEngine.Debug.LogError("Could not find window to attack through");
                 return NodeState.FAILURE;
             }
-            int currWindowIndex = (int)GetData("currWindowIndex");
-            
-            float eyeZOffset = (float)GetData("eyeWindowAttackingZOffset");
-            _eyeTransform.DOMove(currRoom.Windows[currWindowIndex] + new Vector3(0, 0, eyeZOffset), (float)GetData("windowSwitchTime"));
-
-            // animation trigger for attack goes here!
-            _animController.SetBool("isAttacking", true);
 
             // increase heart rate
             HRGauge _heartRate = _player.GetHRGauge();
 
             // decrease max heart reate
             _heartRate.DecreaseMaxHR(_player, (float)GetData("decreaseMaxHRPerSecond"));
+            
+            // update light color
+            _windowLight.intensity = (float) GetData("eyeAgitatedLightIntensity");
+            _windowLight.color = (Color) GetData("eyeAgitatedColor");
 
             if (_player.GetPlayerState() is DyingState)
                 return NodeState.SUCCESS;
@@ -78,6 +67,7 @@ public class Attack : BehaviourNode
 
         // lingering
         parent.parent.SetData("agitated", true);
+        
         return NodeState.RUNNING;
     }
 }

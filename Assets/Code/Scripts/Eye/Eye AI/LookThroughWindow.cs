@@ -11,11 +11,13 @@ public class LookThroughWindow : BehaviourNode
     private Transform _eyeTransform;
     private RoomManager _roomManager;
     private Animator _animController;
+    private UnityEngine.Events.UnityEvent _onEndAttack;
 
-    public LookThroughWindow(Transform transform, Animator animController)
+    public LookThroughWindow(Transform transform, Animator animController, UnityEngine.Events.UnityEvent onEndAttack)
     {
         _eyeTransform = transform;
         _animController = animController;
+        _onEndAttack = onEndAttack;
     }
 
     public override NodeState _Evaluate()
@@ -25,7 +27,7 @@ public class LookThroughWindow : BehaviourNode
         // if not looking through a window, switch to first window in window list
         if (GetData("currWindowIndex") == null)
         {
-            parent.parent.SetData("currWindowIndex", 0);
+            parent.parent.parent.parent.SetData("currWindowIndex", 0);
 
             Room currRoom = (Room)GetData("currentRoom");
             float eyeZOffset = (float)GetData("eyeWindowZOffset");
@@ -36,7 +38,12 @@ public class LookThroughWindow : BehaviourNode
         _waitCounter += UnityEngine.Time.deltaTime;
         
         // animation trigger to stop attack goes here!
-        _animController.SetBool("isAttacking", false);
+        if (_animController.GetBool("isAttacking"))
+        {
+            _onEndAttack.Invoke();
+            _animController.SetBool("isAttacking", false);
+        }
+        
 
         if (_waitCounter > (float)GetData("idleOnWindowWaitTime"))
         {
