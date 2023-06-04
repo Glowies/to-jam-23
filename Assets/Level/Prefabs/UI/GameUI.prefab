@@ -395,7 +395,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d462373be8d087148814392292f71bc6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c17e030280c94e340a1de0b16c118eeb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -585,6 +585,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6b54dd430b0e348b3e086c4318de5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onHeavyBeating:
+    m_PersistentCalls:
+      m_Calls: []
+  onNormalBeating:
+    m_PersistentCalls:
+      m_Calls: []
   _heartImage: {fileID: 7814215221229364410}
   _pulseImage: {fileID: 4366945765913641477}
   _pulseImage2: {fileID: 4577721062183369051}
@@ -1083,6 +1089,7 @@ MonoBehaviour:
   _gameOverUI: {fileID: 2844874377969020155}
   _leaderboardSetterUI: {fileID: 8255181974343291514}
   _scoreboardUI: {fileID: 5440796772387073719}
+  _postProcessingManager: {fileID: 0}
   _controlsUI: {fileID: 724697908814860338}
 --- !u!1 &7615931915316245965
 GameObject:
