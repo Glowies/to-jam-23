@@ -130,6 +130,7 @@ public class EyeBT : BehaviourTree.Tree
         root.SetData("eyeWindowAttackingZOffset", eyeWindowAttackingZOffset);
         root.SetData("attackLingerTime", attackLingerTime);
         root.SetData("guaranteedLooks", 0);
+        root.SetData("currWindowIndex", 0);
         root.SetData("agitated", false);
         root.SetData("eyeAgitatedColor", eyeAgitatedColor);
         root.SetData("eyeAgitatedLightIntensity", eyeAgitatedLightIntensity);

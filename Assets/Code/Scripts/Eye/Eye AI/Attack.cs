@@ -19,12 +19,13 @@ public class Attack : BehaviourNode
     private bool _isAttacking;
     
 
-    public Attack(EyeSight eyeSight, PlayerController player, Animator animController, Transform transform)
+    public Attack(EyeSight eyeSight, PlayerController player, Light selfLight, Light windowLight, UnityEvent<bool> onAttackStateChange)
     {
         _eyeSight = eyeSight;
         _player = player;
-        _eyeTransform = transform;
-        _animController = animController;
+        _selfLight = selfLight;
+        _windowLight = windowLight;
+        _onAttackStateChange = onAttackStateChange;
     }
 
     public override NodeState _Evaluate()
@@ -37,21 +38,11 @@ public class Attack : BehaviourNode
         if (_eyeSight.IsTargetInSight())
         {
 
-            // get closer to window
-            Room currRoom = (Room)GetData("currentRoom");
-
             if (GetData("currWindowIndex") == null)
             {
                 // UnityEngine.Debug.LogError("Could not find window to attack through");
                 return NodeState.FAILURE;
             }
-            int currWindowIndex = (int)GetData("currWindowIndex");
-            
-            float eyeZOffset = (float)GetData("eyeWindowAttackingZOffset");
-            _eyeTransform.DOMove(currRoom.Windows[currWindowIndex] + new Vector3(0, 0, eyeZOffset), (float)GetData("windowSwitchTime"));
-
-            // animation trigger for attack goes here!
-            _animController.SetBool("isAttacking", true);
 
             // increase heart rate
             HRGauge _heartRate = _player.GetHRGauge();
