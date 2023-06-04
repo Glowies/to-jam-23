@@ -51,6 +51,7 @@
 						</Sound>
 						<Sound Name="amb_eyeHum_lp" ID="{FC881CE4-1EB6-42FC-8E96-8A515F8C9944}" ShortID="21365943">
 							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-15</Value>

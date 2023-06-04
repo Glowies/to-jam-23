@@ -25,6 +25,9 @@ namespace UI
         public UnityEvent onHeavyBeating;
         public UnityEvent onNormalBeating;
 
+        // i can't figure out what object to select to hook up and declare the wwise events using unity events, forgive me
+        public AK.Wwise.Event Heartbeat;
+
         [Header("UI")]
         [SerializeField] private GameObject _heartImage;
         [SerializeField] private Image _pulseImage;
@@ -127,6 +130,10 @@ namespace UI
                 _heartImage.transform.DOScale(_heartImageStartScale, 0.08f);
 
                 yield return this._waitForHeavyPace;
+
+                // adding heavy breathing audio
+                Heartbeat.Post(gameObject);
+
             }
         }
         
@@ -147,6 +154,10 @@ namespace UI
                 _heartImage.transform.DOScale(_heartImageStartScale, 0.08f);
 
                 yield return this._waitForNormalPace;
+
+                // adding the normal heartbeat
+                Heartbeat.Post(gameObject);
+                
             }
         }
     }

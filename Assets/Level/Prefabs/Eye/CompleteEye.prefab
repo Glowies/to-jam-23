@@ -5039,6 +5039,9 @@ MonoBehaviour:
   eyeWindowZOffset: 8
   eyeRoomZOffset: 10
   eyeWindowAttackingZOffset: 5
+  OnAttackStateChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4845888082243147921
 GameObject:
   m_ObjectHideFlags: 0

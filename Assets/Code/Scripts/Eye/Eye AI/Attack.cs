@@ -17,7 +17,7 @@ public class Attack : BehaviourNode
     private Animator _animController;
     private UnityEvent<bool> _onAttackStateChange;
     private bool _isAttacking;
-    
+
 
     public Attack(EyeSight eyeSight, PlayerController player, Animator animController, Transform transform, UnityEvent<bool> onAttackStateChange)
     {

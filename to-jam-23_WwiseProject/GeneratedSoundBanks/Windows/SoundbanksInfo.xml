@@ -253,7 +253,7 @@
 				<Event Id="3881368754" Name="Unmute_mus_unsafe_random" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{A753D75A-C3ED-924F-52C5-6CC937CEF377}">
+		<SoundBank Id="1117531639" Type="User" Language="SFX" Hash="{C84A1465-AE3B-885A-6893-6464CF4BF09A}">
 			<ShortName>amb</ShortName>
 			<Path>amb.bnk</Path>
 			<Media>
@@ -263,7 +263,7 @@
 				</File>
 				<File Id="366399191" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>sfx_eyeHum_lp.wav</ShortName>
-					<CachePath>SFX/sfx_eyeHum_lp_3F75BDB9.wem</CachePath>
+					<CachePath>SFX/sfx_eyeHum_lp_9EDFC787.wem</CachePath>
 				</File>
 				<File Id="936333669" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>amb_ghostFreq_lp.wav</ShortName>
@@ -271,7 +271,7 @@
 				</File>
 			</Media>
 			<Events>
-				<Event Id="1374060406" Name="Play_amb_eyeHum" DurationType="OneShot" DurationMin="6.01" DurationMax="6.01">
+				<Event Id="1374060406" Name="Play_amb_eyeHum" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="366399191"/>
 					</MediaRefs>
@@ -379,5 +379,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B9B84E06-E382-8935-7BC8-FC33810C590E}</FileHash>
+	<FileHash>{65FAB110-985F-DF0C-BFCF-46BE6B16F74C}</FileHash>
 </SoundBanksInfo>
