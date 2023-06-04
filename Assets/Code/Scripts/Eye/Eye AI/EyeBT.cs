@@ -4,6 +4,7 @@ using System.Numerics;
 using BehaviourTree;
 using Controls;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EyeBT : BehaviourTree.Tree
     // Behaviour Tree of the eye enemy AI.
@@ -30,7 +31,9 @@ public class EyeBT : BehaviourTree.Tree
     public float eyeWindowZOffset = 7f;
     public float eyeRoomZOffset = 10f;
     public float eyeWindowAttackingZOffset = 3f;
-    
+
+    // Fires "True" when attack begins, fires "False" when attack ends
+    public UnityEvent<bool> OnAttackStateChange;
 
     protected override BehaviourNode SetupTree()
     {
@@ -50,7 +53,7 @@ public class EyeBT : BehaviourTree.Tree
                 new Sequence (new List<BehaviourNode>
                 {
                     new CheckPlayerInView(eyeSight),
-                    new Attack(eyeSight, player, animController, transform)
+                    new Attack(eyeSight, player, animController, transform, OnAttackStateChange)
                 }),
                 // idling while looking thru window
                 new LookThroughWindow(transform, animController),
