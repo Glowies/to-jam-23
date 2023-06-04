@@ -49,9 +49,12 @@ public class EyeBT : BehaviourTree.Tree
     public float eyeRoomZOffset = 10f;
     public float eyeWindowAttackingZOffset = 3f;
 
+    
     [Space(10)]
 
     [Header("Events")]
+    // Fires "True" when attack begins, fires "False" when attack ends
+    public UnityEvent<bool> OnAttackStateChange;
     public UnityEvent onStartAttack;
     public UnityEvent onEndAttack;
     public UnityEvent onEndAgitated;
@@ -77,7 +80,7 @@ public class EyeBT : BehaviourTree.Tree
                 new Sequence (new List<BehaviourNode>
                 {
                     new CheckPlayerInView(eyeSight, transform, onStartAttack, animController),
-                    new Attack(eyeSight, player, eyeSelfLight, eyeWindowLight)
+                    new Attack(eyeSight, player, eyeSelfLight, eyeWindowLight, OnAttackStateChange)
                 }),
                 // idling while looking thru window
                 new LookThroughWindow(transform, animController, onEndAttack),

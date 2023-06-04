@@ -5,6 +5,7 @@ using BehaviourTree;
 using DG.Tweening;
 using Controls;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Attack : BehaviourNode
     // Behaviour node for the attack state of the eye. Increase paranoia meter.
@@ -14,15 +15,16 @@ public class Attack : BehaviourNode
     private PlayerController _player;
     private readonly Light _selfLight;
     private readonly Light _windowLight;
-    
+    private UnityEvent<bool> _onAttackStateChange;
+    private bool _isAttacking;
     
 
-    public Attack(EyeSight eyeSight, PlayerController player, Light selfLight, Light windowLight)
+    public Attack(EyeSight eyeSight, PlayerController player, Animator animController, Transform transform)
     {
         _eyeSight = eyeSight;
         _player = player;
-        _selfLight = selfLight;
-        _windowLight = windowLight;
+        _eyeTransform = transform;
+        _animController = animController;
     }
 
     public override NodeState _Evaluate()
@@ -34,6 +36,23 @@ public class Attack : BehaviourNode
 
         if (_eyeSight.IsTargetInSight())
         {
+
+            // get closer to window
+            Room currRoom = (Room)GetData("currentRoom");
+
+            if (GetData("currWindowIndex") == null)
+            {
+                // UnityEngine.Debug.LogError("Could not find window to attack through");
+                return NodeState.FAILURE;
+            }
+            int currWindowIndex = (int)GetData("currWindowIndex");
+            
+            float eyeZOffset = (float)GetData("eyeWindowAttackingZOffset");
+            _eyeTransform.DOMove(currRoom.Windows[currWindowIndex] + new Vector3(0, 0, eyeZOffset), (float)GetData("windowSwitchTime"));
+
+            // animation trigger for attack goes here!
+            _animController.SetBool("isAttacking", true);
+
             // increase heart rate
             HRGauge _heartRate = _player.GetHRGauge();
 
@@ -48,6 +67,11 @@ public class Attack : BehaviourNode
                 return NodeState.SUCCESS;
 
             return NodeState.RUNNING;
+        }
+
+        if (_isAttacking) { 
+            _isAttacking = false;
+            _onAttackStateChange.Invoke(false);
         }
 
         // lingering
