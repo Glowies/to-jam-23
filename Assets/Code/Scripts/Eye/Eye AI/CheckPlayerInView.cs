@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net;
+using DG.Tweening;
 using BehaviourTree;
+using UnityEngine;
 
 public class CheckPlayerInView : BehaviourNode
     // Node for checking if the player is in the view space of the eye. If an attack is ongoing, this will return success. If the player moves away from view during an attack state, the attack will be ended.
@@ -11,10 +11,16 @@ public class CheckPlayerInView : BehaviourNode
     private float _waitCounter = 0;
     private bool _waiting = true;
     private float _lingerCounter = 0;
+    private UnityEngine.Events.UnityEvent _onStartAttack;
+    private Animator _animController;
+    private Transform _eyeTransform;
 
-    public CheckPlayerInView(EyeSight eyeSight)
+    public CheckPlayerInView(EyeSight eyeSight, Transform eyeTransform, UnityEngine.Events.UnityEvent onStartAttack, Animator animController)
     {
         _eyeSight = eyeSight;
+        _eyeTransform = eyeTransform;
+        _onStartAttack = onStartAttack;
+        _animController = animController;
     }
 
     public override NodeState _Evaluate()
@@ -31,10 +37,25 @@ public class CheckPlayerInView : BehaviourNode
                 else
                 {
                     // UnityEngine.Debug.Log("Player detected!");
-                    // detected oneshot trigger goes here!
 
+                    // start attack
+
+                    // get closer to window
+                    Room currRoom = (Room)GetData("currentRoom");
+
+                    if (GetData("currWindowIndex") == null)
+                    {
+                        // UnityEngine.Debug.LogError("Could not find window to attack through");
+                        return NodeState.FAILURE;
+                    }
+                    int currWindowIndex = (int)GetData("currWindowIndex");
+
+                    float eyeZOffset = (float)GetData("eyeWindowAttackingZOffset");
+                    _eyeTransform.DOMove(currRoom.Windows[currWindowIndex] + new Vector3(0, 0, eyeZOffset), (float)GetData("attackStartTime"));
+                    _animController.SetBool("isAttacking", true);
                     _waitCounter = 0;
                     _waiting = false;
+                    _onStartAttack.Invoke();
                     return NodeState.SUCCESS;
                 }
             } else
