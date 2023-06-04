@@ -131,9 +131,8 @@ namespace UI
 
                 yield return this._waitForHeavyPace;
 
-                // adding heavy breathing audio
+                // adding unsafe audio
                 Heartbeat.Post(gameObject);
-
             }
         }
         
@@ -155,9 +154,8 @@ namespace UI
 
                 yield return this._waitForNormalPace;
 
-                // adding the normal heartbeat
+                // adding safe audio
                 Heartbeat.Post(gameObject);
-                
             }
         }
     }
