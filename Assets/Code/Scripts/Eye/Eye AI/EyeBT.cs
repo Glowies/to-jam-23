@@ -34,6 +34,15 @@ public class EyeBT : BehaviourTree.Tree
 
     // Fires "True" when attack begins, fires "False" when attack ends
     public UnityEvent<bool> OnAttackStateChange;
+    
+    [Space(10)]
+
+    [Header("Events")]
+    public UnityEvent onStartAttack;
+    public UnityEvent onEndAttack;
+    public UnityEvent onEndAgitated;
+    public UnityEvent onStartSearching;
+    public UnityEvent onStartIdle;
 
     protected override BehaviourNode SetupTree()
     {
